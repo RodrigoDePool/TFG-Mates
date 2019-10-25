@@ -1,0 +1,12 @@
+\babel@toc {spanish}{}
+\babel@toc {spanish}{}
+\babel@toc {spanish}{}
+\babel@toc {english}{}
+\babel@toc {spanish}{}
+\noindent \hrulefill \par 
+\contentsline {chapter}{\numberline {1}Introducci\'on y preliminares}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Introducci\'on}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Resultados preliminares}{3}{section.1.2}
+\contentsline {chapter}{\numberline {2}El segundo cap\'{\i }tulo}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Uno m\'as}{6}{section.2.1}
+\contentsline {section}{\numberline {2.2}Y otro}{7}{section.2.2}
