@@ -115,7 +115,81 @@ Un conjunto $\mathcal{X}$ es no conexo si existen dos  conjuntos cerrados, $\mat
 	\begin{align*}
 	\mathcal{T}_Y = \{U\subset\mathcal{Y}: f^{-1}(U)\in\mathcal{T}_X\}
 	\end{align*} 
+	\begin{itemize}
+		\item 
+		Se puede comprobar $T_Y$ genera en efecto una topología de $Y$
+		\item
+		 $T_Y$ es la topología más fina que hace continua a $f$
+		\item 
+		Es usual trabajar con $Y$ como una partición o conjunto de clases de equivalencia de $X$
+	\end{itemize}
 \end{defin}
+
+\begin{lema}\label{conexoAconexo}
+	Sean $X$ e $Y$ espacios topológicos y $f: X \longrightarrow Y$ continua, entonces: 
+	\begin{align*}
+		X \textrm{ conexo} \Rightarrow Y \textrm{conexo}
+	\end{align*}
+\end{lema}
+
+
+\begin{lema}\label{compactoAcompacto}
+	Sean $X$ e $Y$ espacios topológicos y $f: X \longrightarrow Y$ continua, entonces: 
+	\begin{align*}
+	X \textrm{ compacto} \Rightarrow f(X) \textrm{ compacto}
+	\end{align*}
+\end{lema} (FALTA COROLARIO DE CUANDO F ES EXHAUSTIVA)
+
+\begin{lema}\label{XcompactoYt2fcontinua}
+	Sean $X$ e  $Y$ espacios topológicos, $X$ un compacto, $Y$ un espacio de Haussdorf y $f: X \longleftrightarrow Y$ continua, entonces $f$ es cerrada.
+\end{lema} (FALTA COROLARIO  DE QUE Y TIENE LA TOPO COCIENTE DETERMINADA POR F)
+
+\begin{defin}
+	Una n-variedad es un espacio topológico de Haussdorff tal que todo punto tiene un entorno abierto homeomorfo a la bola abierta n-dimensional.
+\end{defin}
+
+\begin{defin}
+	A una 2-variedad conexa la llamaremos superficie.
+\end{defin}
+
+\begin{defin}
+	Una triangulación de una superficie compacta, $S$, consiste en subconjuntos cerrados, ${T_1, ..., T_n}$, que cubren a $S$ y una familia de homeomorfismos, ${\phi_1, ..., \phi_n}$, que cumplen:
+	\begin{align*}
+		\phi_i: T'_i \longrightarrow T_i
+	\end{align*}
+	Donde $T'_i$ es un triángulo del plano $\mathbb{R}^2$. Además, tomando $T_i$ y $T_j$ con $i\neq j$, se cumple una de las siguientes condiciones:
+	\begin{itemize}
+		\item 
+		Son conjuntos totalmente disjuntos
+		\item 
+		Comparten un solo vértice en común (Llamamos vértice a todo elemento de $S$ que se corresponde por algún $\phi_i$ con un vértice en el plano).
+		\item 
+		Tienen toda una arista en común y solo eso (Llamamos arista a la preimagen de una arista de alguún $T'_i$ por $\phi_i$).
+	\end{itemize}
+	
+\end{defin}
+
+\begin{teor}{Teorema de Tibor Radó}\label{teoremaDeTriangulacion}
+	Toda $S$ superficie compacta es triangulable.
+\end{teor}(NO LO DEMOSTRAREMOS)
+
+LEMAS DE TRIANGULACIÓN
+\begin{lema}\label{lema1detriangulacion}
+	Sea $S$ una superficie triangulable entonces una arista lo es de exactamente dos triángulos.
+\end{lema}(TODO: FALTA DEMS)
+
+\begin{lema}\label{lema2detriangulacion}
+	Sea  $S$ una superficie triangulable y $v\in S$ un vértice en esa triangulación, entonces podemos ordenar el conjunto de todos los triángulos con vértice $v$ cíclicamente,  $T_0, T_1, ..., T_n = T_0$, de manera que $T_i$ y $T_{i+1}$ tienen toda una arista en común para todo $0\leq i\leq n-1$.
+\end{lema}(TODO: FALTA DEMS)
+
+(DEFINIR BANDA DE MOBIUS)
+(EJEMPLOS DE NOTACIÓN NORMAL, GRÁFICA Y ALGEBRÁICA)
+(DEFINIR SUMA CONEXA)
+(EJEMPLO DE SUMA DE CONEXA DE PLANO PROY CON PLANO PROY DA BOTELLA DE KLEIN)
+(TEOREMA FINALLLL)
+
+
+
 
 \begin{lema}\label{lema1}
 Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.
