@@ -182,6 +182,21 @@ LEMAS DE TRIANGULACIÓN
 	Sea  $S$ una superficie triangulable y $v\in S$ un vértice en esa triangulación, entonces podemos ordenar el conjunto de todos los triángulos con vértice $v$ cíclicamente,  $T_0, T_1, ..., T_n = T_0$, de manera que $T_i$ y $T_{i+1}$ tienen toda una arista en común para todo $0\leq i\leq n-1$.
 \end{lema}(TODO: FALTA DEMS)
 
+\begin{defin}
+	Dadas dos superfices $S_1$ y $S_2$ podemos definir la suma conexa de ambas, $S_1\#S_2$, como la superficie generada a partir de los siguientes pasos:
+	\begin{enumerate}
+		\item 
+		Para cada $S_i$ tomamos un subconjunto $D_i\subset S_i$ homeomorfo a un disco cerrado de dos dimensiones $E^2$. Llamamos $S'_i$ al complementario del interior de $D_i$.
+		\item 
+		Sea $\phi_i$ el homeomorfismo que manda $D_i$ al disco cerrado $E^2$, definimos el homeomorfismo $\psi$ que manda la frontera de $D'_1$ a la frontera de $D'_2$ como:
+		\begin{align*}
+			\psi = ((\phi_{2}\mid_{fr(D_2)})^{-1}) \circ (\phi_1\mid_{fr(D_1)})
+		\end{align*}
+		\item 
+		Definimos entonces $S_1\#S_2$ como $S'_1\cup S'_2$ dotado de la topología cociente que resulta de identificar los puntos $x$ y $\psi(x)$ para todo punto de la frontera de $D_1$.
+	\end{enumerate}
+	Para confirmar la validez de estar definición hay que aclarar varios puntos. Primero, por qué podemos asegurar en el punto 1 que existe un subconjunto homeomorfo a un disco. Segundo, tenemos que asegurarnos que en el punto dos las fronteras de $D_1$ y $D_2$ tienen la misma imagen. Tercero, habría que comprobar que, en efecto, el objeto obtenido es una superficie. Y, finalmente, tenemos que comprobar que esta definición es independiente de los conjuntos $D_i$ escogidos e independiente de los homeomorfismos. (FALTA PROBAR CADA UNO DE ESTOS PUNTOS)
+\end{defin}
 (DEFINIR BANDA DE MOBIUS)
 (EJEMPLOS DE NOTACIÓN NORMAL, GRÁFICA Y ALGEBRÁICA)
 (DEFINIR SUMA CONEXA)
