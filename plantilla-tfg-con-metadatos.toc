@@ -4,9 +4,12 @@
 \babel@toc {english}{}
 \babel@toc {spanish}{}
 \noindent \hrulefill \par 
-\contentsline {chapter}{\numberline {1}Introducci\'on y preliminares}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Introducci\'on}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Resultados preliminares}{5}{section.1.2}
-\contentsline {chapter}{\numberline {2}El segundo cap\'{\i }tulo}{7}{chapter.2}
-\contentsline {section}{\numberline {2.1}Uno m\'as}{8}{section.2.1}
-\contentsline {section}{\numberline {2.2}Y otro}{9}{section.2.2}
+\contentsline {chapter}{\numberline {1}Cachos sueltos}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Preliminares de topolog\IeC {\'\i }a}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Definiciones}{2}{section.1.2}
+\contentsline {chapter}{\numberline {2}Introducci\'on y preliminares}{1}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introducci\'on}{1}{section.2.1}
+\contentsline {section}{\numberline {2.2}Resultados preliminares}{2}{section.2.2}
+\contentsline {chapter}{\numberline {3}El segundo cap\'{\i }tulo}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Uno m\'as}{6}{section.3.1}
+\contentsline {section}{\numberline {3.2}Y otro}{7}{section.3.2}
