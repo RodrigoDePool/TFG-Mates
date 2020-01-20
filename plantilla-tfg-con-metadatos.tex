@@ -53,7 +53,9 @@ Here goes something
 
 
 
-Enunciemos cosas que nos vendrán bien
+Enunciemos cosas que nos vendrán bien.
+
+Notación de estos cachos sueltos: Utilizaremos una elegante upsilon ($\Upsilon$) para denotar aquello que no sabemos si deberíamos probar formalmente; y usaremos una zeta para aquellas cosas de las que convendría repasar la demostración formal ($\zeta$).
 
 \section{Preliminares de topología}
 
@@ -136,7 +138,7 @@ Introducimos a continuación algunos ejemplos característicos de superficies:
 		\item 
 		$(0,y)$ con $(1,y)$ para $0\leq y\leq 1$
 	\end{itemize}
-La topología que consideraremos es la cociente, inducida por el cuadrado abierto con la topología usual.
+La topología que se considera es la cociente, inducida por el cuadrado cerrado con la topología usual.
 \end{defin}
 
 
@@ -161,7 +163,7 @@ Partiendo de la notación gráfica se puede establecer una notación algebraica.
 		\item 
 		$(0,y)$ con $(1,1-y)$ para $0\leq y\leq 1$
 	\end{itemize}
-	La topología que consideraremos es la cociente, inducida por el cuadrado abierto con la topología usual.
+	La topología que se considera es la cociente, inducida por el cuadrado cerrado con la topología usual.
 \end{defin}
 
 En la figura \ref{fig:planoproyectivo} observamos el plano proyectivo en notación visual.
@@ -229,10 +231,32 @@ Sirviéndonos de la notación algebraica podemos definir \textit{la botella de K
 	\end{enumerate} 
 \end{defin}
 
+\begin{lema}{El pseudolema más útil de toda la topología}
+	
+	Al dilatar, comprimir, trasladar y cortar-identificar una figura, el objeto obtenido es homeomorfo al inicial. ¿Por qué?, se pregunta un matemático, porque todas las transformaciones son continuas. (¿Incluir en el TFG en tono seriesisímo?) 
+\end{lema}
+
+¿Ejemplillos de suma conexa de toros y planos proyectivos?
+
 \begin{lema}\label{lema:sumadedosplanosproyectivos}
 	La suma conexa de dos planos proyectivos es una botella de Klein.
 	\begin{proof}
-		FALTA LA PRUEBA
+		Un plano proyectivo se puede entender como el disco unidad en el que se identifican los puntos diametralmente opuestos. Utilizando esta definición seleccionamos el subconjunto $D = \left\{(x,y): |y|\geq\frac{1}{2}, |x|\leq\sqrt{1-y^2} \right\}$, homeomorfo al disco cerrado, para realizar la suma conexa de los planos. En la figura  \ref{fig:parte1SumaConexaDePlanosP} eliminamos el conjunto $D$ e indicamos con líneas discontinuas los segmentos a identificar con la otra superficie.
+		
+		\begin{figure}[h]\label{fig:parte1SumaConexaDePlanosP}
+			\centering
+			\includegraphics[width=0.7\linewidth]{imagenes/p1planop.png}
+			\caption{Plano proyectivo menos un subconjunto homemorfo al disco cerrado}
+		\end{figure} 
+	
+		Tomamos entonces dos planos proyectivos $I$ e $II$ y realizamos la suma conexa:
+		
+		\begin{figure}[h]\label{fig:sumaconexadepps}
+			\centering
+			\includegraphics[width=0.8\linewidth]{imagenes/sumapps.png}
+			\caption{Suma conexa de planos proyectivos}
+		\end{figure} 
+		La figura final obtenida ($III$) es una \textit{Botella de Klein}.
 	\end{proof}
 \end{lema}
 
