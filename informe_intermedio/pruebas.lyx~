@@ -1,0 +1,279 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Subsection*
+INSTRUCCIONES: Motivación, principales resultados y aplicaciones que se
+ esperan obtener
+\end_layout
+
+\begin_layout Subsection*
+Idea de redacción
+\end_layout
+
+\begin_layout Enumerate
+Introducir superficies 
+\end_layout
+
+\begin_layout Enumerate
+Enunciar el teorema 
+\end_layout
+
+\begin_layout Enumerate
+qué implica
+\end_layout
+
+\begin_layout Enumerate
+El tma en su versión compacta.
+ Rodeillo de ejemplos
+\end_layout
+
+\begin_layout Enumerate
+El tma en su versión no compacta.
+ Cositas de Cantor 
+\end_layout
+
+\begin_layout Enumerate
+Pequeño rodeo sobre la belleza del tma
+\end_layout
+
+\begin_layout Standard
+Las superficies topológicas son una abstracción matemática que buscan dar
+ representación formal a las superficies del mundo físico, quizás por esto
+ que resulta de interés matemático estudiar sus propiedades.
+ En particular, en este trabajo estudiaremos la deformaciones continuas
+ de superficies, o, en otras palabras, las clases de superficies topológicamente
+ equivalentes (homeomorfas).
+ La pregunta que subyace, en términos menos rigurosos, es cuándo podemos
+ estirar, doblar o comprimir una superficie para que se transforme en otra.
+ Será entonces el teorema de clasificación de superficies el que describirá
+ todas las posibles categorías de superficies homeomorfas a las que una
+ dada puede pertenecer.
+ 
+\end_layout
+
+\begin_layout Standard
+En su versión inicial, que ocupará la mayor parte de este trabajo, el teorema
+ se pregunta por las superficies compactas.
+ Dada una superficie compacta el teorema nos asegura de que solo puede ocurrir
+ uno de los dos siguientes casos: O bien la superficie es orientable, en
+ cuyo caso debe de ser homeomorfa a un número finito de toros conectados
+ entre sí; o, en su defecto, es homeomorfa a un número finito de planos
+ proyectivos conectados.
+ Si nos detenemos a analizar por un instante las consecuencias de este enunciado
+ nos encontramos con que: Por un lado, puede parecer evidente que una taza
+ con dos asas se puede deformar en un donut con dos agujeros; Sin embargo,
+ el teorema nos dice mucho más, te demuestra que sea lo que sea una superficie,
+ como quiera que se imagine, siempre estará contenida, topológicamente hablando,
+ en una de estas dos categorías: O muchos donuts conectados, o muchos planos
+ proyectivos pegados, nada más.
+ El mundo de las 2-variedades está entonces bajo control del topólogo bien
+ adiestrado, sabe en qué mundo se pueden mover sus objetos matemáticos,
+ sabe incluso si dos de sus objetos son, o no, iguales en términos topológicos.
+\end_layout
+
+\begin_layout Standard
+Por su parte, la versión más general del teorema, que no exige compacidad,
+ requiere de la introducción de nuevas nociones como la de "frontera ideal"
+ de una superfice y sus "finales".
+ El teorema nos indicará cómo el concepto de frontera ideal resulta clave
+ para el estudio de las superficies no compactas y, de hecho, serán estas
+ fronteras las que representen cada una de las clases de equivalencia topológica
+ de superficies.
+ Además, se verá que partiendo de cualquier espacio con estructura de frontera
+ ideal se puede construir una superficie correspondiente, y se explorará
+ las relaciones que tiene las fronteras ideales con los subconjuntos del
+ conjunto de Cantor.
+\end_layout
+
+\begin_layout Standard
+El trabajo propuesto pretende abordar muchos de los detalles necesarios
+ para entender la formalización del teorema en cuestión.
+\end_layout
+
+\begin_layout Subsubsection*
+Cachos sueltos 
+\end_layout
+
+\begin_layout Standard
+- La noción de superficie como objeto 
+\end_layout
+
+\begin_layout Standard
+- El concepto de superficie topológica es una abstracción matemática
+\end_layout
+
+\begin_layout Standard
+- Las superficies son objetos que surgen frecuentemente en el ámbito matemático,
+ y es por tanto legítimo preguntarse por sus propiedades.
+ Una cuestión que puede resultar llamativa consiste en plantearse qué otra
+ superficie puede conseguirse al estirar, comprimir o doblar una superficie
+ dada, es decir, qué superficies se consiguen al deformar continuamente
+ una inicial.
+ En El estudio de las superficies 
+\end_layout
+
+\begin_layout Standard
+- Las superficies son objetos que permiten describir que emergen frecuentemente
+ en el estudio matemático, Desde la perspectiva matemática puede resultar
+ de interés preguntarse 
+\end_layout
+
+\begin_layout Standard
+- Resulta de interés matemático preguntarse qué objeto se puede alcanzar
+ cuando se deforma continuamente una superficie dada, o, en términos más
+ formales, entre qué dos superficies se puede establecer un homeomorfismo.
+ Una forma de entenderlo, que permite hacerse una idea mental de lo que
+ se plantea, es ver la pregunta como esto equivale a preguntarse por las
+ superficies que se pueden obtener cuando se estira, comprime o dobla, sin
+ rasgar, una superficie inicial.
+ Nace de esta motivación el teorema de clasificación de superficies.
+\end_layout
+
+\begin_layout Standard
+- En particular, en este trabajo se estudiará el teorema de clasificación
+ de superficies.
+ El teorema en cuestión permite categorizar las superficies, de modo que,
+ se establece cuando dos superficies son topológicamente equivalentes.
+ De fondo, el teorema indica qué superficies se pueden conseguir al deformar
+ continuamente (doblar, comprimir, estirar, ...) una superficie inicial.
+ En términos más rigurosos, el teorema es una herramienta topológica para
+ comprobar cuando entre dos superficies existe, o no, un homeomorfismo.
+\end_layout
+
+\begin_layout Standard
+Primero, ocupará gran parte de nuestro estudio el 
+\end_layout
+
+\begin_layout Standard
+MI PRIMER INTENTO FAIL
+\end_layout
+
+\begin_layout Standard
+- El teorema de clasificación de superficies tiene interés casi exclusivamente
+ matemático, su utilidad fuera del entorno académico es nula y su belleza
+ cautiva al cerebro más esteril.
+ Las superficies topológicas son una abstracción matemática que buscan dar
+ representación formal a las superficies del mundo físico.
+ En particular, el teorema en cuestión busca estudiar las deformaciones
+ de dichas superficies.
+ Lo que de fondo se plantea es qué superficie se pueden alcanzar al estirar,
+ doblar o comprimir una superficie dada, lo que los matemáticos llaman "deformar
+ continuamente" una superficie.
+ En términos ya más formales, el teorema se pregunta entre qué dos superficies
+ se puede establecer un homeomorfismo.
+\end_layout
+
+\begin_layout Standard
+El enunciado del teorema no resulta trivial y su demostración tampoco lo
+ es.
+ El teorema afirma, para superficies compactas, que las superficies son
+ deformables a un montón (finito!) de donuts pegados entre sí, o, en su
+ defecto, un conjunto finito de planos proyectivos conectados.
+ Detengámonos por un instante a pensar en las consecuencias de este enunciado:
+ Por un lado, es evidente que una taza con una asa se puede deformar continuamen
+te en un donut, o que una taza con dos asas se puede deformar en un donut
+ con dos agujeros; Sin embargo, el teorema nos dice mucho más, te demuestra
+ que sea lo que sea tu superficie, como quiera que la imagines, no se puede
+ descontrolar demasiado, siempre estará contenida, topológicamente hablando,
+ en una de estas dos categorías: O muchos donuts, o muchos planos proyectivos,
+ nada más.
+ El mundo de las 2-variedades está entonces bajo control del topólogo bien
+ adiestrado, sabe en qué mundo se pueden mover sus objetos matemáticos,
+ sabe incluso si dos de sus objetos son o no son el mismo en términos topológico
+s!
+\end_layout
+
+\begin_layout Standard
+Por su parte, la versión para superficies no compactas se convierte en un
+ cacao mental dificilísimo de demostrar e incluso de entender.
+ Pero, en resumen, viene a decir que toda superficie puede clasificarse
+ por su "frontera ideal" que viene a representar el número de "finales"
+ que tiene la superficie en el infinito.
+ Adicionalmente, te dice que si le das una "frontera ideal" te puede conseguir
+ una superficie no compacta que tenga dicha frontera, y que existe una superfici
+e por cada subconjunto del conjunto de Cantor.
+ Y cualquier matemático con un ínfimo de interés dirá entonces: "ALA, A
+ QUÉ COJONES VIENE EL CONJUNTO DE CANTOR", pues viene y hay una hermosa
+ demostración que no entiendo y que lo prueba.
+\end_layout
+
+\begin_layout Standard
+VERSIÓN OFICIAL PRESENTABLE
+\end_layout
+
+\end_body
+\end_document
