@@ -5,8 +5,6 @@
 \babel@toc {spanish}{}
 \noindent \hrulefill \par 
 \contentsline {chapter}{\numberline {1}Introducci\'on y preliminares}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Introducci\'on}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Resultados preliminares}{4}{section.1.2}
-\contentsline {chapter}{\numberline {2}El segundo cap\'{\i }tulo}{7}{chapter.2}
-\contentsline {section}{\numberline {2.1}Uno m\'as}{8}{section.2.1}
-\contentsline {section}{\numberline {2.2}Y otro}{9}{section.2.2}
+\contentsline {section}{\numberline {1.1}Introducci\'on a las superficies topol\IeC {\'o}gicas}{1}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Superficies compactas}{1}{subsection.1.1.1}
+\contentsline {chapter}{\numberline {2}Algunos resultados de topolog\IeC {\'\i }a}{5}{chapter.2}

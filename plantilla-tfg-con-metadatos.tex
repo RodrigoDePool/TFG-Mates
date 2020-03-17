@@ -41,10 +41,11 @@
 
 
 \begin{abstract}[spanish]
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
+Aquí va un resumen.
 \end{abstract}
 \begin{abstract}[english]
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero \end{abstract}
+	Here goes the abstract
+\end{abstract}
 
 
 \mainmatter
@@ -53,59 +54,82 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
 \chapter{Introducci\'on y preliminares}\label{chap1}
 \setcounter{page}{1}
 
-Dada una superficie, concepto que se formalizará posteriormente, es razonable preguntarse por otras superficies que sean topológicamente equivalentes. Intuitivamente, lo que se estaría buscando es una clasificación que nos indique qué otras superficies se pueden conseguir al deformar continuamente una superficie dada. El objetivo de este trabajo es dar una expresión explícita a tal clasificación y, mediante una demostración constructiva, dar un método para conseguir la clase de equivalencia topológica de una superficie cualquiera.
+El trabajo presenta un estudio de las superficies topológicas y su clasificación. Primero, se estudiarán algunas herramientas, como el de suma conexa o triangulación, que serán útiles para demostrar el teorema de clasificación bajo la hipótesis de compacidad. Luego, nos acercaremos al resultado de [KEREKJARTOS] en el que se retira la exigencia de compacidad, para ello tendremos que introducir nuevas nociones como el de finales o frontera ideal. Por último, examinaremos la demostración constructiva de Ian Richards \cite{ian} que permite construir una superficie representante para cada clase de equivalencia topológica, y, además, desvela una interesante relación entre las 2-variedades conexas no compactas y los subconjuntos del conjunto de Cantor.
 
-Para recabar todos los elementos necesarios en la demostración, el trabajo sigue la siguiente estructura:
-\begin{itemize}\itemsep=0pt
-\item
-Mencionamos algunos lemas básicos de la asignatura de topología que se utilizarán durante la demostración.
+\section{Introducci\'on a las superficies topológicas}
 
-\item
-Introducimos las definiciones necesarias para formalizar el teorema objeto de nuestro trabajo.
-\item
-Enunciamos y demostramos algunos teoremas que serán necesarios posteriormente.
-\item
-Finalmente, procedemos a enunciar y demostrar el teorema de clasificación de superficies compactas.
-\end{itemize}
-
-Bla bla, funcionamiento de las citas: \cite{Abel} y \cite{S-W}.
-
-
-
-\section{Introducci\'on}
-
-Pruebas de como funciona todo
-\begin{equation}\label{eq1}
-e^{i\pi }+1=0.
-\end{equation}
-
-mas cosas
-\begin{equation}\label{eq2}
-e^{i\pi }+1=0.
-\end{equation}
-Integer tincidunt. Cras dapibus.
-\begin{equation}\label{eq3}
-e^{i\pi }+1=0.
-\end{equation}
-Referencias a ecuaciones \eqref{eq1}--\eqref{eq2}, et \eqref{eq3}. 
-
-
-Ejemplos de teoremas: Vamos a escribir alguno que nos hará falta.
-
-
-\begin{teorsin}
-[Cauchy--Schwarz]Nullam quis ante. 
-\end{teorsin}
-
-
-\begin{teor}\label{teor1}
-Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.
-\end{teor}
-
-
-Algunas herramientas útiles de topología
+Para formalizar el concepto de superficie necesitamos primero definir las variedades topológicas:
 \begin{defin}
-Un conjunto $\mathcal{X}$ es no conexo si existen dos  conjuntos cerrados, $\mathcal{X}_1$ y $\mathcal{X}_2$, tal que $\mathcal{X}=\mathcal{X}_1\cup\mathcal{X}_2$ y $\mathcal{X}_1\cap\mathcal{X}_2=\emptyset$.
+	Un conjunto, $\mathcal{X}$, dotado de una topología, diremos que es una \textit{n-variedad} si es Hausdorff y para todo punto existe un entorno homeomorfo a una bola abierta n dimensional.
+\end{defin}
+
+Llamaremos entonces \textit{superficie} a toda 2-variedad conexa que cumple el segundo axioma de numerabilidad. La definición generaliza el concepto intuitivo que se suele manejar de superficies. Algunos ejemplos de superficies son: La esfera con la topología de usual o un toro con la topología de inducida de $\mathcal{R}^3$, que son ambas orientables;o una banda de M\"{o}bius con la topología de subespacio, para el caso de una superficie no orientable.
+
+[IMAGEN 1]
+
+\subsection{Superficies compactas}
+
+El toro y el plano proyectivo son dos superficies esenciales para entender la clasificación de superficies compactas. Por ende, se plantean algunos ejemplos para familiarizarnos con estas variedades.
+
+Tomando el cuadrado cerrado $ X = \{ (x,y) \in R^2: -1\leq x\leq 1,\quad -1\leq y \leq 1  \} $ con la topología de subespacio, el \textit{toro}  se construye de identificar:
+\begin{align*}
+(x,-1)\equiv(x,1) \quad x\in [-1,1]\\
+(-1,y)\equiv(1,y) \quad y\in [-1,1] 
+\end{align*}
+Y dotar al conjunto resultante con la topología de espacio cociente. En la [REF A IMG2] se representa gráficamente el toro, las aristas con la misma letra se identifican siguiendo el sentido indicado por la flecha.
+
+[IMAGEN 2]
+
+Es un ejercico simple pero extenso  demostrar que  el toro así definido es homeomorfo a la estructura de donut que se suele estudiar.
+
+Por su parte, el \textit{plano proyectivo} parte del mismo conjunto $X$ y se construye con las identificaciones:
+\begin{align*}
+(x,-1)\equiv(-x,1) \quad x\in [-1,1]\\
+(-1,y)\equiv(1,-y) \quad y\in [-1,1] 
+\end{align*}
+Utilizando en este caso también la topología cociente. Equivalentemente se puede definir como el espacio cociente que resulta de identificar los puntos diametralmente opuestos de $S^2$.
+
+[IMAGEN 3]
+
+Las gráficas [REF IMG1] y [REF IMG2] nos permiten establecer una notación algebraica para referirnos a estas superficies: 
+Inciando en una arista cualquiera recorremos la figura en el sentido de las agujas del reloj y anotamos cada letra que encontramos, agregando un exponente a la -1 en caso de que el sentido de su flecha sea inverso al del recorrido. Con esto describiríamos [REG IMG1] como $aba^{-1}b^{-1}$ y [REF IMG2] como $abab$. La notación nos permite referirnos a nuevas superficies fácilmente, por ejemplo, $aba^{-1}b$ se correspondería con [REF IMG4] y $aa^{-1}$ con [REF IMG5]. 
+
+[IMAGEN 4](Botella de klein, OYE INTENTA HACER LA DEMS PARA ESTA SUPERFICIE)
+
+[IMAGEN 5]
+
+El siguiente lema [REF A LEMA] nos permitirá comprobar que todas las superficies tratadas hasta ahora son compactas.
+
+\begin{lema}
+	Sea $X$ un espacio topológico e $Y$  un espacio cociente que resulta de identificar puntos en $X$. Entonces:
+	\begin{align*}
+	\text{$X$ compacto}\Rightarrow\text{$Y$ compacto}
+	\end{align*}
+\end{lema}
+\begin{proof}
+	Sea $f:X\longrightarrow Y$ la función cociente que asocia a cada punto su clase de equivalencia; $f$ es claramente sobreyectiva y, por ser cociente, es continua.\\
+	Siendo $X$ compacto tenemos entonces que $f(X)=Y$ también lo es.
+\end{proof}
+
+
+
+Definimos a continuación un operador que nos permitirá generar infinidad de nuevas superficies partiendo de las ya estudiadas (de hecho, si se me permite el \textit{spoiler}, podremos generar todas las superficies compactas posibles).
+
+
+\begin{defin}
+	Sean $S_1$ y $S_2$ dos superficies disjuntas. Llamaremos \textit{suma conexa} de ambas, $S_1\#S_2$, a la superficie que resulta de:TODO CONTINUAR
+\end{defin}
+
+[Nota: sigo acaso demasiado la estructura que hay en el libro de massey? es esto un plagio? No sabría plantearlo de otra forma, su hilo argumental tiene todo el sentido del mundo]
+
+
+
+
+\chapter{Algunos resultados de topología}
+Cosas que empecé a escribir pero que probablemente no haga falta incluir en el TFG. Son definiciones elementales de topo y algunos lemas
+
+\begin{defin}
+	Un conjunto $\mathcal{X}$ es no conexo si existen dos  conjuntos cerrados, $\mathcal{X}_1$ y $\mathcal{X}_2$, tal que $\mathcal{X}=\mathcal{X}_1\cup\mathcal{X}_2$ y $\mathcal{X}_1\cap\mathcal{X}_2=\emptyset$.
 \end{defin}
 \begin{defin}
 	Un conjunto $\mathcal{X}$ se dice conexo si no cumple la definición anterior.
@@ -119,7 +143,7 @@ Un conjunto $\mathcal{X}$ es no conexo si existen dos  conjuntos cerrados, $\mat
 		\item 
 		Se puede comprobar $T_Y$ genera en efecto una topología de $Y$
 		\item
-		 $T_Y$ es la topología más fina que hace continua a $f$
+		$T_Y$ es la topología más fina que hace continua a $f$
 		\item 
 		Es usual trabajar con $Y$ como una partición o conjunto de clases de equivalencia de $X$
 	\end{itemize}
@@ -128,9 +152,12 @@ Un conjunto $\mathcal{X}$ es no conexo si existen dos  conjuntos cerrados, $\mat
 \begin{lema}\label{conexoAconexo}
 	Sean $X$ e $Y$ espacios topológicos y $f: X \longrightarrow Y$ continua, entonces: 
 	\begin{align*}
-		X \textrm{ conexo} \Rightarrow Y \textrm{conexo}
+	X \textrm{ conexo} \Rightarrow Y \textrm{conexo}
 	\end{align*}
 \end{lema}
+\begin{proof}
+	content...
+\end{proof}
 
 
 \begin{lema}\label{compactoAcompacto}
@@ -155,7 +182,7 @@ Un conjunto $\mathcal{X}$ es no conexo si existen dos  conjuntos cerrados, $\mat
 \begin{defin}
 	Una triangulación de una superficie compacta, $S$, consiste en subconjuntos cerrados, ${T_1, ..., T_n}$, que cubren a $S$ y una familia de homeomorfismos, ${\phi_1, ..., \phi_n}$, que cumplen:
 	\begin{align*}
-		\phi_i: T'_i \longrightarrow T_i
+	\phi_i: T'_i \longrightarrow T_i
 	\end{align*}
 	Donde $T'_i$ es un triángulo del plano $\mathbb{R}^2$. Además, tomando $T_i$ y $T_j$ con $i\neq j$, se cumple una de las siguientes condiciones:
 	\begin{itemize}
@@ -182,147 +209,18 @@ LEMAS DE TRIANGULACIÓN
 	Sea  $S$ una superficie triangulable y $v\in S$ un vértice en esa triangulación, entonces podemos ordenar el conjunto de todos los triángulos con vértice $v$ cíclicamente,  $T_0, T_1, ..., T_n = T_0$, de manera que $T_i$ y $T_{i+1}$ tienen toda una arista en común para todo $0\leq i\leq n-1$.
 \end{lema}(TODO: FALTA DEMS)
 
-(DEFINIR BANDA DE MOBIUS)
-(EJEMPLOS DE NOTACIÓN NORMAL, GRÁFICA Y ALGEBRÁICA)
-(DEFINIR SUMA CONEXA)
-(EJEMPLO DE SUMA DE CONEXA DE PLANO PROY CON PLANO PROY DA BOTELLA DE KLEIN)
-(TEOREMA FINALLLL)
-
-
-
-
-\begin{lema}\label{lema1}
-Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.
-\end{lema}
-
-\begin{proof}
-Nullam quis ante. 
-\end{proof}
-
-
-\begin{lema}\label{lema2}
-Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.
-\end{lema}
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.
-
-
-\begin{proof}[\sc Demostraci\'on del lema {\rm \ref{lema2}}]
-Nullam quis ante:
-\begin{equation}
-2+2=4.\qedhere
-\end{equation}
-\end{proof}
-
-\section{Resultados preliminares}
-
-Lorem ipsum dolor sit amet, Teorema \ref{teor1}, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
-\begin{align}\label{eq4}
-&e^{i\pi }+1=0,
-\\
-&2e^{i\pi }+2=0.\label{eq5}
-\end{align}
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-\begin{align}\nonumber
-0&=e^{i\pi }+1=e^{i\pi }+1=e^{i\pi }+1=e^{i\pi }+\sum_{n=1}^\infty \frac{1}{2^n}
-\\
-&=-1+\sum_{n=1}^\infty \frac{1}{2^n}=-1+1=0.\label{eq6}
-\end{align}
-et
-\begin{equation}\label{eq7}
-\begin{aligned}
-e^{i\pi }+1=0,
-\\
-e^{i\pi }+1=0.
-\end{aligned}
-\end{equation}
-
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-\begin{align*}
-e^{i\pi }+1&=0,
-\\
-e^{i\pi }+1&=0.
-\end{align*}
-Aenean massa: 
-\begin{equation}
-\left\{
-\begin{array}{l}
-e^{i\pi }+1=0,
-\\
-e^{i\pi }+1=0.
-\end{array}
-\right.
-\end{equation}
-
-
-Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
-
-
-\chapter{El segundo cap\'{\i}tulo}\label{chap2}
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
-\begin{equation}\label{eq8}
-e^{i\pi }+1=0.
-\end{equation}
-Phasellus viverra nulla ut metus varius laoreet \eqref{eq1}. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
-$$
-e^{i\pi }+1=0.
-$$
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
-\begin{equation}
-e^{i\pi }+1=0.
-\end{equation}
-Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.
-\begin{equation}
-e^{i\pi }+1=0.
-\end{equation}
-Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
-$$
-e^{i\pi }+1=0.
-$$
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
-
-\section{Uno m\'as}
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
-$$
-e^{i\pi }+1=0.
-$$
-
-\section{Y otro}
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
-
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
-
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
-
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
-
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
 
 \begin{thebibliography}{10}
 
+%% TODO: VER COMO SE TIENEN QUE PONER LAS CITAS
+\bibitem{massey} 
+    \textsc{William S. Massey}: 
+    Introducción a la topología algebraica. 
+    \textit{Editorial Reverté} {\bf1} (2006), 1--29.
 
-\bibitem{Abel} 
-    \textsc{Abel, N.\,H.}: 
-    Beweis eines Ausdrucks, von welchem die Binomial-Formel ein einzelner Fall ist. 
-    \textit{J. Reine angew. Math.} {\bf1} (1826), 159--160.
-
-\bibitem{S-W}
-    \textsc{Stein, E.\,M. and Weiss, G.}
-    \textit{Introduction to  Fourier analysis on Euclidean spaces.}
-    Princeton Mathematical Series~32, Princeton University Press, Princeton, NJ, 1971.
+\bibitem{ian}
+    \textsc{Ian Richards}
+    \textit{Classification of non compact surfaces...o algo asi}
     
     
 \end{thebibliography}
