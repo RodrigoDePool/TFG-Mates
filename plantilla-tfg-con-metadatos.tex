@@ -41,18 +41,18 @@
 
 
 \begin{abstract}[spanish]
-Aquí va un resumen.
+
+Aquí va algo
 \end{abstract}
 \begin{abstract}[english]
-	Here goes the abstract
+Here goes something
+
 \end{abstract}
 
 
 \mainmatter
+\chapter{Cachos sueltos}
 
-
-\chapter{Introducci\'on y preliminares}\label{chap1}
-\setcounter{page}{1}
 
 El trabajo presenta un estudio de las superficies topológicas y su clasificación. Primero, se estudiarán algunas herramientas, como el de suma conexa o triangulación, que serán útiles para demostrar el teorema de clasificación bajo la hipótesis de compacidad. Luego, nos acercaremos al resultado de [KEREKJARTOS] en el que se retira la exigencia de compacidad, para ello tendremos que introducir nuevas nociones como el de finales o frontera ideal. Por último, examinaremos la demostración constructiva de Ian Richards \cite{ian} que permite construir una superficie representante para cada clase de equivalencia topológica, y, además, desvela una interesante relación entre las 2-variedades conexas no compactas y los subconjuntos del conjunto de Cantor.
 
@@ -67,6 +67,7 @@ Llamaremos entonces \textit{superficie} a toda 2-variedad conexa que cumple el s
 
 [IMAGEN 1]
 
+
 \subsection{Superficies compactas}
 
 El toro y el plano proyectivo son dos superficies esenciales para entender la clasificación de superficies compactas. Por ende, se plantean algunos ejemplos para familiarizarnos con estas variedades.
@@ -76,9 +77,13 @@ Tomando el cuadrado cerrado $ X = \{ (x,y) \in R^2: -1\leq x\leq 1,\quad -1\leq 
 (x,-1)\equiv(x,1) \quad x\in [-1,1]\\
 (-1,y)\equiv(1,y) \quad y\in [-1,1] 
 \end{align*}
-Y dotar al conjunto resultante con la topología de espacio cociente. En la [REF A IMG2] se representa gráficamente el toro, las aristas con la misma letra se identifican siguiendo el sentido indicado por la flecha.
+Y dotar al conjunto resultante con la topología de espacio cociente. En \ref{fig:toro} se representa gráficamente el toro (las aristas con la misma letra se identifican siguiendo el sentido indicado por la flecha).
 
-[IMAGEN 2]
+\begin{figure}[h]\label{fig:toro}
+	\centering
+	\includegraphics[width=0.3\linewidth]{imagenes/toro.png}
+	\caption{Toro}
+\end{figure} 
 
 Es un ejercico simple pero extenso  demostrar que  el toro así definido es homeomorfo a la estructura de donut que se suele estudiar.
 
@@ -89,12 +94,23 @@ Por su parte, el \textit{plano proyectivo} parte del mismo conjunto $X$ y se con
 \end{align*}
 Utilizando en este caso también la topología cociente. Equivalentemente se puede definir como el espacio cociente que resulta de identificar los puntos diametralmente opuestos de $S^2$.
 
-[IMAGEN 3]
+
+\begin{figure}[h]\label{fig:planoproyectivo}
+	\centering
+	\includegraphics[width=0.3\linewidth]{imagenes/planop.png}
+	\caption{Plano proyectivo}
+\end{figure} 
 
 Las gráficas [REF IMG1] y [REF IMG2] nos permiten establecer una notación algebraica para referirnos a estas superficies: 
 Inciando en una arista cualquiera recorremos la figura en el sentido de las agujas del reloj y anotamos cada letra que encontramos, agregando un exponente a la -1 en caso de que el sentido de su flecha sea inverso al del recorrido. Con esto describiríamos [REG IMG1] como $aba^{-1}b^{-1}$ y [REF IMG2] como $abab$. La notación nos permite referirnos a nuevas superficies fácilmente, por ejemplo, $aba^{-1}b$ se correspondería con [REF IMG4] y $aa^{-1}$ con [REF IMG5]. 
 
-[IMAGEN 4](Botella de klein, OYE INTENTA HACER LA DEMS PARA ESTA SUPERFICIE)
+
+\begin{figure}[h]\label{fig:botelladeklein}
+	\centering
+	\includegraphics[width=0.3\linewidth]{imagenes/klein.png}
+	\caption{Botella de Klein}
+\end{figure} 
+
 
 [IMAGEN 5]
 
@@ -116,8 +132,51 @@ El siguiente lema [REF A LEMA] nos permitirá comprobar que todas las superficie
 Definimos a continuación un operador que nos permitirá generar infinidad de nuevas superficies partiendo de las ya estudiadas (de hecho, si se me permite el \textit{spoiler}, podremos generar todas las superficies compactas posibles).
 
 
-\begin{defin}
-	Sean $S_1$ y $S_2$ dos superficies disjuntas. Llamaremos \textit{suma conexa} de ambas, $S_1\#S_2$, a la superficie que resulta de:TODO CONTINUAR
+
+\begin{defin}\label{defin:sumaconexa}
+	Dadas dos superfices $S_1$ y $S_2$ podemos definir la suma conexa de ambas, $S_1\#S_2$, como la superficie generada a partir de los siguientes pasos:
+	
+	\begin{enumerate}
+		\item 
+		Para cada $S_i$ tomamos un subconjunto $D_i\subset S_i$ homeomorfo al disco cerrado de dos dimensiones $E^2$. Llamamos $S'_i$ al complementario del interior de $D_i$.
+		\item 
+		Sea $\phi_i$ el homeomorfismo que manda $D_i$ al disco cerrado $E^2$, definimos el homeomorfismo $\psi$ que manda la frontera de $D'_1$ a la frontera de $D'_2$ como:
+		\begin{align*}
+		\psi = ((\phi_{2}\mid_{fr(D_2)})^{-1}) \circ (\phi_1\mid_{fr(D_1)})
+		\end{align*}
+		\item 
+		Definimos entonces $S_1\#S_2$ como $S'_1\cup S'_2$ dotado de la topología cociente que resulta de identificar los puntos $x$ y $\psi(x)$ para todo punto de la frontera de $D_1$.
+	\end{enumerate}
+	
+	Para confirmar la validez de estar definición hay que aclarar varios puntos:
+	\begin{enumerate}
+		\item 
+		Primero, por qué podemos asegurar en el punto 1 de la definición que existe un subconjunto homeomorfo a un disco.
+		\begin{proof}
+			Tomamos un punto $p\in S_i$ cualquiera. Como $S_i$ es una 2-variedad, entonces existe un homeomorfismos $g$ que manda un entorno, $U$, del punto $p$ al círculo abierto. 
+			
+			Tomamos $E_{\frac{1}{2}}$ el disco cerrado de radio $\frac{1}{2}$, y $U'= g^{-1}(E_{\frac{1}{2}})$. Tenemos que $g\mid_{U'}$ es un homeomorfismo de un subconjunto de $S_i$ a $E_{\frac{1}{2}}$ que a su vez es homeomorfo al disco cerrado de radio 1. (HACE FALTA?)
+		\end{proof} 
+		\item 
+		Segundo, tenemos que asegurarnos que en el punto 2 las fronteras de $D_1$ y $D_2$ tienen la misma imagen.
+		\begin{proof}
+			Comencemos por aclarar una sutileza en la definición: Cuando hablamos de $D_i$ homeomorfos a $E^2$, nos referimos a homeomorfos como subconjuntos de las superficies, no como conjuntos independientes dotados de la topología del subconjunto.
+			
+			Partiendo de eso, basta con probar que dado un homeomorfismo $f: X\longrightarrow Y$, y el conjunto cerrado $B\subset X$, entonces $f(fr(B)))= fr(f(B))$.
+			Para esto basta con probar que dado un homeomorfismo $f: U\subset X \longrightarrow V\subset Y$, con $U$ y $V$ cerrados, se cumple que $f(fr(U)) = fr(V)$. Esto se sigue directamente de que $f(\mathring{B})=\mathring{f(B)}$, que a su vez es resultado inmediato de las propiedades de homeomorfismos. (HACE FALTA?)
+		\end{proof}
+		\item 
+		Tercero, habría que comprobar que, en efecto, el objeto obtenido es una superficie. Es decir, comprobar que todo punto tiene un entorno homeomorfo al disco abierto, que el espacio es T2 y que es conexo.
+		\begin{proof}
+			
+			(HACE FALTA?)
+		\end{proof}
+		\item 
+		Y, finalmente, tenemos que comprobar que esta definición es independiente de los conjuntos $D_i$ escogidos e independiente de los homeomorfismos.
+		\begin{proof}
+			(HACE FALTA?)
+		\end{proof}
+	\end{enumerate} 
 \end{defin}
 
 [Nota: sigo acaso demasiado la estructura que hay en el libro de massey? es esto un plagio? No sabría plantearlo de otra forma, su hilo argumental tiene todo el sentido del mundo]
@@ -134,52 +193,71 @@ Cosas que empecé a escribir pero que probablemente no haga falta incluir en el 
 \begin{defin}
 	Un conjunto $\mathcal{X}$ se dice conexo si no cumple la definición anterior.
 \end{defin}
-\begin{defin}
-	Sea $\mathcal{X}$ un espacio topológico con topología $\mathcal{T}_X$, sea $\mathcal{Y}$ un conjunto, y $f$ una función  $f:\mathcal{X}\longrightarrow\mathcal{Y}$. Entonces definimos la topología cociente:
-	\begin{align*}
-	\mathcal{T}_Y = \{U\subset\mathcal{Y}: f^{-1}(U)\in\mathcal{T}_X\}
-	\end{align*} 
+
+
+Para considerar gráficamente el toro se asigna a cada arista de un cuadrado unidad una letra y un sentido. Si dos aristas comparten letra, entonces son puntos identificados según el sentido de la flecha. Mostramos en \ref{fig:toro} la representación visual del toro.
+
+
+Partiendo de la notación gráfica se puede establecer una notación algebraica. Empezando en uno de los vértices recorremos el borde de la figura en el sentido de las agujas del reloj, si el sentido  de la arista corresponde con el del recorrido entonces escribimos la letra, si es contrario entonces escribimos la letra elevado a -1. En el caso del toro tenemos: $aba^{-1}b^{-1}$ 
+
+
+
+\begin{defin}\label{defin:planoproyectivo}
+	Se llama plano proyectivo al cuadrado unidad, identificando los puntos:
 	\begin{itemize}
 		\item 
-		Se puede comprobar $T_Y$ genera en efecto una topología de $Y$
-		\item
-		$T_Y$ es la topología más fina que hace continua a $f$
+		$(x,1)$ con $(1-x,0)$ para $0\leq x\leq 1$
 		\item 
-		Es usual trabajar con $Y$ como una partición o conjunto de clases de equivalencia de $X$
+		$(0,y)$ con $(1,1-y)$ para $0\leq y\leq 1$
 	\end{itemize}
+	La topología que se considera es la cociente, inducida por el cuadrado cerrado con la topología usual.
 \end{defin}
 
-\begin{lema}\label{conexoAconexo}
-	Sean $X$ e $Y$ espacios topológicos y $f: X \longrightarrow Y$ continua, entonces: 
-	\begin{align*}
-	X \textrm{ conexo} \Rightarrow Y \textrm{conexo}
-	\end{align*}
+En la figura \ref{fig:planoproyectivo} observamos el plano proyectivo en notación visual.
+
+En notación algebraica el plano proyectivo se escribe $abab$.
+
+Sirviéndonos de la notación algebraica podemos definir \textit{la botella de Klein} como $aba^{-1}b$ 
+
+
+
+
+\begin{lema}{El pseudolema más útil de toda la topología}
+	
+	Al dilatar, comprimir, trasladar y cortar-identificar una figura, el objeto obtenido es homeomorfo al inicial. ¿Por qué?, se pregunta un matemático, porque todas las transformaciones son continuas. (¿Incluir en el TFG en tono seriesisímo?) 
 \end{lema}
-\begin{proof}
-	content...
-\end{proof}
+
+¿Ejemplillos de suma conexa de toros y planos proyectivos?
+
+\begin{lema}\label{lema:sumadedosplanosproyectivos}
+	La suma conexa de dos planos proyectivos es una botella de Klein.
+	\begin{proof}
+		Un plano proyectivo se puede entender como el disco unidad en el que se identifican los puntos diametralmente opuestos. Utilizando esta definición seleccionamos el subconjunto $D = \left\{(x,y): |y|\geq\frac{1}{2}, |x|\leq\sqrt{1-y^2} \right\}$, homeomorfo al disco cerrado, para realizar la suma conexa de los planos. En la figura  \ref{fig:parte1SumaConexaDePlanosP} eliminamos el conjunto $D$ e indicamos con líneas discontinuas los segmentos a identificar con la otra superficie.
+		
+		\begin{figure}[h]\label{fig:parte1SumaConexaDePlanosP}
+			\centering
+			\includegraphics[width=0.7\linewidth]{imagenes/p1planop.png}
+			\caption{Plano proyectivo menos un subconjunto homemorfo al disco cerrado}
+		\end{figure} 
+	
+		Tomamos entonces dos planos proyectivos $I$ e $II$ y realizamos la suma conexa:
+		
+		\begin{figure}[h]\label{fig:sumaconexadepps}
+			\centering
+			\includegraphics[width=0.8\linewidth]{imagenes/sumapps.png}
+			\caption{Suma conexa de planos proyectivos}
+		\end{figure} 
+		La figura final obtenida ($III$) es una \textit{Botella de Klein}.
+	\end{proof}
+\end{lema}
 
 
-\begin{lema}\label{compactoAcompacto}
-	Sean $X$ e $Y$ espacios topológicos y $f: X \longrightarrow Y$ continua, entonces: 
-	\begin{align*}
-	X \textrm{ compacto} \Rightarrow f(X) \textrm{ compacto}
-	\end{align*}
-\end{lema} (FALTA COROLARIO DE CUANDO F ES EXHAUSTIVA)
 
-\begin{lema}\label{XcompactoYt2fcontinua}
-	Sean $X$ e  $Y$ espacios topológicos, $X$ un compacto, $Y$ un espacio de Haussdorf y $f: X \longleftrightarrow Y$ continua, entonces $f$ es cerrada.
-\end{lema} (FALTA COROLARIO  DE QUE Y TIENE LA TOPO COCIENTE DETERMINADA POR F)
 
-\begin{defin}
-	Una n-variedad es un espacio topológico de Haussdorff tal que todo punto tiene un entorno abierto homeomorfo a la bola abierta n-dimensional.
-\end{defin}
 
-\begin{defin}
-	A una 2-variedad conexa la llamaremos superficie.
-\end{defin}
 
-\begin{defin}
+
+\begin{defin}\label{defin:triangulacion}
 	Una triangulación de una superficie compacta, $S$, consiste en subconjuntos cerrados, ${T_1, ..., T_n}$, que cubren a $S$ y una familia de homeomorfismos, ${\phi_1, ..., \phi_n}$, que cumplen:
 	\begin{align*}
 	\phi_i: T'_i \longrightarrow T_i
@@ -187,27 +265,45 @@ Cosas que empecé a escribir pero que probablemente no haga falta incluir en el 
 	Donde $T'_i$ es un triángulo del plano $\mathbb{R}^2$. Además, tomando $T_i$ y $T_j$ con $i\neq j$, se cumple una de las siguientes condiciones:
 	\begin{itemize}
 		\item 
-		Son conjuntos totalmente disjuntos
+		Son conjuntos totalmente disjuntos.
 		\item 
-		Comparten un solo vértice en común (Llamamos vértice a todo elemento de $S$ que se corresponde por algún $\phi_i$ con un vértice en el plano).
+		Comparten un solo vértice en común y solo eso (Llamamos vértice a todo elemento de $S$ que se corresponde por algún $\phi_i$ con un vértice en el plano).
 		\item 
-		Tienen toda una arista en común y solo eso (Llamamos arista a la preimagen de una arista de alguún $T'_i$ por $\phi_i$).
+		Tienen toda una arista en común y solo eso (Llamamos arista a la imagen de una arista de alguún $T'_i$ por $\phi_i$).
 	\end{itemize}
-	
 \end{defin}
 
-\begin{teor}{Teorema de Tibor Radó}\label{teoremaDeTriangulacion}
+
+\begin{teor}{Teorema de Tibor Radó}\label{teor:teoremaDeTriangulacion}
+	
 	Toda $S$ superficie compacta es triangulable.
 \end{teor}(NO LO DEMOSTRAREMOS)
 
-LEMAS DE TRIANGULACIÓN
-\begin{lema}\label{lema1detriangulacion}
+
+
+
+Lemas de triangulación
+\begin{lema}\label{lema:lema1detriangulacion}
 	Sea $S$ una superficie triangulable entonces una arista lo es de exactamente dos triángulos.
 \end{lema}(TODO: FALTA DEMS)
 
-\begin{lema}\label{lema2detriangulacion}
+\begin{lema}\label{lema:lema2detriangulacion}
 	Sea  $S$ una superficie triangulable y $v\in S$ un vértice en esa triangulación, entonces podemos ordenar el conjunto de todos los triángulos con vértice $v$ cíclicamente,  $T_0, T_1, ..., T_n = T_0$, de manera que $T_i$ y $T_{i+1}$ tienen toda una arista en común para todo $0\leq i\leq n-1$.
 \end{lema}(TODO: FALTA DEMS)
+
+
+\begin{teor}{Teorema de clasificación de superficies compactas}\label{teor:teoremadeclasificacion}
+	
+	Toda superficie compacta es homeomorfa a una esfera, a una suma conexa de toros o una suma conexa de planos proyectivos.
+\end{teor}
+
+
+
+
+
+
+
+
 
 
 \begin{thebibliography}{10}

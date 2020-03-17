@@ -1,0 +1,123 @@
+\documentclass[a4paper,oneside,11pt,leqno]{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{epic}
+\usepackage{eepic}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{fancybox}
+
+
+\textwidth = 16truecm 
+\textheight = 24truecm
+\oddsidemargin =-20pt
+\evensidemargin = 5pt
+\topmargin=-1truecm
+
+\begin{document}
+	%\thispagestyle{empty}
+	\hrule
+	\vskip 6pt
+	
+	\noindent{\bf TRABAJO DE FIN DE GRADO EN MATEM\'ATICAS} \\
+	Departamento de Matem\'aticas\\
+	Universidad Aut\'onoma de Madrid\\
+	\noindent ({\it Curso acad\'emico 2019-20}) 
+	\vskip 6pt \hrule
+	
+	\vskip 5mm
+	
+	\noindent{\bf T\'itulo del proyecto}: Teorema de clasificación de superficies
+	
+	\vskip 5mm
+	
+	\noindent{\bf Nombre y Apellidos}: Rodrigo Alonso De Pool Alcántara
+	
+	\vskip 5mm
+	
+	\noindent{\bf Nombre del tutor(es)}: Javier Aramayona
+	
+	\vskip 2cm
+	
+	
+	\centerline{\bf INFORME INTERMEDIO \footnote{ El informe debe ser elaborado por el estudiante y presentado al tutor -o tutores- que deber\'a dar su conformidad antes de ser entregado al coordinador.}}
+	
+	\vskip 5mm
+	
+	\begin{enumerate}
+		
+		\item[1.-] {\bf Labor desarrollada hasta la fecha}: (\textit{reuniones con el tutor; b\'usqueda de bibliograf\'ia; planteamiento de los objetivos.})
+		
+		Durante el primer cuatrimestre el tutorando se familiarizó con la terminología y nociones necesarias para el manejo de superficies desde el punto de vista topológico. Además, se enunció formalmente el teorema de clasificación de superficies compactas y se comprendió su demostración. Para ello  se utilizó principalmente el texto \cite{Massey}.
+		
+		Por otra parte, se inició la lectura de \cite{Richards} con el objetivo de introducir al estudiante a la versión del teorema que no exige la compacidad de la superficie. Por tanto, el estudiante tuvo un primer acercamiento con nuevos conceptos, como el de finales y frontera ideal, necesarios para tratar con la generalización del teorema.
+		
+		Se han realizado reuniones cada dos semanas, tanto presenciales como a través de video-llamadas. Aparte de orientar la investigación del tutorando, el tutor clarificó conceptos y ayudó en la demostración de proposiciones que impedían el avance del estudiante.
+		
+		\item[2.-] {\bf Esquema de los distintos apartados del trabajo}: (\textit{puede usarse como gu\'ia la propia tabla de contenidos.})
+		
+		\begin{enumerate}
+			\item[1] Introducción
+			\begin{enumerate}
+				\item[-] Motivación y planteamiento del teorema de clasificación de superficies
+				\item[-] Ejemplos de aplicación del teorema
+			\end{enumerate}
+			\item[2] Preliminares
+			\begin{enumerate}
+				\item[-] Breve repaso de resultados topológicos 
+				\item[-] Definición de conceptos necesarios para la formalización del teorema
+				\item[-] Notación visual y terminología para el manejo de superficies
+				\item[-] Enunciados y demostraciones de algunas proposiciones necesarias para la demostración del teorema.	
+			\end{enumerate}
+			\item[3] Teorema de clasificación de superficies compactas
+			\begin{enumerate}
+				\item[-] Enunciado formal del teorema
+				\item[-] Demostración
+				\item[-] Varios ejemplos de su aplicación
+			\end{enumerate}
+			\item[4] Aproximación al teorema de clasificación de superficies no compactas
+			\begin{enumerate}
+				\item[-] Introducción de nuevas nociones para tratar con la no compacidad (Frontera ideal y finales)
+				\item[-] Resultados intermedios
+				\item[-] Relación entre el conjunto de Cantor y la clasificación de superficies
+			\end{enumerate}
+		\end{enumerate}
+		
+		
+		\item[3.-] {\bf Descripci\'on del proyecto}: (\textit{motivaci\'on; principales resultados y, en su caso, aplicaciones que se esperan obtener.}) M\'aximo 2 p\'aginas.
+		
+		Las superficies topológicas son una abstracción matemática que buscan dar representación formal a las superficies del mundo físico, quizás por esto que resulta de interés matemático estudiar sus propiedades. En particular, en este trabajo estudiaremos la deformaciones continuas de superficies, o, en otras palabras, las clases de superficies topológicamente equivalentes (homeomorfas). La pregunta que subyace, en términos menos rigurosos, es cuándo podemos estirar, doblar o comprimir una superficie para que se transforme en otra. Será entonces el teorema de clasificación de superficies el que describirá todas las posibles categorías de superficies homeomorfas a las que una dada puede pertenecer. 
+		
+		En su versión inicial, que ocupará gran parte de este trabajo, el teorema se pregunta por las superficies compactas. Dada una superficie compacta el teorema nos asegura de que solo puede ocurrir uno de los dos siguientes casos: O bien la superficie es orientable, en cuyo caso debe de ser homeomorfa a un número finito de toros conectados entre sí; o, en su defecto, es homeomorfa a un número finito de planos proyectivos conectados. Si nos detenemos a analizar por un instante las consecuencias de este enunciado nos encontramos con que: Por un lado, puede parecer evidente que una taza con dos asas se puede deformar en un donut con dos agujeros; Sin embargo, el teorema nos dice mucho más, te demuestra que sea lo que sea una superficie, como quiera que se imagine, siempre estará contenida, topológicamente hablando, en una de estas dos categorías: O muchos donuts conectados, o muchos planos proyectivos pegados, nada más. El mundo de las 2-variedades está entonces bajo control del topólogo bien adiestrado, sabe en qué mundo se pueden mover sus objetos matemáticos, sabe incluso si dos de sus objetos son, o no, iguales en términos topológicos.
+		
+		Por su parte, la versión más general del teorema, que no exige compacidad, requiere de la introducción de nuevas nociones como la de \textit{frontera ideal} de una superficie y la de sus \textit{finales}. El teorema nos indicará cómo el concepto de frontera ideal resulta clave para el estudio de las superficies no compactas y, de hecho, serán estas fronteras las que representen cada una de las clases de equivalencia de superficies homeomorfas. Además, se explorará las relaciones de homeomorfía que existen entre las fronteras ideales y los subconjuntos del conjunto de Cantor, junto con las consecuencias que ello conlleva en el estudio de las superficies.
+		
+		El trabajo propuesto pretende abordar formalmente los detalles necesarios para entender y demostrar las cuestiones planteadas anteriormente.
+		
+		
+		\item[4.-] {\bf Grado de consecuci\'on de los objetivos y plan de trabajo a desarrollar en la segunda mitad del periodo}:
+		
+		Los objetivos propuestos para el primer cuatrimestre se han alcanzado satisfactoriamente. Por un lado, se ha obtenido una visión general del teorema en cuestión, tanto desde el punto de vista riguroso como esquemático, y, adicionalmente, se ha entendido plenamente la demostración en la versión de superficies compactas. Por otro, se ha logrado una primera aproximación al teorema en su versión más general. Idealmente se hubiese preferido haber profundizado más en el artículo \cite{Richards}.
+		
+		Para la segunda mitad del curso se planea: Ahondar en la versión general del teorema de clasificación de superficies, estudiar la relación de las superficies no compactas con el conjunto de Cantor, redactar el TFG y preparar la presentación del mismo.
+		
+		\item[5.-] {\bf Bibliograf\'ia usada hasta la fecha o que se piensa utilizar}: \\
+		La bibliografía se encuentra en el apartado de \textit{Referencias}. Para el segundo periodo se espera continuar utilizando los mismos textos.
+		
+		\begin{thebibliography}{10}
+			\bibitem{Massey} 
+			\textsc{William S. Massey}: 
+			Introducción a la topología algebraica.
+			\bibitem{Richards} 
+			\textsc{Ian Richards}: 
+			On the classification of noncompact surfaces
+		\end{thebibliography}
+		
+		
+	\end{enumerate}
+	
+\end{document}

@@ -4,7 +4,7 @@
 \babel@toc {english}{}
 \babel@toc {spanish}{}
 \noindent \hrulefill \par 
-\contentsline {chapter}{\numberline {1}Introducci\'on y preliminares}{1}{chapter.1}
+\contentsline {chapter}{\numberline {1}Cachos sueltos}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Introducci\'on a las superficies topol\IeC {\'o}gicas}{1}{section.1.1}
 \contentsline {subsection}{\numberline {1.1.1}Superficies compactas}{1}{subsection.1.1.1}
 \contentsline {chapter}{\numberline {2}Algunos resultados de topolog\IeC {\'\i }a}{5}{chapter.2}
