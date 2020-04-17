@@ -4,6 +4,7 @@
 \usepackage{amsfonts, amssymb, amsmath, amsthm}
 \usepackage{graphicx}
 \usepackage{color}
+\newcommand*{\reales}{\mathbb{R}}
 
 \newtheorem{teor}{Teorema}[chapter]
 \newtheorem{lema}[teor]{Lema}
@@ -104,17 +105,34 @@ Consideremos los siguientes ejemplos sencillos de superficies topológicas:
 	tendremos que si $S$ es una superficie topológica, entonces $f(S)$ también lo es.
 \end{enumerate}
 
-Por otro lado, si consideramos el cuadrado con sus bordes ($\overline{C}$), el conjunto no compone un ejemplo de superficie. En este conjunto los puntos que pertenecen a las aristas no tienen entornos homeomorfos a $U^2$. Veremos que $\overline{C}$ es una \textquoteleft superficie con borde \textquoteright, concepto que estudiaremos más adelante.
+Por otro lado, si consideramos el cuadrado con sus bordes ($\overline{C}$), el conjunto no compone un ejemplo de superficie tal y como lo definimos. En este conjunto los puntos que pertenecen a las aristas no tienen entornos homeomorfos a $U^2$. Veremos que $\overline{C}$ es una \textquoteleft superficie con borde \textquoteright, concepto que estudiaremos más adelante.
 
 
 \section{Orientación de superficies}
-Hablar de la definición en R2.\\
-Desplazamientos de una base por R2. \\
-Extender la noción localmente a una superficie topológica.\\
-Caminos que preservan la orientación, y caminos que la invierten (ejemplos?).\\
-Superficies orientables y no orientables\\
-Resultado de que los homeomorfismo preservan la orientabilidad.\\
+Las superficies se dividen en dos clases: Las orientables y las no orientables. Intentaremos en esta sección esbozar el concepto de orientabilidad sin llegar a un completo rigor matemático.\\
 
+En el plano definir una orientación equivale a elegir un sentido de rotación positivo. Por ejemplo, se podría elegir que girar en contra de las agujas del reloj se considera la rotación \textit{positiva}. En $\mathbb{R}^2$,  una vez fijada la orientación, podemos desplazarnos por un camino cerrado y comprobar que el sentido de rotación positivo al final y al inicio del camino coinciden, en este caso decimos que el camino \textit{conserva la orientación}. Si, por el contrario, ocurriese que los sentidos de rotación fueran distintos, diríamos que el camino \textit{invierte la orientación} (esto nunca ocurre en $\mathbb{R}^2$). En general, conviene definir la orientación como la elección de una base de vectores, esta definición, además de equivalente que a la ya presentada, permite generalizar la orientabilidad a $\mathbb{R}^n$.\\
+
+En $\mathbb{R}^n$ elegir una \textbf{orientación} consiste en elegir qué bases vectoriales son \textit{positivas}y cuales son \textit{negativas}. Veamos como realizar esta clasificación:  Sea $\mathcal{B}$ el conjunto de bases de $\reales^n$,  y sean $B_1$ y $B_2$ dos bases de este conjunto, entonces podemos definir la siguiente relación:
+\[
+    B_1 \sim B_2 
+    \Longleftrightarrow
+    \det(B_1 B_2) > 0
+\] 
+Se puede comprobar con las propiedades de los determinantes que $\sim$ define una relación de equivalencia. Tendremos entonces que definir una \textbf{orientación} en $\mathbb{R}^n$ equivale a asignar a una clase de equivalencia la etiqueta de  \textit{orientación positiva} y a la otra la etiqueta de  \textit{orientación negativa}, i.e, equivale a definir una $\sigma$:
+\begin{align*}
+    \sigma: \; & \mathcal{B}/\sim \:\longrightarrow \: \{-1, 1\}
+\end{align*}
+Observamos entonces que la orientación queda totalmente determinada por la elección de una base $B$ de $\mathbb{R}^n$ que catalogamos como \textit{positiva}.
+\\
+
+Para el caso de una superficie topológica abstracta, podemos imaginarla localmente como un abierto de $\reales^2$ en donde elegimos una orientación. Si en la superficie todos los caminos cerrados conservan la orientación, diremos que la superficie es \textbf{orientable}, como por ejemplo una esfera. Inversamente, si existiese un camino cerrado que invierte la orientación (cambia el sentido de rotación), entonces diremos que la superficie es \textbf{no orientable}, como es la caso de una banda de M\"obius. En las próximas secciones veremos varios ejemplos de ambas superficies.
+\\
+
+Se puede demostrar que la orientabilidad es una propiedad topológica (se conserva por homeomorfismos). En el contexto del teorema de clasificación de superficies, observaremos como la orientabilidad de la superficie nos delimitará las clases de equivalencia a las que una superficie puede pertenecer.
+\\
+
+(PREGUNTA: Qué tal? Agrego ejemplos? los detallo y dibujo? Debería añadir rigor?)
 
 
 \section{Superficies compactas}
@@ -427,9 +445,15 @@ Con este teorema concluimos el arsenal de herramientas que nos hará falta para 
 	
 	Toda superficie compacta es homeomorfa a una esfera, a una suma conexa de toros o una suma conexa de planos proyectivos.
 \end{teor}
-\begin{proof}
-Da proof
-\end{proof}
+\begin{enumerate}
+\item Idea de la prueba
+\item Visto como triángulos pegados
+\item Pasos 1 al 5
+\item Corolarios y ejemplos
+\item Característica de Euler, conservación y género?
+\item Superficies con borde?
+\item Recuerda probar los lemas con más rigor y también la definición de suma conexa.
+\end{enumerate}
 
 \chapter{Hacia las superficies no compactas}
 [Complicaciones, citar resultados para superficies con borde]
