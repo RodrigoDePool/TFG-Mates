@@ -4,8 +4,8 @@
 \usepackage{amsfonts, amssymb, amsmath, amsthm}
 \usepackage{graphicx}
 \usepackage{color}
-\newcommand*{\reales}{\mathbb{R}}
 
+\newcommand*{\reales}{\mathbb{R}}
 \newtheorem{teor}{Teorema}[chapter]
 \newtheorem{lema}[teor]{Lema}
 \newtheorem{corolario}[teor]{Corolario}
@@ -43,75 +43,82 @@
 
 
 
+
 \begin{abstract}[spanish]
 
-Aquí va algo
+El trabajo comprende un estudio riguroso de las superficies topológicas y su clasificación:
+
+El primer bloque inicia introduciendo las nociones elementales de superficies compactas y procede a demostrar que, bajo hipótesis de compacidad, toda superficie es topológicamente equivalente: o a una esfera, o a una suma conexa finita de toros, o a una suma conexa finita de planos proyectivos. 
+
+TODO: 
+1. Mencionar superficies \textbf{2do numerables!}
+2. Mencionar a Kerekjartos
+3. Explicar someramente las diferencias entre Kerekjartos e Ian Richards. Hablar en términos de subconjuntos del cjto de Cantor.
+4. Que quede claro lo difícil del paper. Has más largo esta segunda sección
+5. Que quede bonito, AQUÍ SE DECIDE TU NOTA
+6. Traducirlo al inglés (recuerda: Has -> contains   y Result by)
 
 
-Imágenes que no he usado: 
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=0.5\linewidth]{imagenes/superficies.png}
-	\caption{Ejemplos de superficies: Esfera, toro y banda de M\"obius}
-	\label{fig:superficies sencillas}
-\end{figure} 
+Posteriormente, estudiaremos el resultado K\`er\`ejártó, que generaliza la clasificación retirando la exigencia de compacidad. En esta nueva incursión hara falta definir el conceto de `frontera ideal', un invariante topológico que ser el invariante topológico  para el manejo de superficies genéricas. Por último, se reproducirá una construcción de Ian Richards \cite{ian} que  permite crear un representante para cada clase de equivalencia de superficies homeomorfas.
 
 \end{abstract}
 
 \begin{abstract}[english]
-Here goes something
+This essay has a mathematical approach to topological surfaces and their classification:
+
+Firstly, basic notions of compact surfaces will be introduced, from which a proof of their classification will be given. As a result we will find that any compact surface is homeomorphic either to: a sphere, or a  finite \textit{connected sum} of torus, or a finite \textit{connected sum} of projective planes.
+
+Afterwards, we will proceed to study the classification eliminating the hypothesis of compactness. For this, we will require to introduce new concepts like the ideal boundary. Finally, we will present a result from Ian Richards \cite{ian} that constructs a surface homemorphic to any given surface.
 
 \end{abstract}
+
+
+
 
 
 \mainmatter
 \chapter{Introducción}
 
-
 El trabajo abarcará un estudio de las superficies topológicas y su clasificación:
-\\
 
+Primero, introduciremos la noción de superficie de forma rigurosa y definiremos los conceptos de suma conexa y triangulación, ambas herramientas que facilitarán el manejo de estos objetos. Para acabar con este primer bloque, enunciaremos y demostraremos el teorema de clasificación que nos garantiza que toda superficie compacta es topológicamente equivalente: o a una esfera; o a una \textit{suma} finita de toros; o a una \textit{suma}  finita de planos proyectivos.
   
-  Comenzaremos por introducir la noción de superficie de forma rigurosa. Una vez familiarizados con este concepto, tendremos como primer objetivo clasificar las superficies bajo la hipótesis de compacidad. Para ello definiremos la suma conexa y la triangulación, siendo ambas herramientas que nos facilitarán el manejo de las superficies compactas. Finalmente, enunciaremos y demostraremos el teorema de clasificación de las superficies compactas, teorema que nos garantizará que toda superficie compacta es necesariamente homeomorfa: o a una esfera; o a una \textquoteleft suma\textquoteright  finita de toros; o a una suma \textquoteleft suma\textquoteright  finita de planos proyectivos.
- \\
-  
-  Como segundo objetivo, estudiaremos el resultado de K\`er\`ejártó. El teorema generaliza la clasificación retirando la exigencia de compacidad. Antes de sumergirnos en el teorema, serán necesarias nuevas herramientas que nos permitan manejar las superficies no compactas. Por ello, introduciremos las nociones de finales, frontera ideal y clases de orientabilidad.
-  \\
-  
-  Por último, examinaremos una demostración de Ian Richards \cite{ian} que  construye una superficie representante para cada clase de equivalencia topológica. Adelantamos que la construcción revela una espectacular relación entre las superficies y los subconjuntos del conjunto de Cantor.
+Como segundo objetivo, estudiaremos el resultado de K\`er\`ejártó. El teorema generaliza la clasificación retirando la exigencia de compacidad. Antes de sumergirnos en el teorema, serán necesarias nuevas herramientas. Por ello, introduciremos las nociones de finales, frontera ideal y clases de orientabilidad. Veremos entonces que dos superficies serán homeomorfas si y solo si comparten frontera ideal, clase orientabilidad y género.
+
+Finalmente, examinaremos algunos resultados sobre la clasificación. Por un lado, comprobaremos que toda frontera ideal de una superficie no compacta es homeomorfa a un subconjunto del conjunto de Cantor. Además, estudiaremos la demostración del recíproco dada por Ian Richards \cite{ian}, esto es, que para todo subconjunto del conjunto de Cantor existe una superficie que le tiene por frontera ideal. Adicionalmente, esta prueba nos dará un método constructivo con el cual generar superficies representantes para cada clase de equivalencia (topológica) de superficies.
+
 
 \section{Introducci\'on a las superficies topológicas}
-
 
 El concepto de superficie topológica busca generalizar la idea de \textit{superficie} en el sentido usual. Más concretamente, buscamos abarcar todo conjunto que comparta localmente las propiedades topológicas de una superficie en $\mathbb{R}^n$. 
 
 \begin{defin}
-	Diremos que un espacio topológico, $S$, es una \textbf{superficie topológica} si para todos sus puntos existe un entorno homeomorfo a $U^2 = \{x\in \mathbb{R}^2: ||x||<1 \}$. Además, a $X$ se le exige ser Hausdorff, segundo numerable y conexo. \footnote{Si retiramos la hipótesis de conexión y sustituimos $U^2$ por $U^n$, obtenemos una \textit{n-variedad} topológica. Sin embargo, en este trabajo nos limitamos al estudio de las 2-variedades conexas (superficies).}
+\label{defin:superficie}
+Diremos que un espacio topológico, $S$, es una \textbf{superficie topológica} si para todos sus puntos existe un entorno homeomorfo a $U^2 = \{x\in \mathbb{R}^2: ||x||<1 \}$. Además, a $S$ se le exige ser Hausdorff, segundo numerable y conexo. \footnote{Si retiramos la hipótesis de conexión y sustituimos $U^2$ por $U^n$, obtenemos una \textit{n-variedad} topológica. Sin embargo, en este trabajo nos limitamos al estudio de las 2-variedades conexas (superficies).}
 \end{defin}
 
 Consideremos los siguientes ejemplos sencillos de superficies topológicas:
 \begin{enumerate}
-	\item El conjunto $ U^2 = \{ x\in\mathbb{R}^2: |x|<1 \} $, dotado de la topología de subespacio, es trivialmente una superficie. 
-	\item El cuadrado sin bordes
-	\[
-	C = \{(x,y)\in \mathbb{R}^2: 0 <  x < 1,\, 0 < y < 1 \}
-	\]
-	al ser dotado de la topología de subespacio, también es ejemplo de superficie.
-	\item Dado un homeomorfismo cualquiera:
-	\[
-	f:S \rightarrow X
-	\]
-	tendremos que si $S$ es una superficie topológica, entonces $f(S)$ también lo es.
+\item El conjunto $ U^2 = \{ x\in\mathbb{R}^2: |x|<1 \} $, dotado de la topología de subespacio, es trivialmente una superficie. 
+
+\item El cuadrado sin bordes
+\[ C = \{(x,y)\in \mathbb{R}^2: 0 <  x < 1,\, 0 < y < 1 \} \]
+al ser dotado de la topología de subespacio, también es ejemplo de superficie.
+
+\item Dado un homeomorfismo cualquiera:
+\[ f:S \rightarrow X \]
+tendremos que si $S$ es una superficie topológica, entonces $f(S)$ también lo es.
 \end{enumerate}
 
 Por otro lado, si consideramos el cuadrado con sus bordes ($\overline{C}$), el conjunto no compone un ejemplo de superficie tal y como lo definimos. En este conjunto los puntos que pertenecen a las aristas no tienen entornos homeomorfos a $U^2$. Veremos que $\overline{C}$ es una \textquoteleft superficie con borde \textquoteright, concepto que estudiaremos más adelante.
 
 
 \section{Orientación de superficies}
-Las superficies se dividen en dos clases: Las orientables y las no orientables. Intentaremos en esta sección esbozar el concepto de orientabilidad sin llegar a un completo rigor matemático.\\
+\label{sec:orientabilidad}
 
-En el plano definir una orientación equivale a elegir un sentido de rotación positivo. Por ejemplo, se podría elegir que girar en contra de las agujas del reloj se considera la rotación \textit{positiva}. En $\mathbb{R}^2$,  una vez fijada la orientación, podemos desplazarnos por un camino cerrado y comprobar que el sentido de rotación positivo al final y al inicio del camino coinciden, en este caso decimos que el camino \textit{conserva la orientación}. Si, por el contrario, ocurriese que los sentidos de rotación fueran distintos, diríamos que el camino \textit{invierte la orientación} (esto nunca ocurre en $\mathbb{R}^2$). En general, conviene definir la orientación como la elección de una base de vectores, esta definición, además de equivalente que a la ya presentada, permite generalizar la orientabilidad a $\mathbb{R}^n$.\\
+Las superficies se dividen en dos clases: Las orientables y las no orientables. Intentaremos en esta sección esbozar el concepto de orientabilidad sin llegar a un completo rigor matemático.
+
+En el plano definir una orientación equivale a elegir un sentido de rotación positivo. Por ejemplo, se podría elegir que girar en contra de las agujas del reloj se considera la rotación \textit{positiva}. En $\mathbb{R}^2$,  una vez fijada la orientación, podemos desplazarnos por un camino cerrado y comprobar que el sentido de rotación positivo al final y al inicio del camino coinciden, en este caso decimos que el camino \textit{conserva la orientación}. Si, por el contrario, ocurriese que los sentidos de rotación fueran distintos, diríamos que el camino \textit{invierte la orientación} (esto nunca ocurre en $\mathbb{R}^2$). En general, conviene definir la orientación como la elección de una base de vectores, esta definición, además de equivalente que a la ya presentada, permite generalizar la orientabilidad a $\mathbb{R}^n$.
 
 En $\mathbb{R}^n$ elegir una \textbf{orientación} consiste en elegir qué bases vectoriales son \textit{positivas}y cuales son \textit{negativas}. Veamos como realizar esta clasificación:  Sea $\mathcal{B}$ el conjunto de bases de $\reales^n$,  y sean $B_1$ y $B_2$ dos bases de este conjunto, entonces podemos definir la siguiente relación:
 \[
@@ -124,13 +131,10 @@ Se puede comprobar con las propiedades de los determinantes que $\sim$ define un
     \sigma: \; & \mathcal{B}/\sim \:\longrightarrow \: \{-1, 1\}
 \end{align*}
 Observamos entonces que la orientación queda totalmente determinada por la elección de una base $B$ de $\mathbb{R}^n$ que catalogamos como \textit{positiva}.
-\\
 
 Para el caso de una superficie topológica abstracta, podemos imaginarla localmente como un abierto de $\reales^2$ en donde elegimos una orientación. Si en la superficie todos los caminos cerrados conservan la orientación, diremos que la superficie es \textbf{orientable}, como por ejemplo una esfera. Inversamente, si existiese un camino cerrado que invierte la orientación (cambia el sentido de rotación), entonces diremos que la superficie es \textbf{no orientable}, como es la caso de una banda de M\"obius. En las próximas secciones veremos varios ejemplos de ambas superficies.
-\\
 
 Se puede demostrar que la orientabilidad es una propiedad topológica (se conserva por homeomorfismos). En el contexto del teorema de clasificación de superficies, observaremos como la orientabilidad de la superficie nos delimitará las clases de equivalencia a las que una superficie puede pertenecer.
-\\
 
 (PREGUNTA: Qué tal? Agrego ejemplos? los detallo y dibujo? Debería añadir rigor?)
 
@@ -153,13 +157,13 @@ Se puede comprobar que ambas formas de definir la esfera son homeomorfas.
 	\label{fig:esfera expresion canonica}
 \end{figure} 
 
+
 \subsection*{El toro}
 Si se toma el cuadrado cerrado $ X = \{ (x,y) \in R^2: -1\leq x\leq 1,\quad -1\leq y \leq 1  \} $ con la topología de subespacio, el \textbf{toro}  se construye de identificar los puntos de  $ X $ según  \ref{toroid} y dotar al conjunto resultante de la topología cociente.
 \begin{align}\label{toroid}
 	(x,-1)\equiv(x,1) \quad x\in [-1,1]  \\
 	(-1,y)\equiv(1,y) \quad y\in [-1,1] \nonumber
 \end{align}
-
 En la figura \ref{fig:toro expresion canonica} se representa gráficamente el toro. Las aristas con el mismo símbolo indican aristas a identificar en el sentido indicado por las flechas.
 
 \begin{figure}[h!]
@@ -181,21 +185,23 @@ Por su parte, el \textbf{plano proyectivo} corresponde al disco $ D = \{x\in\mat
 \end{figure} 
 
 De los tres ejemplos de superficies compactas dadas hasta ahora, este es el único de una superficie no orientable. 
-\\
 
 Después de haber visto los ejemplos, es razonable cuestionarse si los espacios cocientes que tratamos en ellos son realmente conjuntos compactos. El siguiente lema nos demuestra que, en efecto, las superficies obtenidas son compactas.
 
 \begin{lema}\label{lema:compacidadDePoligonos}
-	Sea $X$ un espacio topológico e $Y$  un espacio cociente que resulta de identificar puntos en $X$. Entonces:
-	\begin{align*}
+Sea $X$ un espacio topológico e $Y$  un espacio cociente que resulta de identificar puntos en $X$. Entonces:
+\begin{align*}
 	\text{$X$ compacto}\Rightarrow\text{$Y$ compacto}
-	\end{align*}
+\end{align*}
 \end{lema}
+
 \begin{proof}
-	Sea $f:X\longrightarrow Y$ la función cociente que asocia a cada punto su clase de equivalencia; $f$ es claramente sobreyectiva y, por ser cociente, es continua.\\
-	Siendo $X$ compacto tenemos entonces que $f(X)=Y$ también lo es.
+Sea $f:X\longrightarrow Y$ la función cociente que asocia a cada punto su clase de equivalencia; $f$ es claramente sobreyectiva y, por ser cociente, es continua.\\
+Siendo $X$ compacto tenemos entonces que $f(X)=Y$ también lo es.
 \end{proof}
+
 En nuestros ejemplos todas las superficies vienen de identificar puntos en conjuntos compactos. Se sigue entonces del lema que las superficies son a su vez compactas.
+
 
 \subsection{Expresión canónica}
 \label{subsec:expcanonica}
@@ -206,13 +212,12 @@ Más aún, se puede definir una notación con la que referirnos a estos polígon
 Partiendo de cualquier vértice recorremos la figura en el sentido de las agujas del reloj, se anotan los símbolos según se recorre la respectiva arista y se agrega el exponente 1 o -1, según si la flecha va en el mismo sentido del recorrido o en sentido contrario.
 
 Con esta notación: nos referimos  a la esfera (figura \ref{fig:esfera expresion canonica}) como $ aa^{-1} $; al toro (figura \ref{fig:toro expresion canonica})  como $ aba^{-1}b^{-1} $; y al plano proyectivo (figura \ref{fig:planoproyectivo expresión canónica}) como $ aa $. Llamaremos \textbf{expresión canónica} a estas formas de referirnos a la esfera, al toro y al plano proyectivo, respectivamente.
-\\
 
 La notación sugerida facilita enormemente la definición de nuevas superficies. Utilicemos esta herramienta para introducir un último ejemplo de superficie compacta:
 
 
-\subsection*{Botella de \textit{Klein}}
-	La \textbf{botella de \textit{Klein}} es la superficie que corresponde con la expresión $ aba^{-1}b $.
+\subsection*{Botella de Klein}
+La \textbf{botella de Klein} es la superficie que corresponde con la expresión $ aba^{-1}b $.
 
 \begin{figure}[h!]
 	\centering
@@ -222,39 +227,32 @@ La notación sugerida facilita enormemente la definición de nuevas superficies.
 \end{figure} 
 
 
-
-
 \section{Suma conexa}
 
 La suma conexa es un operador entre superficies. La idea será ir \textquoteleft sumando \textquoteright superficies compactas para generar nuevas. De hecho, si se me permite el \textit{spoiler}, utilizaremos este operador en toros y planos proyectivos para construir superficies homeomorfas a \textbf{cualquier} otra superficie compacta.\\
 Procedamos a definir matemáticamente el operador:
 
 \begin{defin}\label{defin:sumaconexa}
-	Dadas dos superfices $S_1$ y $S_2$, se define la \textbf{suma conexa} de ambas ($S_1\#S_2$) como la superficie generada al recortar un disco de cada superficie y pegarlas a través del borde de los discos retirados. Más formalmente:
-	\begin{enumerate}
-		\item 
-		Para cada $S_i$, tomamos un subconjunto $D_i\subset S_i$ homeomorfo al disco cerrado $E^2=\{x\in\mathbb{R}^2: ||x||\leq 1\}$. Llamamos $S'_i$ al complementario del interior de $D_i$.
-		\item 
-		Tomamos un homeomorfismo $\psi:D_1\longrightarrow D_2$
-		\item 
-		Definimos entonces $S_1\#S_2$ como $S'_1\cup S'_2$ dotado de la topología cociente que resulta de la identificación:
-		\[
-		x \equiv  \psi(x), \quad \forall x \in D_1
-		\] 
-	\end{enumerate}
-	Habría que comprobar que la suma conexa está bien definida y resulta en una nueva superficie. Este aspecto lo abordamos en lema \ref{lema:sumaconexa}.
+Dadas dos superfices $S_1$ y $S_2$, se define la \textbf{suma conexa} de ambas ($S_1\#S_2$) como la superficie generada al recortar un disco de cada superficie y pegarlas a través del borde de los discos retirados. Más formalmente:
+\begin{enumerate}
+\item  Para cada $S_i$, tomamos un subconjunto $D_i\subset S_i$ homeomorfo al disco cerrado $E^2=\{x\in\mathbb{R}^2: ||x||\leq 1\}$. Llamamos $S'_i$ al complementario del interior de $D_i$.
+
+\item Tomamos un homeomorfismo $\psi:D_1\longrightarrow D_2$
+
+\item Definimos entonces $S_1\#S_2$ como $S'_1\cup S'_2$ dotado de la topología cociente que resulta de la identificación:
+\[ x \equiv  \psi(x), \quad \forall x \in D_1 \] 
+\end{enumerate}
+Habría que comprobar que la suma conexa está bien definida y resulta en una nueva superficie. Este aspecto lo abordamos en lema \ref{lema:sumaconexa}.
 \end{defin}
 
 
 \subsection*{Ejemplos}
 Utilizando la notación introducida hasta el momento presentamos algunos ejemplos de sumas conexas:
-\\
 
 \noindent \textbf{Suma conexa de toros}
 \\
 Sean $ T_1 $ y $ T_2 $ dos toros disjuntos, estudiemos $ S=T_1\, \# \, T_2 $. Nos ayudamos de la figura \ref{fig:suma conexa de toros planos} para ilustrar el proceso:\\
 Primero, retiramos de cada toro el disco con frontera $c_i$, como vemos en la primera imagen. Nótese que podemos expresarlo como la segunda imagen porque todos los vértices del polígono están identificados. Finalmente, identificamos los bordes $ c_1 $ y $ c_2 $, obteniendo el octágono que representa  $ S $, donde, de nuevo, todos los vértices representan el mismo punto.
-
 
 \begin{figure}[h!]
 	\centering
@@ -264,7 +262,6 @@ Primero, retiramos de cada toro el disco con frontera $c_i$, como vemos en la pr
 \end{figure} 
 
 Utilizando la notación para expresiones canónicas, de la figura \ref{fig:suma conexa de toros planos} se deduce que  $ S $ se puede expresar como $ a_1 b_1 a_1^{-1}b_1^{-1}a_2 b_2 a_2^{-1} b_2^{-1}  $. 
-
 
 \begin{figure}[h!]
 	\centering
@@ -302,76 +299,86 @@ Otra propiedad interesante de la suma conexa es que conserva la compacidad, i.e,
 Los ejemplos mencionados en la sección anterior proporcionan un método para describir sumas conexas arbitrarias de esferas, toros y planos proyectivos. Basta repetir los mismos procedimientos para comprobar que:
 
 \begin{list}{-}{}
-	\item La suma conexa de $ n $ esferas es igual a una esfera:
-	\begin{align}\label{formacanonica:esfera}
-		aa^{-1} 
-	\end{align}
+\item La suma conexa de $ n $ esferas es igual a una esfera:
+\begin{align}\label{formacanonica:esfera}
+	aa^{-1} 
+\end{align}
+
 	\item La suma conexa de $ n $ toros se puede escribir como:
-	\begin{align}\label{formacanonica:ntoros}
-		a_1b_1a_1^{-1}b_1^{-1}a_2b_2a_2^{-1}b_2^{-1}...a_nb_na_n^{-1}b_n^{-1}
-	\end{align}
+\begin{align}\label{formacanonica:ntoros}
+	a_1b_1a_1^{-1}b_1^{-1}a_2b_2a_2^{-1}b_2^{-1}...a_nb_na_n^{-1}b_n^{-1}
+\end{align}
+
 	\item La suma conexa de $ n $ planos proyectivos se puede describir como: 
-	\begin{align}\label{formacanonica:nplanosp}
-	a_1a_1a_2a_2...a_na_n
-	\end{align}
+\begin{align}\label{formacanonica:nplanosp}
+a_1a_1a_2a_2...a_na_n
+\end{align}
 \end{list}
 A las expresiones \ref{formacanonica:esfera},\ref{formacanonica:ntoros} y \ref{formacanonica:nplanosp} las llamaremos \textit{expresiones canónicas} de sus respectivas sumas conexas.
-
  
 Antes de dar el asunto por concluido, veamos un último ejemplo de suma conexa:
+
 \begin{lema}\label{lema:SumaDosPlanospEsKlein}
-	La suma conexa de dos planos proyectivos es una botella de \textit{Klein}
-	\begin{proof}
-		En la demostración trataremos al plano proyectivo como el disco unidad identificando los puntos diametralmente opuestos.\\
-		Seleccionamos del plano proyectivo el subconjunto $D = \left\{(x,y): |y|\geq\frac{1}{2}, |x|\leq\sqrt{1-y^2} \right\}$  homeomorfo al disco cerrado. Retiramos $ D $ como se muestra en la figura \ref{fig:planop sin D}, los segmentos discontinuos representan la frontera del disco por la cual se ha de realizar la suma conexa.
-		\begin{figure}[h!]
-			\centering
-			\includegraphics[width=0.4\linewidth]{imagenes/planop_sinD.png}
-			\caption{Plano proyectivo menos un subconjunto homemorfo al disco cerrado}
-			\label{fig:planop sin D}
-		\end{figure} 
-		
-		Partiendo de dos planos proyectivos,  $I$ e $II$, retiramos el disco como en la figura \ref{fig:planop sin D}. Luego procedemos a identifcar ambos conjuntos como se indica en la figura \ref{fig:sumaconexadeppsEnLema}.
-		
-		\begin{figure}[h!]
-			\centering
-			\includegraphics[width=0.8\linewidth]{imagenes/sumappsEnLema.png}
-			\caption{Botella de \textit{Klein} = $ I \# II$}
-			\label{fig:sumaconexadeppsEnLema}
-		\end{figure} 
-		La figura final obtenida  es una \textit{Botella de Klein}.
-	\end{proof}
+La suma conexa de dos planos proyectivos es una botella de Klein
+
+\begin{proof}
+En la demostración trataremos al plano proyectivo como el disco unidad identificando los puntos diametralmente opuestos.\\
+Seleccionamos del plano proyectivo el subconjunto $D = \left\{(x,y): |y|\geq\frac{1}{2}, |x|\leq\sqrt{1-y^2} \right\}$  homeomorfo al disco cerrado. Retiramos $ D $ como se muestra en la figura \ref{fig:planop sin D}, los segmentos discontinuos representan la frontera del disco por la cual se ha de realizar la suma conexa.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.4\linewidth]{imagenes/planop_sinD.png}
+	\caption{Plano proyectivo menos un subconjunto homemorfo al disco cerrado}
+	\label{fig:planop sin D}
+\end{figure} 
+
+Partiendo de dos planos proyectivos,  $I$ e $II$, retiramos el disco como en la figura \ref{fig:planop sin D}. Luego procedemos a identifcar ambos conjuntos como se indica en la figura \ref{fig:sumaconexadeppsEnLema}.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\linewidth]{imagenes/sumappsEnLema.png}
+	\caption{Botella de Klein = $ I \# II$}
+	\label{fig:sumaconexadeppsEnLema}
+\end{figure} 
+
+La figura final obtenida  es una Botella de Klein.
+\end{proof}
 \end{lema}
 
 El ávido lector se habrá dado cuenta de un detalle curioso de la demostración, retirar un disco de un plano proyectivo lo convierte en una banda de M\"obius!
+
 
 \section{Triangulación de una superficie}
 Una triangulación, en caso de existir, pretende expresar una superficie como un conjunto de triángulos identificados por las aristas. La noción de triangulación, \textit{a priori} inofensiva, será un ingrediente clave para poder manipular superficies compactas. Se define rigurosamente como:
 
 \begin{defin}\label{defin:triangulacion}
-	Una \textbf{triangulación} de una superficie compacta, $S$, consiste en subconjuntos cerrados, $\{T_1, ..., T_n\}$, que cubren a $S$ y en una familia de homeomorfismos, $\{\phi_1, ..., \phi_n\}$, que cumplen:
-	\begin{align*}
-	\phi_i: T'_i \longrightarrow T_i
-	\end{align*}
-	Donde $T'_i$ es un triángulo del plano $\mathbb{R}^2$.
-	Además, se exige que para cualesquiera dos $T_i$ y $T_j$ con $i\neq j$, se cumpla una de las siguientes condiciones:
-	\begin{itemize}
-		\item 
-		Son conjuntos totalmente disjuntos.
-		\item 
-		Comparten un vértice en común y solo eso.
-		\item 
-		Tienen toda una arista en común y solo eso.
-	\end{itemize}
-	Adicionalmente, llamaremos \textbf{vértice} a todo elemento de $S$ que se corresponde por algún $\phi_i$ con un vértice en el plano. Y llamaremos \textbf{arista} a todo subconjunto de $S$ que tenga por imagen una arista de algún $T'_i$.
-\end{defin}
+Una \textbf{triangulación} de una superficie compacta, $S$, consiste en subconjuntos cerrados, $\{T_1, ..., T_n\}$, que cubren a $S$ y en una familia de homeomorfismos, $\{\phi_1, ..., \phi_n\}$, que cumplen:
 
+\begin{align*}
+	\phi_i: T'_i \longrightarrow T_i
+\end{align*}
+
+Donde $T'_i$ es un triángulo del plano $\mathbb{R}^2$.
+Además, se exige que para cualesquiera dos $T_i$ y $T_j$ con $i\neq j$, se cumpla una de las siguientes condiciones:
+
+\begin{itemize}
+\item 
+Son conjuntos totalmente disjuntos.
+
+\item 
+Comparten un vértice en común y solo eso.
+
+\item 
+Tienen toda una arista en común y solo eso.
+\end{itemize}
+
+Adicionalmente, llamaremos \textbf{vértice} a todo elemento de $S$ que se corresponde por algún $\phi_i$ con un vértice en el plano. Y llamaremos \textbf{arista} a todo subconjunto de $S$ que tenga por imagen una arista de algún $T'_i$.
+\end{defin}
 
 Intuitivamente, podemos pensar en una triangulación como una teselación por triángulos de una superficie dada. Estudiemos algunos ejemplos concretos para familiarizarnos con el concepto:
 
 El toro se puede triangular como ilustra la figura  \ref{fig:toro triangulado}. Fijémonos que basta con definir una lista de triángulos, con sus respectivos vértices, para concretar una trinagulación. En la figura indicada la lista sería:
 [Lista de triángulos]
-
 
 \begin{figure}[h!]
 	\centering
@@ -379,8 +386,8 @@ El toro se puede triangular como ilustra la figura  \ref{fig:toro triangulado}. 
 	\caption{Triangulación del toro}
 	\label{fig:toro triangulado}
 \end{figure} 
-En la figura \ref{fig:no triangulaciones} señalamos un par de intentos de simplificar la triangulación del toro. Sin embargo, notemos que ninguna de las dos imágenes son triangulación del toro. La primera, aunque triangulación, no es homeomorfa al toro; La segunda ni siquiera satisface las condiciones de triangulación.
 
+En la figura \ref{fig:no triangulaciones} señalamos un par de intentos de simplificar la triangulación del toro. Sin embargo, notemos que ninguna de las dos imágenes son triangulación del toro. La primera, aunque triangulación, no es homeomorfa al toro; La segunda ni siquiera satisface las condiciones de triangulación.
 
 \begin{figure}[h!]
 	\centering
@@ -390,8 +397,8 @@ En la figura \ref{fig:no triangulaciones} señalamos un par de intentos de simpl
 	\label{fig:no triangulaciones}
 \end{figure} 
 
-
 Para el caso del plano proyectivo, se propone en la figura \ref{fig:plano proyectivo triangulado} una triangulación.
+
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.3\linewidth]{imagenes/planop_triangulado.png}
@@ -405,38 +412,44 @@ Para el caso del plano proyectivo, se propone en la figura \ref{fig:plano proyec
 Primero, veamos un par de lemas que nos enmarcan el comportamiento de las triangulaciones:
 
 \begin{lema}\label{lema:lema1detriangulacion}
-	Sea $S$ una superficie triangulable entonces una arista lo es de exactamente dos triángulos.
-	\begin{proof}
-	    Supongamos que una arista lo es de uno o más de dos triángulos. Elegimos un $x\in S$ de dicha arista. Por un lado, sabemos que un entorno de $x$ es homeomorfo a 
-	    \[U^2 = \{x\in\reales^2: ||x||<1\}\]
-	    Por otra parte, veamos los distintos casos:
-	    \begin{enumerate}
-	        \item[(a)] Si la arista lo fuese de un único triángulo, entonces tendríamos entornos de $x$ homeomorfos a
-	        \[ H^2 = \{(x,y)\in\reales^2: x^2+y^2<1, \, y\geq 1 \} \]
-	        \item[(b)] Si la arista lo fuese de  $n$ triángulos, con $n\geq 3$. Entonces tendríamos entornos de $x$ homeomorfos a pegar $n$ conjuntos de la forma de $H^2$ (podemos hacerlos disjuntos trasladándolos). Más rigurosamente, el conjunto a cocientar sería
-	        \[
-            \bigcup^n_{i=1} \{(x+10i,y)\in\reales^2: (x-10i)^2+y^2<1, \, y\geq 1 \} \}	        
-	        \]
-	        Identificando los puntos con $y=0$. En la figura \ref{fig:tripleplano} ilustramos el caso para $n=3$.
-	    \end{enumerate}    
-	    En cualquier de los dos casos estaríamos incurriendo en un absurdo, con lo que concluimos la demostración.
-	\end{proof}
+Sea $S$ una superficie triangulable entonces una arista lo es de exactamente dos triángulos.
+
+\begin{proof}
+Supongamos que una arista lo es de uno o más de dos triángulos. Elegimos un $x\in S$ de dicha arista. Por un lado, sabemos que un entorno de $x$ es homeomorfo a 
+\[U^2 = \{x\in\reales^2: ||x||<1\}\]
+Por otra parte, veamos los distintos casos:
+
+\begin{enumerate}
+\item[(a)] Si la arista lo fuese de un único triángulo, entonces tendríamos entornos de $x$ homeomorfos a
+\[ H^2 = \{(x,y)\in\reales^2: x^2+y^2<1, \, y\geq 1 \} \]
+
+\item[(b)] Si la arista lo fuese de  $n$ triángulos, con $n\geq 3$. Entonces tendríamos entornos de $x$ homeomorfos a pegar $n$ conjuntos de la forma de $H^2$ (podemos hacerlos disjuntos trasladándolos). Más rigurosamente, el conjunto a cocientar sería
+\[
+   \bigcup^n_{i=1} \{(x+10i,y)\in\reales^2: (x-10i)^2+y^2<1, \, y\geq 1 \} \}	        
+\]
+Identificando los puntos con $y=0$. En la figura \ref{fig:tripleplano} ilustramos el caso para $n=3$.
+\end{enumerate}    
+
+En cualquier de los dos casos estaríamos incurriendo en un absurdo, con lo que concluimos la demostración.
+\end{proof}
 \end{lema}
+
 \begin{figure}[h!]
-			\centering
-			\includegraphics[width=0.4\linewidth]{imagenes/tripleplano.png}
-			\caption{Identificación por la frontera de $H^2$}
-			\label{fig:tripleplano}
-		\end{figure}
+	\centering
+	\includegraphics[width=0.4\linewidth]{imagenes/tripleplano.png}
+	\caption{Identificación por la frontera de $H^2$}
+	\label{fig:tripleplano}
+\end{figure}
 
 \begin{lema}\label{lema:lema2detriangulacion}
-	Sea  $S$ una superficie triangulable y $v\in S$ un vértice en esa triangulación, entonces podemos ordenar el conjunto de todos los triángulos con vértice $v$ cíclicamente,  $T_0, T_1, ..., T_n = T_0$, de manera que $T_i$ y $T_{i+1}$ tienen toda una arista en común para todo $0\leq i\leq n-1$.
-	\begin{proof}
-	    Fijado un vértice $v$, podemos utilizar el lema anterior (\ref{lema:lema1detriangulacion}) para hacer una partición del conjunto de triángulos que tienen a $v$ por vértice. Si ocurriese que hay más de un conjunto disjunto en la partición, entonces $v$ no podría tener un entorno homeomorfo a $U^2$.
-	\end{proof}
+Sea  $S$ una superficie triangulable y $v\in S$ un vértice en esa triangulación, entonces podemos ordenar el conjunto de todos los triángulos con vértice $v$ cíclicamente,  $T_0, T_1, ..., T_n = T_0$, de manera que $T_i$ y $T_{i+1}$ tienen toda una arista en común para todo $0\leq i\leq n-1$.
+
+\begin{proof}
+Fijado un vértice $v$, podemos utilizar el lema anterior (\ref{lema:lema1detriangulacion}) para hacer una partición del conjunto de triángulos que tienen a $v$ por vértice. Si ocurriese que hay más de un conjunto disjunto en la partición, entonces $v$ no podría tener un entorno homeomorfo a $U^2$.
+\end{proof}
+
 \end{lema}
 \textbf{Observación:} En ambos lemas utilizamos que $U^2$ solo puede ser homeomorfo a otros abiertos conexos de $\reales^2$ (Demostrar esto no es tan sencillo y requiere del uso de grupos fundamentales).
-
 
 La triangulación nos servirá más adelante como herramienta potentísima para demostrar el teorema de clasificación de superficies compactas. Comprobaremos que con ella podremos expresar cualquier superficie topológica compacta, por abstracta que sea, como un conjunto de triángulos en 
 Intuitivamente, podemos pensar en la triangulación como una teselación por triángulos de una superficie. Para el caso de una esfera o un toro uno puede imaginarse tales teselaciones
@@ -444,8 +457,7 @@ Intuitivamente, podemos pensar en la triangulación como una teselación por tri
 La triangulación compone una herramienta potente para el manejo de superficies compactas. Comprobaremos más adelante que nos permite manipular la superficie como si se tratara de triángulos en $\mathbb{R}^2$. Sin embargo, primero es necesario probar que \textit{de facto} existe tal triangulación, requisito que parece especialmente intimidante para el caso de conjuntos abstractos. Por suerte, el matemático Tibor Radó demostró un teorema que nos garantiza que toda superficie compacta es triangulable. Enunciamos el teorema sin, lamentablemente, dar demostración.
 
 \begin{teor}{Teorema de triangulación}\label{teor:teoremaDeTriangulacion}	
-	
-	Toda $S$ superficie compacta es triangulable.
+Toda $S$ superficie compacta es triangulable.
 \end{teor}
 
 Con este teorema concluimos el arsenal de herramientas que nos hará falta para emprender la demostración del teorema de clasificación de superficies compactas.
@@ -454,12 +466,10 @@ Con este teorema concluimos el arsenal de herramientas que nos hará falta para 
 
 
 
-
 \chapter{Clasificación de superficies compactas}
 
-\begin{teor}{Teorema de clasificación de superficies compactas}\label{teor:teoremadeclasificacion}
-	
-	Toda superficie compacta es homeomorfa a una esfera, a una suma conexa de toros o una suma conexa de planos proyectivos.
+\begin{teor}{Teorema de clasificación de superficies compactas}\label{teor:teoremadeclasificacion}	
+Toda superficie compacta es homeomorfa a una esfera, a una suma conexa de toros o una suma conexa de planos proyectivos.
 \end{teor}
 
 \subsubsection*{Idea de la demostración}
@@ -469,40 +479,42 @@ Habiendo llegado a las expresiones canónicas de \ref{subsec:expresionescanonica
 
 \section{Primer paso}
 Buscamos demostrar que cualquier superficie compacta $S$ es homeomorfa un polígono $\reales^2$ con sus aristas identificadas a pares.
-\\
 
 Por el teorema \ref{teor:teoremaDeTriangulacion} tenemos que $S$ es triangulable. Sean $T_1, T_2, ..., T_n$ los triángulos de S y sean $T'_1, T'_2, ...,  T'_n$ los correspondientes triángulos en $\reales^2$, tenemos los homeomorfismos:
-\[
-\phi_i: T'_i \longrightarrow T_i
-\]
+\[ \phi_i: T'_i \longrightarrow T_i \]
 Podemos asumir que los $T'_i$ son disjuntos (en caso de que no lo fueran, bastaría con componer con una traslación). Además, podemos organizar los triángulos de forma tal que todo $T_i$ tiene al menos una arista $e_i$ en común con algún tríangulo $T_1, ..., T_{i-1}$ para $2\leq i \leq n$; para ello elegimos $T_2$ que tenga una arista en común con $T_1$, elegimos $T_3$ que tenga una arista en común con $T_1$ o $T_2$, y así sucesivamente. Si en algún punto no pudiésemos elegir un $T_k$, tendríamos entonces dos conjuntos disjuntos $\{T_1, ..., T_{k-1} \}$ y $\{T_k, ..., T_n\}$, pero esto dividiría a $S$ en dos conjuntos cerrados disjuntos contradiciendo la hipótesis de conexión.\\
 Sea $T' = \bigcup T'_i$, definimos la función 
-\[
-\phi: T' \longrightarrow S
-\]
+\[ \phi: T' \longrightarrow S \]
 como $\phi |_{T'_i} = \phi_i$ para todo $i$. Claramente $\phi$ es sobreyectiva y continua\footnote{Para probar la continuidad basta con escribir cualquier abierto en $S$ como unión finita de la partición de triángulos.}. Al ser $T'$ compacto y $S$ Hausdorff, entonces $\phi$ es cerrada, de lo que se sigue que $S$ tiene la topología cociente inducida por $\phi$.
-
 
 El polígono que queremos construir será descrito como espacio cociente de $T'$. Por hipótesis, tenemos que $e_i$ es arista de los triángulos $T_i$ y $T_j$ para algún $1\leq j < i$, y a su vez $\phi^{-1}(e_i)$ es arista de $T'_i$ y $T'_j$. Identificamos ambos triángulos en $T'$ a lo largo de la arista $\phi^{-1}(e_i)$. El mismo procedimiento se puede aplicar para las aristas $e_2, e_3, ..., e_n$, obteniendo como resultado un conjunto cociente $D$ del conjunto inicial $T'$. La función $\phi$ induce una nueva función continua $\psi: D \longrightarrow S$. De nuevo, al ser $D$ compacto y $S$ Hausdorff, tenemos que $\psi$ es   cerrada y con ello que $S$ tiene la topología cociente inducida por esta función. \\
 Veamos que $D$ es homeomorfo al disco cerrado $E^2 = \{x\in \reales^2: |x|\leq 1\}$:
+
 \begin{enumerate}
 \item[(a)] Tenemos que el triángulo $T'_i$ en $\reales^2$ es homeomorfo a $E^2$.
+
 \item[(b)] Dados dos discos cerrados $E^2_1$ y $E^2_2$, si los identificamos por un segmento cerrado de sus fronteras, obtenemos un espacio cociente homeomorfo, de nuevo, a un disco cerrado. De aquí se sigue que, si tenemos dos triángulos $T'_i$ y $T'_j$  identificados por una de sus aristas, entonces el espacio resultante es homeomorfo a $E^2$.
 \end{enumerate}
 Utilizando (a) y (b) tenemos que el espacio cociente $D$ obtenido a partir de $T'$, es topológicamente equivalente a un disco cerrado. Además, sabemos que el espacio cociente que induce $\psi$ coincidirá  con el disco cerrado en el cual segmentos de su frontera están identificados a pares; esto se sigue del proceso de construcción de $D$, teniendo en cuenta que al identificar la arista $\phi^{-1}(e_i)$ de dos triángulos, el resto de aristas en la frontera siguen emparejadas (sabemos que van por parejas por el lema \ref{lema:lema1detriangulacion}).
 
 
-En la figura [REFERENCIA A FIGURA] tenemos un tetraedro triangulado\\
-(FIGURA)\\
+En la figura \ref{fig:tetraedrotriangulado} tenemos un tetraedro triangulado
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.3\linewidth]{imagenes/tetraedro.png}
+	\caption{Tetraedro triangulado}
+	\label{fig:tetraedrotriangulado}
+\end{figure}
+
 Ilustramos en la figura \ref{fig:d} cómo se representaría el mismo tetraedro como el espacio cociente $D$ descrito en esta sección.
 
 \begin{figure}[h!]
-			\centering
-			\includegraphics[width=0.3\linewidth]{imagenes/d.jpeg}
-			\caption{Tetraedro como espacio cociente de un disco}
-			\label{fig:d}
-		\end{figure}
-
+	\centering
+	\includegraphics[width=0.3\linewidth]{imagenes/d.jpeg}
+	\caption{Tetraedro como espacio cociente de un disco}
+	\label{fig:d}
+\end{figure}
 
 A partir de aquí, manipularemos la superficie compacta $S$ como si de un polígono se tratase. Asumiendo que las aristas del polígono están identificadas a pares y sin ningún orden ni dirección particular.
 
@@ -511,94 +523,123 @@ A partir de aquí, manipularemos la superficie compacta $S$ como si de un políg
 
 El segundo paso consiste en la eliminación de aristas adyacentes de primera especie.
 
-
 Del primer paso hemos obtenido el polígono $D$ que representa a la superficie $S$ si se identifican sus aristas a pares. El polígono identificado lo podemos expresar con la misma notación que usamos para las expresiones canónicas (véase la sección \ref{subsec:expresionescanonicassumasconexas}). Por ejemplo, en el caso de la figura \ref{fig:d}, podemos expresarlo como:
-\[
-a^{-1}abb^{-1}cc^{-1}d^{-1}d
-\]
+\[ a^{-1}abb^{-1}cc^{-1}d^{-1}d \]
 Si en esta expresión un par de aristas con el mismo símbolo aparecen  con exponentes +1 y -1 ($...a...a^{-1}$, por ejemplo), entonces diremos que el par es de \textit{primera especie}. Si aparecen ambas con el exponente +1, o ambas con -1, diremos que el par es de \textit{segunda especie}. En el caso de la figura \ref{fig:d} tenemos que los cuatro pares de aristas son de primera especie y, además, adyacentes.
-
 
 En este paso buscaremos eliminar las aristas adyacentes de primera especie, i.e, con la forma $aa^{-1}$ o $a^{-1}a$. Suponiendo que el polígono tenga al menos 4 lados, la figura \ref{fig:paso2} indica como podríamos eliminar esta arista de nuestra expresión. El mismo procedimiento se sigue aplicando mientras haya aristas adyacentes de primer orden ó hasta que la expresión tenga únicamente dos aristas. En este último caso, tenemos que la expresión será $aa$ o $aa^{-1}$, es decir, homeomorfo a una esfera o a un plano proyectivo (véase la sección \ref{subsec:expcanonica}). En caso de que haya más de dos aristas y no queden arista de primera especie se continúa al siguiente paso.
 \begin{figure}[h!]
-			\centering
-			\includegraphics[width=0.4\linewidth]{imagenes/paso2.jpeg}
-			\caption{Eliminando adyacencias de primera especie}
-			\label{fig:paso2}
-		\end{figure}
+	\centering
+	\includegraphics[width=0.4\linewidth]{imagenes/paso2.jpeg}
+	\caption{Eliminando adyacencias de primera especie}
+	\label{fig:paso2}
+\end{figure}
 
 \section{Tercer paso}
-En este paso procederemos a transformar el polígono $D$ para que todos sus vértices estén identificados entre sí, es decir, buscamos que todos los vértices representen el mismo punto en la superficie $S$. Partamos del $D$ resultante del paso 2.
 
+En este paso procederemos a transformar el polígono $D$ para que todos sus vértices estén identificados entre sí, es decir, buscamos que todos los vértices representen el mismo punto en la superficie $S$. Partamos del $D$ resultante del paso 2.
 
 Podemos dividir los vértices en clases de equivalencia según qué vértices están identificados. Supongamos que al menos hay dos clases de equivalencias e intentemos eliminar una de ellas.\\
 Como hay dos clases de equivalencia, entonces existen al menos dos vértices adyacentes $P$ y $Q$ tal que no pertenecen a la misma clase, ilustramos en la figura \ref{fig:paso3} cómo procederemos. Sabemos que $a$ y $b$ no pueden estar identificados\footnote{No puede ser par de primera especie porque ya hemos aplicado el segundo paso, y no puede ser par de segunda especie porque los vértices son distintos.}, entonces cortamos e identificamos a lo largo de la línea $c$ como muestra la figura. Al finalizar la transformación, tenemos un vértice menos de la clase $P$ y uno más de la clase $Q$. Una vez eliminado el vértice, se aplica el segundo paso nuevamente de ser posible y se repite el procedimiento. Tras un número finito de pasos habremos eliminado la clase de equivalencia de $P$. Iteramos de forma análoga hasta que tengamos una única clase de equivalencia de vértices del polígono.
-\begin{figure}[h!]
-			\centering
-			\includegraphics[width=0.4\linewidth]{imagenes/paso3.jpeg}
-			\caption{Reduciendo clases de equivalencia de vértices}
-			\label{fig:paso3}
-		\end{figure}
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.4\linewidth]{imagenes/paso3.jpeg}
+	\caption{Reduciendo clases de equivalencia de vértices}
+	\label{fig:paso3}
+\end{figure}
 
 
 \section{Cuarto paso}
-Ahora buscaremos hacer adyacentes todos los pares de aristas de segunda especie.
 
+Ahora buscaremos hacer adyacentes todos los pares de aristas de segunda especie.
 
 En la figura \ref{fig:paso4} ilustramos el proceso. Partimos de que tenemos dos aristas $b$ de segunda especie no adyacentes, y procedemos a cortar e identificar a través de $a$. Como resultado hemos cambiado un par no adyacente a uno adyacente. Repetimos el mismo procedimiento hasta que todas las aristas de segunda especie sean adyacentes.
 
-
 \begin{figure}[h!]
-			\centering
-			\includegraphics[width=0.4\linewidth]{imagenes/paso4.jpeg}
-			\caption{Transformando en adyacentes aristas de segunda especie}
-			\label{fig:paso4}
-		\end{figure}
-
-
+	\centering
+	\includegraphics[width=0.4\linewidth]{imagenes/paso4.jpeg}
+	\caption{Transformando en adyacentes aristas de segunda especie}
+	\label{fig:paso4}
+\end{figure}
 
 En caso de no haber ninguna arista de primera especia, entonces tendremos unas expresión de la forma $a_1a_1a_2a_2...a_na_n$, con lo que concluimos que la superficies es homeomorfa a la suma conexa de $n$ planos proyectivos (véase \ref{subsec:expresionescanonicassumasconexas}).
 
-
 En caso de haber un par de  aristas de primera especie, denotémosla por $c$, probaremos que necesariamente existe otro par de primera especie que las intercala. En otras palabras, necesariamente existe otro par de aristas de primera especie, $d$, tal que la expresión obtenida es de la forma $c...d...c^{-1}...d^{-1}...$
 
-
 \begin{figure}[h!]
-			\centering
-			\includegraphics[width=0.2\linewidth]{imagenes/paso4_2.jpeg}
-			\caption{Par de primera especie tras el paso 4}
-			\label{fig:paso4_2}
-		\end{figure}
+	\centering
+	\includegraphics[width=0.2\linewidth]{imagenes/paso4_2.jpeg}
+	\caption{Par de primera especie tras el paso 4}
+	\label{fig:paso4_2}
+\end{figure}
 
+Para probar esto, supongamos que no existe el par $d$. Bajo este supuesto el aspecto del polígono $D$ sería similar a \ref{fig:paso4_2}, donde A y B son ambas sucesiones de aristas. Por el cuarto paso, todas las aristas de segunda especie son adyacentes, con lo que, bajo el supuesto de que no exista $d$, entonces no existiría ninguna arista de A identificada con una de B, ni viceversa. Sin embargo, ello implicaría que los vértices finales e iniciales de la arista $c$ no están identificados, con lo que incurrimos en una contradicción con el tercer paso (TODO: POR QUÉ NO PUEDEN HABER DOS VÉRTICES IDENTIFICADOS A PESAR DE NO HABER NINGUNA ARISTA?).
 
-Para probar esto, supongamos que no existe el par $d$. Bajo este supuesto el aspecto del polígono $D$ sería similar a \ref{fig:paso4_2}, donde A y B son ambas sucesiones de aristas. TODO COMPLETAR CONTRADICCIÓN CUANDO ESTÉS MÁS ILUMINADO.
 
 \section{Quinto paso}
-En este paso haremos adyacentes los pares de aristas de primera especie que estén intercalados como en el paso anterior.
 
-TODO
+En este paso haremos adyacentes los pares de aristas de primera especie que estén intercalados como se indica en el paso anterior.
+
+Supongamos que nuestro polígono tiene la expresión $a \ldots b \ldots a^{-1} \ldots b^{-1}$ (véase la figura \ref{fig:paso5} $(a)$). Primero, cortamos a lo largo de $c$ y pegamos las aristas $b$, obteniendo la figura \ref{fig:paso5} $(b)$.  Seguidamente, cortamos a lo largo de $d$ y pegamos $c$, con lo que obtenemos la figura \ref{fig:paso5} $(c)$. Nótese que hemos transformado nuestra expresión cambiando los pares $a$ y $b$, por $cdc^{-1}d^{-1}$.  De los pasos se sigue que los vértices siguen manteniendo una única clase de equivalencia.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.4\linewidth]{imagenes/paso5.jpeg}
+	\caption{Haciendo adyacentes pares de primera especie intercalados.}
+	\label{fig:paso5}
+\end{figure}
+
+Repetimos el mismo procedimiento hasta que todos los pares de aristas de primera especie estén agrupados de la forma  $cdc^{-1}d^{-1}$. Si no hay pares de arista de segunda especie, la expresión sería 
+\[a_1 b_1 a_1^{-1} b_1^{-1} a_2 b_2 a_2^{-1} b_2^{-1} \ldots a_n b_n a_n^{-1} b_n^{-1}\]
+con lo que la superficie es equivalente a una suma conexa de $n$ toros (véase la sección \ref{subsec:expresionescanonicassumasconexas}).
+
 
 \section{Desenlace final}
-TODO
 
-\section{•}
+Tras los cinco pasos anteriores hemos tenido en cuenta los casos en los que la superficie es homeomorfa a una esfera, una suma conexa de $n$ planos proyectivos o una suma conexa de $n$ toros. Consideremos ahora el caso en el que la expresión tiene tanto aristas de segunda especie (adyacentes), como aristas de primera especie (agrupadas en conjuntos de cuatro). La expresión de este último caso corresponde con una suma conexa de $n$ toros y $m$ planos proyectivos. 
 
-\begin{enumerate}
-\item Idea de la prueba
-\item Visto como triángulos pegados
-\item Pasos 1 al 5
-\item Corolarios y ejemplos
-\item Característica de Euler, conservación y género?
-\item Superficies con borde?
-\item Recuerda probar los lemas con más rigor y también la definición de suma conexa.
-\end{enumerate}
+Utilizando el lema \ref{lema:planop+toro=3planop} en el anexo, tenemos que cada toro y plano proyectivo pueden ser sustituidos por tres planos proyectivos. Luego del lema se sigue que en este caso nuestra superficie corresponde con una suma conexa de $m+2n$ planos proyectivos. Con esto concluimos la demostración.
 
+En virtud de lo estudiado sobre orientabilidad en la sección \ref{sec:orientabilidad}, podemos reformular el teorema de clasificación como:
 
+\begin{teorsin}
+Toda superficie compacta orientable es topológicamente equivalente a una esfera o una suma conexa de $n$ toros. Toda superficie compacta no orientable es homeomorfa a una suma conexa de $n$ planos proyectivos.
+\end{teorsin}
 
+Definimos entonces el \textbf{género} de una superficie compacta como el valor de $n$ que le corresponde por homeomorfismo en el teorema anterior. En caso de que la superficie sea homeomorfa a una esfera diremos que la superficie tiene género 0. \\
+Para probar que el género está bien definido hace falta probar que las clases de equivalencia mencionadas no son homeomorfas entre sí. Una prueba se construye en el libro \cite{massey} utilizando la relación entre el género ($g$) y la característica de Euler ($x$) \ref{gen_carE}, y demostrando la invariancia topológica de la característica.
+\begin{equation}
+\label{gen_carE}
+g = \begin{cases}
+\frac{1}{2}(2-x) & \quad \text{si la superficie es orientable}\\
+2-x & \quad \text{si la superficie no es orientable}
+\end{cases}
+\end{equation}
 
+\section{Superficies con borde y su clasificación}
+La noción de superficie con la que hemos trabajado hasta ahora no contempla `bordes'. Por ejemplo, si tomamos el cuadrado cerrado
+\[
+C = \{(x,y)\in \reales^2:\; 0 \leq x \leq 1, \: 0 \leq y \leq 1  \}
+\]
+comprobamos que no satisface la definición \ref{defin:superficie}: el punto $(0,0)$ no tiene ningún entorno homeomorfo a $U^2$. Ampliamos entonces el concepto de superficie:
 
+\begin{defin}
+Diremos que un espacio topológico, $S$, es una \textbf{superficie con borde} si cumple ser conexo, Hausdorff y segundo numerable. Donde, además, se cumple que todo punto en $S$ tiene un entorno homeomorfo a $U^2$ o a
+\[H^2 = \{(x,y)\in U^2:\; y\geq0 \}\]
+Llamaremos \textbf{borde} de la superficie al conjunto de puntos que tienen entornos homeomorfos a $H^2$, e \textbf{interior} de la superficie al conjunto de puntos con entornos homeomorfos $U^2$.
+\end{defin}
 
+Utilizando el teorema \ref{teor:teoremadeclasificacion} y un razonamiento similar de su demostración, se puede probar la clasificación para las superficies con borde:
+
+\begin{teor}
+Dos superficies con borde compactas son homeomorfas si y solo si tienen el mismo número de componentes de borde, son ambas orientables o ambas no orientables, y tienen la misma característica de Euler.
+\end{teor}
+
+Una demostración rigurosa se puede leer en \cite{massey}. Equivalentemente podemos enunciar el teorema como: Toda superficie con $k$ componentes de borde es homeomorfa a una esfera, o a una suma conexa de $n$ toros o a una suma conexa de $n$ planos proyectivos, en los cuales `retiramos' $k$ discos abiertos. Esta enunciado alternativo nos permite hablar de género también para el caso de las superficies con borde. \\
+\\
+
+Con esto cerramos finalmente la clasificación para superficies compactas y  podemos sumergirnos en el mundo más variado de la no compacidad!
 
 
 
@@ -620,14 +661,7 @@ numerable) y compacto con el Cjto de Cantor]
 
 
 
-
-
-
-
-
-
 \chapter{Anexo: Algunos resultados que utilizamos en el trabajo}
-
 
 \begin{lema}\label{lema:sumaconexa}
 	Para verificar que la suma conexa está bien definida hace falta aclarar varios puntos.
@@ -674,22 +708,25 @@ TODO
 
 
 
+\chapter{COSAS QUE NO HE UTILIZADO}
 
-
-
-
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\linewidth]{imagenes/superficies.png}
+	\caption{Ejemplos de superficies: Esfera, toro y banda de M\"obius}
+	\label{fig:superficies sencillas}
+\end{figure} 
 
 
 
 
 
 \begin{thebibliography}{10}
-
 %% TODO: VER COMO SE TIENEN QUE PONER LAS CITAS
 \bibitem{massey} 
     \textsc{William S. Massey}: 
     Introducción a la topología algebraica. 
-    \textit{Editorial Reverté} {\bf1} (2006), 1--29.
+    \textit{Editorial Reverté} {\bf1} (2006), 1--40.
 
 \bibitem{ian}
     \textsc{Ian Richards}
@@ -698,6 +735,4 @@ TODO
     
 \end{thebibliography}
 \cleardoublepage
-
-
 \end{document}
