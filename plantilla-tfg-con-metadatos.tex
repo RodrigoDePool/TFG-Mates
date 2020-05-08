@@ -50,26 +50,19 @@ El trabajo comprende un estudio riguroso de las superficies topológicas y su cl
 
 El primer bloque inicia introduciendo las nociones elementales de superficies compactas y procede a demostrar que, bajo hipótesis de compacidad, toda superficie es topológicamente equivalente: o a una esfera, o a una suma conexa finita de toros, o a una suma conexa finita de planos proyectivos. 
 
-TODO: 
-1. Mencionar superficies \textbf{2do numerables!}
-2. Mencionar a Kerekjartos
-3. Explicar someramente las diferencias entre Kerekjartos e Ian Richards. Hablar en términos de subconjuntos del cjto de Cantor.
-4. Que quede claro lo difícil del paper. Has más largo esta segunda sección
-5. Que quede bonito, AQUÍ SE DECIDE TU NOTA
-6. Traducirlo al inglés (recuerda: Has -> contains   y Result by)
+Posteriormente, estudiaremos el resultado Keréjártó, que generaliza la clasificación retirando la exigencia de compacidad. En esta nueva incursión hará falta definir el concepto de `frontera ideal', un invariante topológico que describe cómo subsuperficies compactas dividen a la superficie en cuestión. Demostraremos que, fijado el `género' y la `clase de orientabilidad', una superficie viene determinada topológicamente por su frontera ideal. 
 
-
-Posteriormente, estudiaremos el resultado K\`er\`ejártó, que generaliza la clasificación retirando la exigencia de compacidad. En esta nueva incursión hara falta definir el conceto de `frontera ideal', un invariante topológico que ser el invariante topológico  para el manejo de superficies genéricas. Por último, se reproducirá una construcción de Ian Richards \cite{ian} que  permite crear un representante para cada clase de equivalencia de superficies homeomorfas.
-
+Luego, daremos representantes para las clases de equivalencia de la clasificación no compacta. Utilizando un resultado topológico veremos que toda frontera ideal es homeomorfa a un subconjunto del conjunto de Cantor. Más aún, estudiaremos una especie de recíproco descrito por Ian Richards en \cite{ian}: Dado un subconjunto cualquiera del conjunto de Cantor construiremos una superficie que lo tiene por frontera ideal. Esta construcción nos permitirá dar el representante para cada clase de equivalencia. Finalmente, haremos un breve apunte sobre la numerabilidad de las superficies homeomorfas según las hipótesis de la clasificación.
 \end{abstract}
 
 \begin{abstract}[english]
-This essay has a mathematical approach to topological surfaces and their classification:
+This essay contains a mathematical approach to topological surfaces and their classification:
 
 Firstly, basic notions of compact surfaces will be introduced, from which a proof of their classification will be given. As a result we will find that any compact surface is homeomorphic either to: a sphere, or a  finite \textit{connected sum} of torus, or a finite \textit{connected sum} of projective planes.
 
-Afterwards, we will proceed to study the classification eliminating the hypothesis of compactness. For this, we will require to introduce new concepts like the ideal boundary. Finally, we will present a result from Ian Richards \cite{ian} that constructs a surface homemorphic to any given surface.
+Afterwards, we will proceed to study the Kerékjártó's theorem, the classification without the hypothesis of compactness. For this, we will require to introduce the concept of ideal boundary, a topological invariant that describes how a surface is divided by its compact subsurfaces. The theorem will guarantee that, with a `genus' and `orientability class', a surface will be topologically determined by its ideal boundary.
 
+Furthermore, we will give a representative for each equivalence class of the classification. A topological result will prove that any ideal boundary is homeomorphic to a subset of the Cantor set. Evenmore, a construction by Ian Richards will prove that given any subset of the Cantor set one can construct a surface that has it as ideal boundary. This construction will allows us to present such representatives. Lastly, we will briefly discuss the numerability of homeomorphic surfaces.
 \end{abstract}
 
 
@@ -78,28 +71,17 @@ Afterwards, we will proceed to study the classification eliminating the hypothes
 
 \mainmatter
 \chapter{Introducción}
-
-El trabajo abarcará un estudio de las superficies topológicas y su clasificación:
-
-Primero, introduciremos la noción de superficie de forma rigurosa y definiremos los conceptos de suma conexa y triangulación, ambas herramientas que facilitarán el manejo de estos objetos. Para acabar con este primer bloque, enunciaremos y demostraremos el teorema de clasificación que nos garantiza que toda superficie compacta es topológicamente equivalente: o a una esfera; o a una \textit{suma} finita de toros; o a una \textit{suma}  finita de planos proyectivos.
-  
-Como segundo objetivo, estudiaremos el resultado de K\`er\`ejártó. El teorema generaliza la clasificación retirando la exigencia de compacidad. Antes de sumergirnos en el teorema, serán necesarias nuevas herramientas. Por ello, introduciremos las nociones de finales, frontera ideal y clases de orientabilidad. Veremos entonces que dos superficies serán homeomorfas si y solo si comparten frontera ideal, clase orientabilidad y género.
-
-Finalmente, examinaremos algunos resultados sobre la clasificación. Por un lado, comprobaremos que toda frontera ideal de una superficie no compacta es homeomorfa a un subconjunto del conjunto de Cantor. Además, estudiaremos la demostración del recíproco dada por Ian Richards \cite{ian}, esto es, que para todo subconjunto del conjunto de Cantor existe una superficie que le tiene por frontera ideal. Adicionalmente, esta prueba nos dará un método constructivo con el cual generar superficies representantes para cada clase de equivalencia (topológica) de superficies.
-
-
+En este capítulo introduciremos la noción de superficie topológica de manera rigurosa. Además, nos familiarizaremos con los conceptos de suma conexa y triangulación, componiendo ambas las herramientas esenciales para probar la clasificación de superficies compactas.
 \section{Introducci\'on a las superficies topológicas}
-
 El concepto de superficie topológica busca generalizar la idea de \textit{superficie} en el sentido usual. Más concretamente, buscamos abarcar todo conjunto que comparta localmente las propiedades topológicas de una superficie en $\mathbb{R}^n$. 
 
 \begin{defin}
 \label{defin:superficie}
-Diremos que un espacio topológico, $S$, es una \textbf{superficie topológica} si para todos sus puntos existe un entorno homeomorfo a $U^2 = \{x\in \mathbb{R}^2: ||x||<1 \}$. Además, a $S$ se le exige ser Hausdorff, segundo numerable y conexo. \footnote{Si retiramos la hipótesis de conexión y sustituimos $U^2$ por $U^n$, obtenemos una \textit{n-variedad} topológica. Sin embargo, en este trabajo nos limitamos al estudio de las 2-variedades conexas (superficies).}
+Diremos que un espacio topológico, $S$, es una \textbf{superficie topológica} si para todos sus puntos existe un entorno homeomorfo a $U^2 = \{x\in \mathbb{R}^2: ||x||<1 \}$. Además, a $S$ se le exige ser Hausdorff, segundo numerable y conexo. \footnote{Si retiramos la hipótesis de conexión y sustituimos $U^2$ por $U^n$, obtenemos una \textbf{n-variedad} topológica. Sin embargo, en este trabajo nos limitamos al estudio de las 2-variedades conexas (superficies).}
 \end{defin}
-
-Consideremos los siguientes ejemplos sencillos de superficies topológicas:
+Consideremos los siguientes ejemplos de superficies topológicas:
 \begin{enumerate}
-\item El conjunto $ U^2 = \{ x\in\mathbb{R}^2: |x|<1 \} $, dotado de la topología de subespacio, es trivialmente una superficie. 
+\item El conjunto $ U^2 = \{ x\in\mathbb{R}^2: ||x||<1 \} $, dotado de la topología de subespacio, es una superficie. 
 
 \item El cuadrado sin bordes
 \[ C = \{(x,y)\in \mathbb{R}^2: 0 <  x < 1,\, 0 < y < 1 \} \]
@@ -110,41 +92,19 @@ al ser dotado de la topología de subespacio, también es ejemplo de superficie.
 tendremos que si $S$ es una superficie topológica, entonces $f(S)$ también lo es.
 \end{enumerate}
 
-Por otro lado, si consideramos el cuadrado con sus bordes ($\overline{C}$), el conjunto no compone un ejemplo de superficie tal y como lo definimos. En este conjunto los puntos que pertenecen a las aristas no tienen entornos homeomorfos a $U^2$. Veremos que $\overline{C}$ es una \textquoteleft superficie con borde \textquoteright, concepto que estudiaremos más adelante.
-
-
-\section{Orientación de superficies}
+Por otro lado, si consideramos el cuadrado con sus bordes ($\overline{C}$), el conjunto no compone un ejemplo de superficie tal y como lo definimos. En este conjunto los puntos que pertenecen a las aristas no tienen entornos homeomorfos a $U^2$. Veremos que $\overline{C}$ es una \textquoteleft superficie con borde \textquoteright, concepto que estudiaremos más adelante (véase la sección \ref{sec:superfborde}).
+\subsection{Orientación de superficies}
 \label{sec:orientabilidad}
+Las superficies se dividen en dos clases: Las orientables y las no orientables. En este trabajo no ahondaremos con formalidad matemática en este concepto, asumiremos que a las superficies tratadas pueden dotarse de una estructura diferencial y con ello podemos recurrir a la noción de orientabilidad estudiada en el grado. Sin embargo, bastaría con extender el concepto de orientabilidad para que los resultados aquí propuestos valieran para cualquier superficie topológica.
 
-Las superficies se dividen en dos clases: Las orientables y las no orientables. Intentaremos en esta sección esbozar el concepto de orientabilidad sin llegar a un completo rigor matemático.
-
-En el plano definir una orientación equivale a elegir un sentido de rotación positivo. Por ejemplo, se podría elegir que girar en contra de las agujas del reloj se considera la rotación \textit{positiva}. En $\mathbb{R}^2$,  una vez fijada la orientación, podemos desplazarnos por un camino cerrado y comprobar que el sentido de rotación positivo al final y al inicio del camino coinciden, en este caso decimos que el camino \textit{conserva la orientación}. Si, por el contrario, ocurriese que los sentidos de rotación fueran distintos, diríamos que el camino \textit{invierte la orientación} (esto nunca ocurre en $\mathbb{R}^2$). En general, conviene definir la orientación como la elección de una base de vectores, esta definición, además de equivalente que a la ya presentada, permite generalizar la orientabilidad a $\mathbb{R}^n$.
-
-En $\mathbb{R}^n$ elegir una \textbf{orientación} consiste en elegir qué bases vectoriales son \textit{positivas}y cuales son \textit{negativas}. Veamos como realizar esta clasificación:  Sea $\mathcal{B}$ el conjunto de bases de $\reales^n$,  y sean $B_1$ y $B_2$ dos bases de este conjunto, entonces podemos definir la siguiente relación:
-\[
-    B_1 \sim B_2 
-    \Longleftrightarrow
-    \det(B_1 B_2) > 0
-\] 
-Se puede comprobar con las propiedades de los determinantes que $\sim$ define una relación de equivalencia. Tendremos entonces que definir una \textbf{orientación} en $\mathbb{R}^n$ equivale a asignar a una clase de equivalencia la etiqueta de  \textit{orientación positiva} y a la otra la etiqueta de  \textit{orientación negativa}, i.e, equivale a definir una $\sigma$:
-\begin{align*}
-    \sigma: \; & \mathcal{B}/\sim \:\longrightarrow \: \{-1, 1\}
-\end{align*}
-Observamos entonces que la orientación queda totalmente determinada por la elección de una base $B$ de $\mathbb{R}^n$ que catalogamos como \textit{positiva}.
-
-Para el caso de una superficie topológica abstracta, podemos imaginarla localmente como un abierto de $\reales^2$ en donde elegimos una orientación. Si en la superficie todos los caminos cerrados conservan la orientación, diremos que la superficie es \textbf{orientable}, como por ejemplo una esfera. Inversamente, si existiese un camino cerrado que invierte la orientación (cambia el sentido de rotación), entonces diremos que la superficie es \textbf{no orientable}, como es la caso de una banda de M\"obius. En las próximas secciones veremos varios ejemplos de ambas superficies.
-
-Se puede demostrar que la orientabilidad es una propiedad topológica (se conserva por homeomorfismos). En el contexto del teorema de clasificación de superficies, observaremos como la orientabilidad de la superficie nos delimitará las clases de equivalencia a las que una superficie puede pertenecer.
-
-(PREGUNTA: Qué tal? Agrego ejemplos? los detallo y dibujo? Debería añadir rigor?)
-
+El principal resultado que usaremos al respecto es que la orientabilidad es una propiedad topológica (se conserva por homeomorfismos). En el contexto del teorema de clasificación de superficies, observaremos como la orientabilidad de la superficie nos delimitará las clases de equivalencia a las que una superficie puede pertenecer.
 
 \section{Superficies compactas}
 
 En nuestro objetivo de acercarnos a una clasificación  completa de superficies, empezaremos por estudiar el caso de las superficies compactas. Para ello necesitaremos primero hacernos con un bagaje de ejemplos de superficies compactas elementales. Sin más preámbulo, alimentemos la curiosidad del lector con estos suculentos ejemplos:
 
 \subsection*{La esfera}
-El conjunto $ \mathbb{S}^2 = \{x\in \mathbb{R}^3: |x|=1 \} $ claramente conforma un ejemplo de superficie compacta. Alternativamente, se puede expresar la esfera como el disco $ D = \{(x,y)\in\mathbb{R}^2: |(x,y)|\leq1 \} $, realizando la identificación  \ref{esferaid} y dotando al conjunto resultante de la topología cociente.
+El conjunto $ \mathbb{S}^2 = \{x\in \mathbb{R}^3: ||x||=1 \} $ conforma un ejemplo de superficie compacta. Alternativamente, se puede expresar la esfera como el disco $ D = \{(x,y)\in\mathbb{R}^2: ||(x,y)||\leq1 \} $, realizando la identificación  \ref{esferaid} y dotando al conjunto resultante de la topología cociente.
 \begin{align}\label{esferaid}
 	(x,y)\equiv(x,-y),\quad\forall(x,y)\in fr(D)
 \end{align}
@@ -152,7 +112,7 @@ Se puede comprobar que ambas formas de definir la esfera son homeomorfas.
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.2\linewidth]{imagenes/esfera_plana.png}
+	\includegraphics[width=0.15\linewidth]{imagenes/esfera_plana.png}
 	\caption{Esfera como espacio cociente}
 	\label{fig:esfera expresion canonica}
 \end{figure} 
@@ -164,15 +124,15 @@ Si se toma el cuadrado cerrado $ X = \{ (x,y) \in R^2: -1\leq x\leq 1,\quad -1\l
 	(x,-1)\equiv(x,1) \quad x\in [-1,1]  \\
 	(-1,y)\equiv(1,y) \quad y\in [-1,1] \nonumber
 \end{align}
-En la figura \ref{fig:toro expresion canonica} se representa gráficamente el toro. Las aristas con el mismo símbolo indican aristas a identificar en el sentido indicado por las flechas.
-
+En la figura \ref{fig:toro expresion canonica} se representa gráficamente el toro. Las aristas con el mismo símbolo indican aristas a identificar en el sentido fijado por las flechas.
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.3\linewidth]{imagenes/toroplano.png}
+	\includegraphics[width=0.2\linewidth]{imagenes/toroplano.png}
 	\caption{Toro como espacio cociente}
 	\label{fig:toro expresion canonica}
 \end{figure} 
 
+La definición de toro aquí expuesta es homeomorfa a la superficie de revolución en $\reales^3$ estudiada en el grado. Esta definición será conveniente más adelante en el teorema de clasificación de superficies compactas.
 
 \subsection*{El plano proyectivo}
 Por su parte, el \textbf{plano proyectivo} corresponde al disco $ D = \{x\in\mathbb{R}^2: ||x||\leq1 \} $ en el cual se identifican los puntos antipodales de la frontera. Se ilustra esta identificación en la figura \ref{fig:planoproyectivo expresión canónica}.
@@ -186,7 +146,7 @@ Por su parte, el \textbf{plano proyectivo} corresponde al disco $ D = \{x\in\mat
 
 De los tres ejemplos de superficies compactas dadas hasta ahora, este es el único de una superficie no orientable. 
 
-Después de haber visto los ejemplos, es razonable cuestionarse si los espacios cocientes que tratamos en ellos son realmente conjuntos compactos. El siguiente lema nos demuestra que, en efecto, las superficies obtenidas son compactas.
+Después de haber visto los ejemplos, es razonable cuestionarse si los espacios cocientes que tratamos son realmente conjuntos compactos. El siguiente lema nos demuestra que, en efecto, las superficies obtenidas son compactas.
 
 \begin{lema}\label{lema:compacidadDePoligonos}
 Sea $X$ un espacio topológico e $Y$  un espacio cociente que resulta de identificar puntos en $X$. Entonces:
@@ -196,7 +156,7 @@ Sea $X$ un espacio topológico e $Y$  un espacio cociente que resulta de identif
 \end{lema}
 
 \begin{proof}
-Sea $f:X\longrightarrow Y$ la función cociente que asocia a cada punto su clase de equivalencia; $f$ es claramente sobreyectiva y, por ser cociente, es continua.\\
+Sea $f:X\longrightarrow Y$ la función cociente que asocia a cada punto su clase de equivalencia; $f$ es sobreyectiva y, por ser cociente, es continua.\\
 Siendo $X$ compacto tenemos entonces que $f(X)=Y$ también lo es.
 \end{proof}
 
@@ -218,14 +178,14 @@ La notación sugerida facilita enormemente la definición de nuevas superficies.
 
 \subsection*{Botella de Klein}
 La \textbf{botella de Klein} es la superficie que corresponde con la expresión $ aba^{-1}b $.
-
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.3\linewidth]{imagenes/klein.png}
+	\includegraphics[width=0.2\linewidth]{imagenes/klein.png}
 	\caption{Botella de Klein}
 	\label{fig:botelladeklein expresion canónica}
 \end{figure} 
 
+La botella de Klein compone un ejemplo de superficie no orientable que, además, no es representable en $\reales^3$ como una superficie regular.
 
 \section{Suma conexa}
 
@@ -283,7 +243,7 @@ Podemos seguir un mecanismo parecido al anterior para realizar la suma conexa de
 
 \noindent \textbf{Suma conexa de esferas}
 \\
-En la figura \ref{fig:suma conexa de esferas} ilustramos la suma conexa de dos esferas. Curiosamente observamos que el resultado es otra esfera. Se puede comprobar que la esfera actúa como elemento neutro de la suma conexa.
+En la figura \ref{fig:suma conexa de esferas} ilustramos la suma conexa de dos esferas, que es otra esfera. En general, se puede comprobar que la esfera actúa como elemento neutro de la suma conexa.
 
 \begin{figure}[h!]
 	\centering
@@ -319,11 +279,11 @@ A las expresiones \ref{formacanonica:esfera},\ref{formacanonica:ntoros} y \ref{f
 Antes de dar el asunto por concluido, veamos un último ejemplo de suma conexa:
 
 \begin{lema}\label{lema:SumaDosPlanospEsKlein}
-La suma conexa de dos planos proyectivos es una botella de Klein
+La suma conexa de dos planos proyectivos es homeomorfa a una botella de Klein
 
 \begin{proof}
 En la demostración trataremos al plano proyectivo como el disco unidad identificando los puntos diametralmente opuestos.\\
-Seleccionamos del plano proyectivo el subconjunto $D = \left\{(x,y): |y|\geq\frac{1}{2}, |x|\leq\sqrt{1-y^2} \right\}$  homeomorfo al disco cerrado. Retiramos $ D $ como se muestra en la figura \ref{fig:planop sin D}, los segmentos discontinuos representan la frontera del disco por la cual se ha de realizar la suma conexa.
+Seleccionamos del plano proyectivo el subconjunto $D = \left\{(x,y): ||y||\geq\frac{1}{2}, ||x||\leq\sqrt{1-y^2} \right\}$  homeomorfo al disco cerrado. Retiramos $ D $ como se muestra en la figura \ref{fig:planop sin D}, los segmentos discontinuos representan la frontera del disco por la cual se ha de realizar la suma conexa.
 
 \begin{figure}[h!]
 	\centering
@@ -345,7 +305,7 @@ La figura final obtenida  es una Botella de Klein.
 \end{proof}
 \end{lema}
 
-El ávido lector se habrá dado cuenta de un detalle curioso de la demostración, retirar un disco de un plano proyectivo lo convierte en una banda de M\"obius!
+El ávido lector se habrá dado cuenta de un detalle de la demostración: retirar un disco de un plano proyectivo lo convierte en una banda de M\"obius!
 
 
 \section{Triangulación de una superficie}
@@ -359,21 +319,11 @@ Una \textbf{triangulación} de una superficie $S$, consiste en un conjunto de ce
 \end{align*}
 
 Donde $T'_i$ es un triángulo del plano $\mathbb{R}^2$.
-Además, se exige que para cualesquiera dos $T_i$ y $T_j$ con $i\neq j$, se cumpla una de las siguientes condiciones:
-
-\begin{itemize}
-\item 
-Son conjuntos totalmente disjuntos.
-
-\item 
-Comparten un vértice en común y solo eso.
-
-\item 
-Tienen toda una arista en común y solo eso.
-\end{itemize}
-
-Adicionalmente, llamaremos \textbf{vértice} a todo elemento de $S$ que se corresponde por algún $\phi_i$ con un vértice en el plano. Y llamaremos \textbf{arista} a todo subconjunto de $S$ que tenga por imagen una arista de algún $T'_i$.
+Además, se exige que para cualesquiera dos $T_i$ y $T_j$ con $i\neq j$, se cumpla una de las siguientes condiciones: o son conjuntos totalmente disjuntos; o comparten un vértice en común y solo eso; o tienen toda una arista en común y solo eso.\\
+Adicionalmente, llamaremos \textbf{vértice} a todo elemento de $S$ que se corresponde por algún $\phi_i$ con un vértice en el plano. Y llamaremos \textbf{arista} a todo subconjunto de $S$ que tenga por imagen una arista de algún $T'_i$.\\
+\textbf{Observación:} En el caso de superficies compactas, a la triangulación se le exige estar compuesta por un número finito de triángulos.
 \end{defin}
+
 
 Intuitivamente, podemos pensar en una triangulación como una teselación por triángulos de una superficie dada. Estudiemos algunos ejemplos concretos para familiarizarnos con el concepto:
 
@@ -449,16 +399,14 @@ Fijado un vértice $v$, podemos utilizar el lema anterior (\ref{lema:lema1detria
 \end{proof}
 
 \end{lema}
-\textbf{Observación:} En ambos lemas utilizamos que $U^2$ solo puede ser homeomorfo a otros abiertos conexos de $\reales^2$ (Demostrar esto no es tan sencillo y requiere del uso de grupos fundamentales).
 
-La triangulación nos servirá más adelante como herramienta potentísima para demostrar el teorema de clasificación de superficies compactas. Comprobaremos que con ella podremos expresar cualquier superficie topológica compacta, por abstracta que sea, como un conjunto de triángulos en 
-Intuitivamente, podemos pensar en la triangulación como una teselación por triángulos de una superficie. Para el caso de una esfera o un toro uno puede imaginarse tales teselaciones
-
-La triangulación compone una herramienta potente para el manejo de superficies compactas. Comprobaremos más adelante que nos permite manipular la superficie como si se tratara de triángulos en $\mathbb{R}^2$. Sin embargo, primero es necesario probar que \textit{de facto} existe tal triangulación, requisito que parece especialmente intimidante para el caso de conjuntos abstractos. Por suerte, el matemático Tibor Radó demostró un teorema que nos garantiza que toda superficie compacta es triangulable. Enunciamos el teorema sin, lamentablemente, dar demostración.
+La idea de triangulación compone una herramienta potente para el manejo de superficies en general. Sin embargo, para usarla primero es necesario probar que \textit{de facto} existe una tal triangulación. Por suerte, el siguiente resultado del matemático Tibor Radó nos garantiza su existencia. Enunciamos el teorema sin, lamentablemente, dar demostración.
 
 \begin{teor}{Teorema de triangulación}\label{teor:teoremaDeTriangulacion}	
-Toda $S$ superficie segundo numerable es triangulable.
+
+Toda superficie separable es triangulable.
 \end{teor}
+En el contexto de este trabajo, las superficies son segundo numerables por definición. Por tanto, todas las superficies son separables y con ello triangulables.
 
 Con este teorema concluimos el arsenal de herramientas que nos hará falta para emprender la demostración del teorema de clasificación de superficies compactas.
 
@@ -485,10 +433,10 @@ Por el teorema \ref{teor:teoremaDeTriangulacion} tenemos que $S$ es triangulable
 Podemos asumir que los $T'_i$ son disjuntos (en caso de que no lo fueran, bastaría con componer con una traslación). Además, podemos organizar los triángulos de forma tal que todo $T_i$ tiene al menos una arista $e_i$ en común con algún tríangulo $T_1, ..., T_{i-1}$ para $2\leq i \leq n$; para ello elegimos $T_2$ que tenga una arista en común con $T_1$, elegimos $T_3$ que tenga una arista en común con $T_1$ o $T_2$, y así sucesivamente. Si en algún punto no pudiésemos elegir un $T_k$, tendríamos entonces dos conjuntos disjuntos $\{T_1, ..., T_{k-1} \}$ y $\{T_k, ..., T_n\}$, pero esto dividiría a $S$ en dos conjuntos cerrados disjuntos contradiciendo la hipótesis de conexión.\\
 Sea $T' = \bigcup T'_i$, definimos la función 
 \[ \phi: T' \longrightarrow S \]
-como $\phi |_{T'_i} = \phi_i$ para todo $i$. Claramente $\phi$ es sobreyectiva y continua\footnote{Para probar la continuidad basta con escribir cualquier abierto en $S$ como unión finita de la partición de triángulos.}. Al ser $T'$ compacto y $S$ Hausdorff, entonces $\phi$ es cerrada, de lo que se sigue que $S$ tiene la topología cociente inducida por $\phi$.
+como $\phi |_{T'_i} = \phi_i$ para todo $i$. La función $\phi$ es sobreyectiva y continua\footnote{Para probar la continuidad basta con escribir cualquier abierto en $S$ como unión finita de la partición de triángulos.}. Al ser $T'$ compacto y $S$ Hausdorff, entonces $\phi$ es cerrada, de lo que se sigue que $S$ tiene la topología cociente inducida por $\phi$.
 
 El polígono que queremos construir será descrito como espacio cociente de $T'$. Por hipótesis, tenemos que $e_i$ es arista de los triángulos $T_i$ y $T_j$ para algún $1\leq j < i$, y a su vez $\phi^{-1}(e_i)$ es arista de $T'_i$ y $T'_j$. Identificamos ambos triángulos en $T'$ a lo largo de la arista $\phi^{-1}(e_i)$. El mismo procedimiento se puede aplicar para las aristas $e_2, e_3, ..., e_n$, obteniendo como resultado un conjunto cociente $D$ del conjunto inicial $T'$. La función $\phi$ induce una nueva función continua $\psi: D \longrightarrow S$. De nuevo, al ser $D$ compacto y $S$ Hausdorff, tenemos que $\psi$ es   cerrada y con ello que $S$ tiene la topología cociente inducida por esta función. \\
-Veamos que $D$ es homeomorfo al disco cerrado $E^2 = \{x\in \reales^2: |x|\leq 1\}$:
+Veamos que $D$ es homeomorfo al disco cerrado $E^2 = \{x\in \reales^2: ||x||\leq 1\}$:
 
 \begin{enumerate}
 \item[(a)] Tenemos que el triángulo $T'_i$ en $\reales^2$ es homeomorfo a $E^2$.
@@ -574,7 +522,7 @@ En caso de haber un par de  aristas de primera especie, denotémosla por $c$, pr
 	\label{fig:paso4_2}
 \end{figure}
 
-Para probar esto, supongamos que no existe el par $d$. Bajo este supuesto el aspecto del polígono $D$ sería similar a \ref{fig:paso4_2}, donde A y B son ambas sucesiones de aristas. Por el cuarto paso, todas las aristas de segunda especie son adyacentes, con lo que, bajo el supuesto de que no exista $d$, entonces no existiría ninguna arista de A identificada con una de B, ni viceversa. Sin embargo, ello implicaría que los vértices finales e iniciales de la arista $c$ no están identificados, con lo que incurrimos en una contradicción con el tercer paso (TODO: POR QUÉ NO PUEDEN HABER DOS VÉRTICES IDENTIFICADOS A PESAR DE NO HABER NINGUNA ARISTA?).
+Para probar esto, supongamos que no existe el par $d$. Bajo este supuesto el aspecto del polígono $D$ sería similar a \ref{fig:paso4_2}, donde A y B son ambas sucesiones de aristas. Por el cuarto paso, todas las aristas de segunda especie son adyacentes, con lo que, bajo el supuesto de que no exista $d$, entonces no existiría ninguna arista de A identificada con una de B, ni viceversa. Sin embargo, ello implicaría que los vértices finales e iniciales de la arista $c$ no están identificados\footnote{El lema \ref{lema:lema2detriangulacion} nos permite crear un argumento por contradicción: Si hubiera algún vértice identificado en A y B, entonces podríamos identificar un par de aristas de este vértice entre sendas sucesiones (pero esto no ocurre por hipótesis).}, con lo que incurrimos en una contradicción con el tercer paso.
 
 
 \section{Quinto paso}
@@ -597,18 +545,19 @@ con lo que la superficie es equivalente a una suma conexa de $n$ toros (véase l
 
 \section{Desenlace final}
 
-Tras los cinco pasos anteriores hemos tenido en cuenta los casos en los que la superficie es homeomorfa a una esfera, una suma conexa de $n$ planos proyectivos o una suma conexa de $n$ toros. Consideremos ahora el caso en el que la expresión tiene tanto aristas de segunda especie (adyacentes), como aristas de primera especie (agrupadas en conjuntos de cuatro). La expresión de este último caso corresponde con una suma conexa de $n$ toros y $m$ planos proyectivos. 
+Tras los cinco pasos anteriores hemos tenido en cuenta los casos en los que la superficie es homeomorfa a una esfera, una suma conexa de $n$ planos proyectivos o una suma conexa de $m$ toros. Consideremos ahora el caso en el que la expresión tiene tanto aristas de segunda especie (adyacentes), como aristas de primera especie (agrupadas en conjuntos de cuatro). La expresión de este último caso corresponde con una suma conexa de $n$ toros y $m$ planos proyectivos:
+\[ a_1 b_1 a_1^{-1} b_1^{-1} \ldots a_n b_n a_n^{-1} b_n^{-1} c_1 c_1 \ldots c_m c_m \] 
 
-Utilizando el lema \ref{lema:planop+toro=3planop} en el anexo, tenemos que cada toro y plano proyectivo pueden ser sustituidos por tres planos proyectivos. Luego del lema se sigue que en este caso nuestra superficie corresponde con una suma conexa de $m+2n$ planos proyectivos. Con esto concluimos la demostración.
+Utilizando el lema \ref{lema:planop+toro=3planop} en el anexo, tenemos que cada suma de toro más plano proyectivo puede sustituirse por la suma conexa de tres planos proyectivos. Luego del lema se sigue que, en este último caso, nuestra superficie corresponde con una suma conexa de $m+2n$ planos proyectivos, con lo que queda demostrado el teorema.
 
-En virtud de lo estudiado sobre orientabilidad en la sección \ref{sec:orientabilidad}, podemos reformular el teorema de clasificación como:
+En virtud de lo mencionado sobre orientabilidad en la sección \ref{sec:orientabilidad}, podemos reformular el teorema de clasificación como:
 
 \begin{teorsin}
 Toda superficie compacta orientable es topológicamente equivalente a una esfera o una suma conexa de $n$ toros. Toda superficie compacta no orientable es homeomorfa a una suma conexa de $n$ planos proyectivos.
 \end{teorsin}
 
-Definimos entonces el \textbf{género} de una superficie compacta como el valor de $n$ que le corresponde por homeomorfismo en el teorema anterior. En caso de que la superficie sea homeomorfa a una esfera diremos que la superficie tiene género 0. \\
-Para probar que el género está bien definido hace falta probar que las clases de equivalencia mencionadas no son homeomorfas entre sí. Una prueba se construye en el libro \cite{massey} utilizando la relación entre el género ($g$) y la característica de Euler ($x$) \ref{gen_carE}, y demostrando la invariancia topológica de la característica.
+Definimos entonces el \textbf{género} de una superficie compacta como el valor de $n$ que le corresponde por homeomorfismo en el teorema anterior. En caso de que la superficie sea homeomorfa a una esfera diremos que tiene género 0. \\
+Para probar que el género está bien definido hace falta demostrar que las clases de equivalencia mencionadas no son homeomorfas entre sí. Una prueba se construye en \cite{massey} utilizando la relación \ref{gen_carE} entre el género ($g$) y la característica de Euler ($x$), y demostrando la invariancia topológica de la característica.
 \begin{equation}
 \label{gen_carE}
 g = \begin{cases}
@@ -618,6 +567,7 @@ g = \begin{cases}
 \end{equation}
 
 \section{Superficies con borde y su clasificación}
+\label{sec:superfborde}
 La noción de superficie con la que hemos trabajado hasta ahora no contempla `bordes'. Por ejemplo, si tomamos el cuadrado cerrado
 \[
 C = \{(x,y)\in \reales^2:\; 0 \leq x \leq 1, \: 0 \leq y \leq 1  \}
@@ -625,39 +575,207 @@ C = \{(x,y)\in \reales^2:\; 0 \leq x \leq 1, \: 0 \leq y \leq 1  \}
 comprobamos que no satisface la definición \ref{defin:superficie}: el punto $(0,0)$ no tiene ningún entorno homeomorfo a $U^2$. Ampliamos entonces el concepto de superficie:
 
 \begin{defin}
-Diremos que un espacio topológico, $S$, es una \textbf{superficie con borde} si cumple ser conexo, Hausdorff y segundo numerable. Donde, además, se cumple que todo punto en $S$ tiene un entorno homeomorfo a $U^2$ o a
+Diremos que un espacio topológico $S$ es una \textbf{superficie con borde} si cumple ser conexo, Hausdorff y segundo numerable. Donde, además, se cumple que todo punto en $S$ tiene un entorno homeomorfo a $U^2$ o a
 \[H^2 = \{(x,y)\in U^2:\; y\geq0 \}\]
 Llamaremos \textbf{borde} de la superficie al conjunto de puntos que tienen entornos homeomorfos a $H^2$, e \textbf{interior} de la superficie al conjunto de puntos con entornos homeomorfos $U^2$.
 \end{defin}
 
-Utilizando el teorema \ref{teor:teoremadeclasificacion} y un razonamiento similar de su demostración, se puede probar la clasificación para las superficies con borde:
+Utilizando el teorema \ref{teor:teoremadeclasificacion} y un razonamiento similar al de su demostración, se puede probar la clasificación para las superficies con borde:
 
 \begin{teor}
 Dos superficies con borde compactas son homeomorfas si y solo si tienen el mismo número de componentes de borde, son ambas orientables o ambas no orientables, y tienen la misma característica de Euler.
 \end{teor}
 
-Una demostración rigurosa se puede leer en \cite{massey}. Equivalentemente podemos enunciar el teorema como: Toda superficie con $k$ componentes de borde es homeomorfa a una esfera, o a una suma conexa de $n$ toros o a una suma conexa de $n$ planos proyectivos, en los cuales `retiramos' $k$ discos abiertos. Esta enunciado alternativo nos permite hablar de género también para el caso de las superficies con borde. \\
-\\
+Una demostración rigurosa se puede leer en \cite{massey}. Equivalentemente, podemos enunciar el teorema como: Toda superficie con $k$ componentes de borde es homeomorfa a una esfera, o a una suma conexa de $n$ toros o a una suma conexa de $n$ planos proyectivos, en los cuales retiramos $k$ discos abiertos. Este enunciado alternativo nos permite hablar de género también para el caso de las superficies con borde. 
 
 Con esto cerramos finalmente la clasificación para superficies compactas y  podemos sumergirnos en el mundo más variado de la no compacidad!
 
 
 
 \chapter{Hacia las superficies no compactas}
-[Complicaciones]
 
-[Introducir finales y frontera ideal]
+En este capítulo extenderemos la clasificación a superficies no compactas y construiremos una superficie representante para cada clase de equivalencia.\\
+El teorema de clasificación de Kerékjártó se basará en la clasificación de superficies compactas con borde estudiada en el capítulo anterior, y en el concepto de ``frontera ideal''. La ``frontera ideal'' será un espacio topológico definido a partir de una superficie dada, que describe el comportamiento de subsuperficies compactas encajadas. Comprobaremos que este espacio topólogico será un invariante que cumplirá también ser totalmente inconexo, separable y compacto. Finalmente, el teorema nos garantizará que, fijado el género y la ``clase de orientabilidad'', dos superficies son homeomorfas si y solo si sus ``fronteras ideales'' también lo son.\\
+Las propiedades topológicas de la ``frontera ideal'' nos permitirá formular una especie de recíproco. Veremos que todo espacio totalmente inconexo, separable y compacto es homeomorfo a la frontera ideal de una superficie. Para esta comprobación utilizaremos que todo espacio de dichas propiedades es homeomorfo a un subconjutno del conjunto de Cantor, y partiendo de este conjunto dentro del plano construiremos la superficie adecuada. 
+[IMAGEN DE SUPERFICIE NO COMPACTA DE GÉNERO INFINITO)
 
-[Demostrar algunos, citar otros, lemas de fronteras ideales]
+\section{Definiciones básicas}
+Introducimos algunas definiciones que serán útiles para el manejo de las superficies no compactas.
 
-[Tma de Kerekjartos sobre clasificación]
+\begin{defin}
+Diremos que un subconjunto de una superficie $S$ es \textbf{acotado} si su cierre es comapcto en $S$.
+\end{defin}
 
-[Relación de espacios totalmente inconexos, separables (cjto denso 
-numerable) y compacto con el Cjto de Cantor]
+\begin{defin}
+Llamaremos \textbf{subsuperficie} de una superficie dada $S$ a todo subconjunto que cumpla ser una superficie con borde.
+\end{defin} 
 
-[Construcción de Ian Richards dando una superficie a cada posible frontera ideal]
+Recordemos que las superficies tratadas en este trabajo satisfacen por definición ser segundo numerables (por tanto, separables) y que el teorema \ref{teor:teoremaDeTriangulacion} nos sigue garantizando que las superficies estudiadas son triangulables.\\
 
-[NUMERABILIDAD]
+(REESCRIBIR TODO ESTO DEL GÉNERO Y CEÑIRTE A LAS DEFINICIONES DEL PAPER!!)
+Podemos también generalizar el concepto de género que dimos ya para superficies compactas. Diremos que una superficie no compacta tiene género $m > 0$ si toda subsuperficie compacta tiene género igual o inferior a $m$ y existe una subsuperficie compacta para que se satisface la igualdad. Si ocurriése que se pueden construir subsuperficies de género arbitrariamente grandes, entonces diremos que la superficie tiene género infinito. 
+\begin{defin}
+Diremos que una superficie es \textbf{plana} si toda subsuperficie compacta tiene género 0. 
+\end{defin}
+
+De manera similar podemos hablar de la orientabilidad en superficies no compactas. Una superficie puede ser orientable o no orientable. 
+\begin{defin}
+Diremos que una superficie $S$ es \textbf{infinitamente no orientable} si no existe un subconjutno acotado  $A \subset S$ tal que $A\backslash S$ sea orientable. En caso de existir, diremos que $S$ es \textbf{finitamente no orientable}.
+\end{defin}
+De la definiciones dadas se sigue que toda subsuperficie infinitamente no orientable necesariamente tiene género infinito.
+(TODO: Estas definiciones me dejan un poco intranquilo porque no me esto ciñendo al paper, quizás debería)
+(HABLAR MEJOR DE LAS CLASES DE ORIENTABILIDAD Y TODO ESOO)
+[INTRODUCIR IMAGEN DE SUPERFICIE NO COMPACTA PLANA, DE GÉNERO FINO E INFINITO]
+\\
+
+\subsection{La frontera ideal}
+La frontera ideal es un espacio topológico que da una descripción de cómo subconjuntos compactos de una superficie separan la superficie en conjuntos no acotados. Se construye como el conjunto de clases de equivalencia de los ``finales'', concepto que definimos a continuación:
+
+\begin{defin}
+Un \textbf{final} de una superficie $S$ es una secuencia de conjuntos encajados $P_1 \supset P_2 \supset \ldots$, donde $P_i$ es un conjunto conexo no acotado de $S$ que cumple:
+\begin{enumerate}
+\item[(a)] La frontera de $P_i$ es compacto para todo $i$;
+\item[(b)] Para cualquier subconjunto acotado $A \subset S$, $P_i \bigcap A = \emptyset$ para $i$ suficientemente grande.
+\end{enumerate}
+\end{defin}
+Dados dos finales $P_1 \supset P_2 \supset \ldots$ y $P'_1 \supset P'_2 \supset \ldots$, diremos que son equivalentes si para todo $n$ existe un correspondiente $N$ tal que $P_n \subset P'_N$ y viceversa.  Esta regla establece una relación de equivalencia. Denotaremos por $p*$ a la clase de equivalencia del final $p = P_1 \supset P_2 \supset \ldots$.
+
+\begin{defin}
+La \textbf{frontera ideal} de una superficie $S$ es el espacio topológico $B(S)$ que tiene por elementos las clases de equivalencia de finales, y tiene por base los conjuntos $U^*$: donde $U\subset S$ es cualquier conjunto  cuya frontera sea compacta; y los elementos de $U*$ son los finales $p*$ que satisfagan que, fijado un representante $p=P_1 \supset P_2 \supset \ldots $, exista un $n$ con $P_n \subset U$.
+\end{defin}
+Para probar que la frontera ideal está bien definida es preciso comprobar que los elementos de cualquier $U*$ no dependen del representante escogido, esto se sigue directamente de la relación de equivalencia establecida entre finales. Además, es necesario probar que el conjunto propuesto, en efecto, forma una base de una topología, para ello comprobamos que: eligiendo $U=\emptyset$ tenemos el abierto $U^*=B(S)$; tomando $U = S$ tenemos el abierto $U^*=\emptyset$; y, en el siguiente lema, veremos que $U^* \cap V^* = (U \cap V)^*$, que prueba que el conjunto es una base y con ello se demuetra que el espacio $B(S)$ está bien definido.
+
+\begin{lema}
+Dada una superficie $S$ y dos conjuntos  con frontera compacta $U,V \subset S$, entonces se cumple que $U^*\cap V^* = (U \cap V)^* $.
+\end{lema}
+\begin{proof}
+Primero veamos que $U^*\cap V^* \supset (U \cap V)^* $:
+\[
+p^* \in (U \cap V)^* \Rightarrow
+\exists n \quad p_n \subset (U \cap V) \Rightarrow
+p^* \in U, \: p^* \in V
+\]
+Por otra parte, veamos $U^*\cap V^* \subset (U \cap V)^* $:
+\begin{align*}
+p^* \in U, \: p^* \in V & \Rightarrow \exists n,m \quad p_n \subset U, \: p_m \subset V\\
+& \Rightarrow n' = \max(n,m), \; p_{n'} \subset U \cap V\\
+& \Rightarrow p^* \in (U\cap V)^*
+\end{align*}
+\end{proof}
+
+Del mismo modo conviene demostrar la misma propiedad para la unión:
+\begin{lema}
+Dada una superficie $S$ y dos conjuntos  con frontera compacta $U,V \subset S$, entonces se cumple que $U^*\cup V^* = (U \cup V)^* $.
+\begin{proof}
+Si $U$ y $V$ tienen frontera compacta entonces $U\cup V$ también. El siguiente razonamiento comprueba $U^*\cup V^* \subset (U \cup V)^* $:
+\[
+q^* \in U^*\cup V^* \Rightarrow 
+\exists n \: q_n \subset U \: \vee \: q_n \subset V \Rightarrow
+\exists n \: q_n \subset U \cup V \Rightarrow
+q^* \in (U \cup V)^*
+\]
+El otro contenido lo comprobaremos por contradicción. Supongamos que $q^* \in (U \cup V)^*$, pero que para todo $n$ tenemos que $q_n \nsubseteq U$ y $q_n \nsubseteq V$. Como la frontera de $U \cup V$ y la de $V^c$ son compactas, podemos elegir un $n$ tal que $fr(V^c)\cap q_n = \emptyset$ y que $q_n \subset Int(U\cup V)$. Entonces podemos proponer  la partición de $q_n$ en los abiertos $Int(V) \cap Int(U \cup V)$ e  $Int(V^c) \cap Int(U \cup V)$, disjuntos y ambos con intersección con $q_n$ no vacía por la hipótesis inicial; sin embargo, esto contradice que $q_n$ sea conexo.
+\end{proof}
+\end{lema}
+
+\begin{defin}
+Sea $p^*$ el representante de un final $p =P_1 \supset P_2 \supset \ldots$, diremos que $p^*$ es \textbf{plano/orientable} si existe un $N$ tal que para todo $n>N$ los conjuntos $P_n$ son superficies planas/orientables.
+\end{defin}
+
+La definición anterior nos permite considerar los conjuntos $B(S) \supset B'(S) \supset B"(S)$, donde $B'(S)$  es el conjunto de los finales no planos y $B"(S)$ es el conjunto de los finales no orientables. A partir de ahora consideraremos la frontera ideal como la terna $(B(S), B'(S), B"(S))$.
+\begin{lema}
+Los conjuntos $B'(S)$ y $B"(S)$ son cerrados. 
+\end{lema}
+\begin{proof}
+Veamos que $A = (B'(S))^c$ es un abierto:\\
+Sea $p^* \in A$ entonces existe un $n$ con $P_n$ plano. Definimos el conjunto:
+\[
+C = \bigcup_{p^* \in A} Int(P_n)^*
+\]
+$C$ es abierto por ser unión de abiertos. Bastaría con ver que $C=A$: por un lado, se sigue de la definición que $A\subset C$; por otro, si $q^* \in C$ entonces existe un $n$ y un $m$ con $q_m \subset Int(P_n)$, como $P_n$ es plano entonces $q_m$ también, con lo que concluimos que $q^* \in A \Rightarrow C\subset A$.\\
+Una demostración totalmente análoga comprueba que $B = (B"(S))^c$ es abierto.
+\end{proof}
+
+\textbf{Ejemplo:} Si para todo subconjunto compacto $A\subset S$, se tiene que $S\backslash A$ tiene como mucho $m$ componentes no acotadas, y se cumple que para algún $A$ el valor es exactamente $m$, entonces el conjunto $B(S)$ consiste de $m$ clases de equivalencia de finales (donde cada uno puede ser plano, orientable y no plano, o no orientable). Si $m=0$ tenemos una superficie compacta.
+
+[EJEMPLO CON M=4]
+
+El siguiente par de propiedades son herramienta utilizadas por el teorema de Kerékjárto:
+
+\begin{lema}
+Sea $S_1$ una subsuperficie de $S$, tendremos que $S_1^* \in B(S)$ un final no plano/no orientable si y solo si $S_1$ es de género infinito/es infinitamente no orientable. De la misma forma, $S_1^*$ es no vacío si y solo si $S_1$ es no acotado.
+\end{lema}
+
+\begin{lema}
+\label{lema:fronteraidealnoconexo}
+La frontera ideal de una superficie separable es un espacio totalmente inconexo, separable y compacto.
+\end{lema}
+Una demostración rigurosa de este hecho se da en [AGREGAR REFERENCIA, SALE EN EL PAPER].
+
+\section{Teorema de Kerékjárto}
+\begin{teor}
+Sean $S$ y $S'$ dos superficies separables del mismo género y clase de orientabilidad. Entonces $S$ y $S'$ son homeomorfa si y solo si las fronteras ideales (como ternas de espacios) son homeomorfas.
+\end{teor}
+
+\subsection{Idea de la demostración}
+La demostración sigue un razonamiento inductivo, para demostrarlo son necesarios varios pasos técnicos. En el trabajo daremos una idea de la demostración sin detenernos a analizar esos detalles.
+
+[AGREGAR DEMOSTRACIÓN]
+
+\section{Construcción de una superficie con frontera ideal dada}
+Recordemos que la proposición \ref{lema:fronteraidealnoconexo} nos garantiza que la frontera ideal es un espacio espacio totalmente inconexo, separable y compacto. Demostraremos ahora que para cualquier terna de espacios topológicos $X \supset Y \supset Z$, con $Y$ y $Z$ cerrados de $X$, que cumplan dichas propiedades, son homeomorfos a la frontera ideal de alguna superficie. Ian Richards en [AGREGAR REFERENCIA] construye la superficie que da demostración a este hecho. \\
+
+\begin{lema}
+\label{lema:cantor}
+Cualquier espacio compacto, totalmente inconexo y separable es homeomorfo a un subconjunto del conjunto de Cantor.
+\end{lema}
+[Agregar referencia donde se demuestre?]
+
+Con este resultado podemos proceder a enunciar y demostrar el teorema de Ian Richards:
+
+\begin{teor}
+Sea $(X,Y,Z)$ una terna cualquiera de espacios compactos, separables y totalmente inconexos con $Z \subset Y \subset X$.  Entonces existe una superficie $S$ cuya frontera ideal es $(B(S), B'(S), B"(S))$ que es topológicamente equivalente a $(X,Y,Z)$
+\end{teor}
+
+\subsubsection*{Idea de la demostración}
+La construcción partirá de una esfera a la cual retiraremos un conjunto de puntos y discos abiertos, cada punto representará un final y los discos serán convenientemente identificados para crear  subsuperficies de género 1 (o bien un toro o bien un plano proyectivo). Configurando adecuadamente estos dos elementos conseguiremos una frontera ideal homeomorfa a $(X,Y,Z)$.\\
+Procederemos primero construyendo la superficie y luego comprobando que cumple la condición especificada.
+
+
+\subsubsection*{Demostración}
+Por el lema \ref{lema:cantor} podemos asumir que $X$ es un subconjunto del conjunto de Cantor, el cual consideramos inmerso en el plano compactificado (homeomorfo a la esfera) como el conjunto de puntos $(x,0)$ con $0 \leq x\leq 1$ donde $x$ tiene una expresión triádica sin el dígito 1.
+
+[IMAGEN DE TAL CONJUNTO DE CANTOR]
+
+Elegimos $D'$ el conjunto de todos los discos cerrados del plano que tienen por diámetro los intervalos $[\frac{n - 1/3}{3^m} , \frac{n + 4/3}{3^m} ] x {0}$ , con $0\leq n \leq 3^m$, donde $n$ es un entero que admite una expresión triádica sin el dígito 1. Sea $D$ el subconjunto de discos de $D'$ que contienen al menos un punto de $X$.\\
+
+[IMAGEN DEL CONJUNTO D Y X]
+
+Los discos de $D$ intersecados con $X$ determinan una base de la topología de $X$. Los discos de $D$ cumplen las siguientes dos propiedades:
+\begin{enumerate}
+\item Cuales quiera dos discos del conjunto son o bien disjuntos o bien uno está contenido dentro del otro (véase [REFERENCIA A IMAGEN]).
+\item Si tenemos una cadena de discos $D_1 \supset D_2 \supset \ldots$, entonces la intersección de todos esos discos  con el eje x es un único punto de $X$ (este hecho se comprueba viendo que podemos excluir cualquier otro punto de la intersección). Más aún, se tiene que el conjunto de discos de $D$ que contienen a un $x \in X$ se pueden representar como una secuencia $D_1 \supset D_2 \supset \ldots$ cuya intersección es $x$.
+\end{enumerate}
+Sea $P^+$ y $P^-$ los planos $y > 0 $ e $y < 0$, respectivamente. Para cada disco $K$ en $D$, denotamos por $K'$ y por $K"$ los dos discos más grandes contenidos propiamente en $K$ (Cualquier otro disco propiamente contenido en $K$ estará por tanto contenido o en $K'$ o en $K"$, véase la figura [AGREGAR REFERENCIA]).
+[FIGURA CON K' Y K "]
+
+Ahora, para cada disco $K$ en $D$ elegimos dos discos abiertos $C^+(K)$ y $C^-(K)$, cada uno contenido en $K$  y que satisfagan:
+\begin{enumerate}
+\item[(a)] $C^+(K) \subset P^+$ y $C^-(K) \subset P^-$
+\item[(b)] $C^+(K)$ y $C^-(K)$ no intersequen ni a $K'$ ni a $K"$.
+\item[(c)] $C^+(K)$ y $C^-(K)$ son simétricos respecto al eje x.
+\end{enumerate}
+Con lo que ningunos dos círculos $C^\pm(K)$ se intersecan entre sí.
+[IMAGEN DE CÓMO SERÍAN ESTOS DISCOS]
+Construimos nuestra superficie $S$ como la esfera homeormofa al plano compactificado en el que retiramos los puntos de $X$ y algunos de los círculos $C^\pm(K)$. Primero, retiramos los círculos $C^\pm(K)$ que están dentro de un $K\in D$ con $K \cap Y \neq \emptyset$, si por el contrario  $K \cap Y = \emptyset$, entonces ignoramos los círculo. El segundo caso corresponderá con los finales planos. Luego,  si ocurre que $K \cap Y \neq \emptyset$  y $K \cap Z = \emptyset$, entonces identificamos $C^+(K)$ con $C^-(K)$ reflejando el primero en el eje x (preservando la orientación), estos corresponderán con los finales de género infinito orientables.  Por último, si $K \cap Z \neq \emptyset$, entonces identificamos los círculos por traslación (invirtiendo la orientación), en cuyo caso tendremos finales de género infinito no orientables.\\
+Queda ahora probar que la $S$ que se obtiene tiene una frontera ideal equivalente a la terna $(X,Y,Z)$. (AQUÍ HAY QUE METERSE EN TECNISISMOS, terminar).
+
+
+
+\subsection{Construcción de superficie no compacta de género finito}
+[TODO]
+\subsubsection*{Numerabilidad de las clasificaciones}
+[TODO]
 
 
 
