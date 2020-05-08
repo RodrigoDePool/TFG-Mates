@@ -279,7 +279,7 @@ A las expresiones \ref{formacanonica:esfera},\ref{formacanonica:ntoros} y \ref{f
 Antes de dar el asunto por concluido, veamos un último ejemplo de suma conexa:
 
 \begin{lema}\label{lema:SumaDosPlanospEsKlein}
-La suma conexa de dos planos proyectivos es una botella de Klein
+La suma conexa de dos planos proyectivos es homeomorfa a una botella de Klein
 
 \begin{proof}
 En la demostración trataremos al plano proyectivo como el disco unidad identificando los puntos diametralmente opuestos.\\
@@ -400,7 +400,7 @@ Fijado un vértice $v$, podemos utilizar el lema anterior (\ref{lema:lema1detria
 
 \end{lema}
 
-La triangulación compone una herramienta potente para el manejo de superficies en general. Sin embargo, para usarla primero es necesario probar que \textit{de facto} existe una tal triangulación. Por suerte, el siguiente resultado del matemático Tibor Radó nos garantiza su existencia. Enunciamos el teorema sin, lamentablemente, dar demostración.
+La idea de triangulación compone una herramienta potente para el manejo de superficies en general. Sin embargo, para usarla primero es necesario probar que \textit{de facto} existe una tal triangulación. Por suerte, el siguiente resultado del matemático Tibor Radó nos garantiza su existencia. Enunciamos el teorema sin, lamentablemente, dar demostración.
 
 \begin{teor}{Teorema de triangulación}\label{teor:teoremaDeTriangulacion}	
 
@@ -586,32 +586,40 @@ Utilizando el teorema \ref{teor:teoremadeclasificacion} y un razonamiento simila
 Dos superficies con borde compactas son homeomorfas si y solo si tienen el mismo número de componentes de borde, son ambas orientables o ambas no orientables, y tienen la misma característica de Euler.
 \end{teor}
 
-Una demostración rigurosa se puede leer en \cite{massey}. Equivalentemente, podemos enunciar el teorema como: Toda superficie con $k$ componentes de borde es homeomorfa a una esfera, o a una suma conexa de $n$ toros o a una suma conexa de $n$ planos proyectivos, en los cuales retiramos $k$ discos abiertos. Esta enunciado alternativo nos permite hablar de género también para el caso de las superficies con borde. \\
-\\
+Una demostración rigurosa se puede leer en \cite{massey}. Equivalentemente, podemos enunciar el teorema como: Toda superficie con $k$ componentes de borde es homeomorfa a una esfera, o a una suma conexa de $n$ toros o a una suma conexa de $n$ planos proyectivos, en los cuales retiramos $k$ discos abiertos. Este enunciado alternativo nos permite hablar de género también para el caso de las superficies con borde. 
 
 Con esto cerramos finalmente la clasificación para superficies compactas y  podemos sumergirnos en el mundo más variado de la no compacidad!
 
 
 
 \chapter{Hacia las superficies no compactas}
+En este capítulo extenderemos la clasificación a superficies no compactas y construiremos una superficie representante para cada clase de equivalencia.
 
-En este capítulo extenderemos la clasificación a superficies no compactas y construiremos una superficie representante para cada clase de equivalencia.\\
-El teorema de clasificación de Kerékjártó se basará en la clasificación de superficies compactas con borde estudiada en el capítulo anterior, y en el concepto de ``frontera ideal''. La ``frontera ideal'' será un espacio topológico definido a partir de una superficie dada, que describe el comportamiento de subsuperficies compactas encajadas. Comprobaremos que este espacio topólogico será un invariante que cumplirá también ser totalmente inconexo, separable y compacto. Finalmente, el teorema nos garantizará que, fijado el género y la ``clase de orientabilidad'', dos superficies son homeomorfas si y solo si sus ``fronteras ideales'' también lo son.\\
-Las propiedades topológicas de la ``frontera ideal'' nos permitirá formular una especie de recíproco. Veremos que todo espacio totalmente inconexo, separable y compacto es homeomorfo a la frontera ideal de una superficie. Para esta comprobación utilizaremos que todo espacio de dichas propiedades es homeomorfo a un subconjutno del conjunto de Cantor, y partiendo de este conjunto dentro del plano construiremos la superficie adecuada. 
-[IMAGEN DE SUPERFICIE NO COMPACTA DE GÉNERO INFINITO)
+El teorema de clasificación de Kerékjártó se basará en la clasificación de superficies compactas con borde, estudiada en el capítulo anterior, y en el concepto de `frontera ideal', que introduciremos en este capítulo. La frontera ideal será un invariante  definido a partir de una superficie dada, que a su vez será un espacio topológico totalmente inconexo, separable y compacto. Finalmente, el teorema nos garantizará que, fijado el género y la `clase de orientabilidad', dos superficies son homeomorfas si y solo si sus fronteras ideales también lo son.
 
-\section{Definiciones básicas}
+Las propiedades topológicas de la frontera ideal nos permitirán formular una especie de recíproco. Por un lado, veremos que toda frontera ideal es homeomorfa a un subconjunto del conjunto de Cantor. Por el otro, estudiaremos una demostración de Ian Richards que construye una superficie que tiene frontera ideal homeomorfa a un subconjunto del conjunto de Cantor arbitrario. Este resultado nos permitirá dar un representante para cada clase de equivalencia de la clasificación de superficies. Por último, discutiremos brevemente la numerabilidad de las clases de superficies homeomorfas. 
+
+
+\section{Introducción a las superficies no compactas}
 Introducimos algunas definiciones que serán útiles para el manejo de las superficies no compactas.
 
 \begin{defin}
-Diremos que un subconjunto de una superficie $S$ es \textbf{acotado} si su cierre es comapcto en $S$.
+Diremos que un subconjunto de una superficie $S$ es \textbf{acotado} si su cierre es compacto en $S$.
 \end{defin}
 
 \begin{defin}
 Llamaremos \textbf{subsuperficie} de una superficie dada $S$ a todo subconjunto que cumpla ser una superficie con borde.
 \end{defin} 
 
-Recordemos que las superficies tratadas en este trabajo satisfacen por definición ser segundo numerables (por tanto, separables) y que el teorema \ref{teor:teoremaDeTriangulacion} nos sigue garantizando que las superficies estudiadas son triangulables.\\
+La figura [REFERENCIA A LA SIGUIENTE FIGURA] ilustra una superficie con una subsuperficie $S'$, que además cumple ser un subconjunto acotado. 
+
+(IMAGEN DE SUPERFICIE NO COMPACTA DE GÉNERO INFINITO con subconjunto acotado y subsuperficie)
+
+\subsection{Sobre el género}
+TODO1
+
+\subsection{Sobre la orientabilidad}
+TODO2
 
 (REESCRIBIR TODO ESTO DEL GÉNERO Y CEÑIRTE A LAS DEFINICIONES DEL PAPER!!)
 Podemos también generalizar el concepto de género que dimos ya para superficies compactas. Diremos que una superficie no compacta tiene género $m > 0$ si toda subsuperficie compacta tiene género igual o inferior a $m$ y existe una subsuperficie compacta para que se satisface la igualdad. Si ocurriése que se pueden construir subsuperficies de género arbitrariamente grandes, entonces diremos que la superficie tiene género infinito. 
@@ -630,19 +638,21 @@ De la definiciones dadas se sigue que toda subsuperficie infinitamente no orient
 \\
 
 \subsection{La frontera ideal}
-La frontera ideal es un espacio topológico que da una descripción de cómo subconjuntos compactos de una superficie separan la superficie en conjuntos no acotados. Se construye como el conjunto de clases de equivalencia de los ``finales'', concepto que definimos a continuación:
+La frontera ideal es un espacio topológico que da una descripción de cómo subconjuntos compactos de una superficie la separan en conjuntos no acotados. Se construye como el conjunto de clases de equivalencia de los `finales', concepto que definimos a continuación:
 
 \begin{defin}
 Un \textbf{final} de una superficie $S$ es una secuencia de conjuntos encajados $P_1 \supset P_2 \supset \ldots$, donde $P_i$ es un conjunto conexo no acotado de $S$ que cumple:
 \begin{enumerate}
 \item[(a)] La frontera de $P_i$ es compacto para todo $i$;
-\item[(b)] Para cualquier subconjunto acotado $A \subset S$, $P_i \bigcap A = \emptyset$ para $i$ suficientemente grande.
+\item[(b)] Para cualquier subconjunto acotado $A \subset S$, $P_i \cap A = \emptyset$ para $i$ suficientemente grande.
 \end{enumerate}
 \end{defin}
-Dados dos finales $P_1 \supset P_2 \supset \ldots$ y $P'_1 \supset P'_2 \supset \ldots$, diremos que son equivalentes si para todo $n$ existe un correspondiente $N$ tal que $P_n \subset P'_N$ y viceversa.  Esta regla establece una relación de equivalencia. Denotaremos por $p*$ a la clase de equivalencia del final $p = P_1 \supset P_2 \supset \ldots$.
+Dados dos finales $p = P_1 \supset P_2 \supset \ldots$  y  $p' = P'_1 \supset P'_2 \supset \ldots$, diremos que son equivalentes si para todo $n$ existe un correspondiente $N$ tal que $P_n \subset P'_N$ y viceversa.  Esta regla establece una relación de equivalencia. Denotaremos por $p*$ a la clase de equivalencia del final $p$.
+
+(Ejemplo de un final)
 
 \begin{defin}
-La \textbf{frontera ideal} de una superficie $S$ es el espacio topológico $B(S)$ que tiene por elementos las clases de equivalencia de finales, y tiene por base los conjuntos $U^*$: donde $U\subset S$ es cualquier conjunto  cuya frontera sea compacta; y los elementos de $U*$ son los finales $p*$ que satisfagan que, fijado un representante $p=P_1 \supset P_2 \supset \ldots $, exista un $n$ con $P_n \subset U$.
+La \textbf{frontera ideal} de una superficie $S$ es el espacio topológico $B(S)$ que tiene por elementos las clases de equivalencia de finales, y tiene por base los conjuntos $U^*$: donde $U\subset S$ es cualquier conjunto  cuya frontera sea compacta; y los elementos de $U^*$ son los finales $p*$ que satisfagan que, fijado un representante $p=P_1 \supset P_2 \supset \ldots $, existe un $n$ con $P_n \subset U$.
 \end{defin}
 Para probar que la frontera ideal está bien definida es preciso comprobar que los elementos de cualquier $U*$ no dependen del representante escogido, esto se sigue directamente de la relación de equivalencia establecida entre finales. Además, es necesario probar que el conjunto propuesto, en efecto, forma una base de una topología, para ello comprobamos que: eligiendo $U=\emptyset$ tenemos el abierto $U^*=B(S)$; tomando $U = S$ tenemos el abierto $U^*=\emptyset$; y, en el siguiente lema, veremos que $U^* \cap V^* = (U \cap V)^*$, que prueba que el conjunto es una base y con ello se demuetra que el espacio $B(S)$ está bien definido.
 
@@ -746,11 +756,16 @@ Procederemos primero construyendo la superficie y luego comprobando que cumple l
 \subsubsection*{Demostración}
 Por el lema \ref{lema:cantor} podemos asumir que $X$ es un subconjunto del conjunto de Cantor, el cual consideramos inmerso en el plano compactificado (homeomorfo a la esfera) como el conjunto de puntos $(x,0)$ con $0 \leq x\leq 1$ donde $x$ tiene una expresión triádica sin el dígito 1.
 
-[IMAGEN DE TAL CONJUNTO DE CANTOR]
 
-Elegimos $D'$ el conjunto de todos los discos cerrados del plano que tienen por diámetro los intervalos $[\frac{n - 1/3}{3^m} , \frac{n + 4/3}{3^m} ] x {0}$ , con $0\leq n \leq 3^m$, donde $n$ es un entero que admite una expresión triádica sin el dígito 1. Sea $D$ el subconjunto de discos de $D'$ que contienen al menos un punto de $X$.\\
+Elegimos $D'$ el conjunto de todos los discos cerrados del plano que tienen por diámetro los intervalos $[\frac{n - 1/3}{3^m} , \frac{n + 4/3}{3^m} ] x {0}$ , con $0\leq n \leq 3^m$, donde $m$ es cualquier natural y $n$ es un natural que admite una expresión triádica sin el dígito 1. Sea $D$ el subconjunto de discos de $D'$ que contienen al menos un punto de $X$.\\
 
-[IMAGEN DEL CONJUNTO D Y X]
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\linewidth]{imagenes/conjuntoD.png}
+	\caption{Los discos del conjunto $D'$. En rojo el conjunto de Cantor en el plano.}
+	\label{fig:conjuntoD}
+\end{figure}
 
 Los discos de $D$ intersecados con $X$ determinan una base de la topología de $X$. Los discos de $D$ cumplen las siguientes dos propiedades:
 \begin{enumerate}
