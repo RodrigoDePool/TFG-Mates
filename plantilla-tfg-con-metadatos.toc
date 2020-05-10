@@ -24,8 +24,8 @@
 \contentsline {section}{\numberline {3.1}Introducci\IeC {\'o}n a las superficies no compactas}{21}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}El borde ideal}{23}{subsection.3.1.1}
 \contentsline {section}{\numberline {3.2}Teorema de Ker\IeC {\'e}kj\IeC {\'a}rto}{25}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Idea de la demostraci\IeC {\'o}n}{25}{subsection.3.2.1}
-\contentsline {section}{\numberline {3.3}Construcci\IeC {\'o}n de una superficie con borde ideal dado}{25}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Construcci\IeC {\'o}n de representantes para superficies no compacta}{27}{subsection.3.3.1}
-\contentsline {chapter}{\numberline {4}Anexo: Algunos resultados que utilizamos en el trabajo}{29}{chapter.4}
-\contentsline {chapter}{\numberline {5}COSAS QUE NO HE UTILIZADO}{31}{chapter.5}
+\contentsline {subsection}{\numberline {3.2.1}Idea de la demostraci\IeC {\'o}n}{26}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.3}Construcci\IeC {\'o}n de una superficie con borde ideal dado}{26}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Construcci\IeC {\'o}n de representantes para superficies no compacta}{29}{subsection.3.3.1}
+\contentsline {chapter}{\numberline {4}Anexo: Algunos resultados que utilizamos en el trabajo}{31}{chapter.4}
+\contentsline {chapter}{\numberline {5}COSAS QUE NO HE UTILIZADO}{33}{chapter.5}

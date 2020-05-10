@@ -613,9 +613,14 @@ Diremos que un subconjunto de una superficie $S$ es \textbf{acotado} si su cierr
 Llamaremos \textbf{subsuperficie} de una superficie dada $S$ a todo subconjunto que cumpla ser una superficie (posiblemente con borde).
 \end{defin} 
 
-La figura [REFERENCIA A LA SIGUIENTE FIGURA] ilustra una superficie con una subsuperficie $S'$, que además cumple ser un subconjunto acotado. 
+La figura \ref{fig:ejemplonocompacto} ilustra una superficie no compacta con una subsuperficie $S'$, que además cumple ser un subconjunto acotado. 
 
-(IMAGEN DE SUPERFICIE NO COMPACTA DE GÉNERO INFINITO con subconjunto acotado y subsuperficie)
+
+\begin{figure}[h!]
+	\centering	\includegraphics[width=0.5\linewidth]{imagenes/ejemplonocompacta.png}
+	\caption{Superficie no compacta con subsuperficie $S'$.}
+	\label{fig:ejemplonocompacto}
+\end{figure}
 
 \subsection*{Sobre el género}
 El género de una superficie no compacta $S$ se define a partir de los géneros de sus subsuperficies compactas:
@@ -624,6 +629,7 @@ Diremos que una superficie no compacta es \textbf{planar} (o de género 0) si to
 \end{defin}
 Por otra parte, si existe una subsuperficie compacta $A\subset S$ de género $m$, tal que las componentes de $S\backslash A$ son superficies de género 0, entonces diremos que $S$ tiene género $m$. Fijémonos en que esta definición no entra en contradicción con la anterior cuando $m=0$. Si una tal superficie $A$ no existiera, entonces diremos que $S$ tiene \textbf{género infinito}. En este último caso, se comprueba que existen subsuperficies compactas de género arbitrariamente grande.
 
+La figura \ref{fig:ejemplonocompacto} es un ejemplo de superficie no compacta de género infinito.
 
 \subsection*{Sobre la orientabilidad}
 Similarmente al caso compacto, las superficies pueden ser orientables o no orientables. Adicionalmente, si una superficie $S$ es no compacta y no orientable diremos que es \textbf{finitamente no orientable} si existe una subsuperficie $A\subset S$ tal que todas las componentes de $S\backslash A$ son orientables. En caso de que $S$ no sea orientable y que no exista un $A$ que cumpla esa propiedad, entonces diremos que la superficie es \textbf{infinitamente no orientable}. Observamos que una superficie infinitamente no orientable necesariamente tiene que tener género infinito\footnote{Si fuese de género finito tendríamos un $S\backslash A$ con componentes de género 0, pero toda superficie de género 0 es orientable.}, pero no al revés.
@@ -633,15 +639,11 @@ Una superficie $S$ finitamente no orientable puede ser de \textbf{no orientabili
 Diremos que dos superficies pertenecen a la misma \textbf{clase de orientabilidad} si: ambas son orientables; o ambas son infinitamente no orientables; o ambas comparten ser finitamente no orientables de la misma paridad.
 \end{defin}
 
-La figura [AGREGAR REFERENCIA] ilustra varios casos distintos de superficies no compactas: La imagen (a) muestra una superficie planar; la imagen (b) muestra una superficie de género infinito orientable; la imagen (c) corresponde a una superficie de género finito, finitamente no orientable; y el (d) corresponde con una superficie infinitamente no orientable. 
-
-[INTRODUCIR IMAGEN DE SUPERFICIE NO COMPACTA PLANA, DE GÉNERO FINO E INFINITO]
-
-
 \subsection{El borde ideal}
 El borde ideal es un espacio topológico que da una descripción de cómo subconjuntos compactos de una superficie la separan en conjuntos no acotados. Se construye como el conjunto de clases de equivalencia de los `extremos', concepto que definimos a continuación:
 
 \begin{defin}
+\label{defin:extremo}
 Un \textbf{extremo} de una superficie $S$ es una secuencia de conjuntos encajados $P_1 \supset P_2 \supset \ldots$, donde $P_i$ es un conjunto conexo no acotado de $S$ que cumple:
 \begin{enumerate}
 \item[(a)] La frontera de $P_i$ es compacto para todo $i$;
@@ -650,7 +652,13 @@ Un \textbf{extremo} de una superficie $S$ es una secuencia de conjuntos encajado
 \end{defin}
 Dados dos extremos $p = P_1 \supset P_2 \supset \ldots$  y  $p' = P'_1 \supset P'_2 \supset \ldots$, diremos que son equivalentes si para todo $n$ existe un correspondiente $N$ tal que $P_n \subset P'_N$ y viceversa.  Esta regla establece una relación de equivalencia. Denotaremos por $p*$ a la clase de equivalencia del extremo $p$.
 
-(EJEMPLO DE UN FINAL)
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\linewidth]{imagenes/final.png}
+	\caption{Ejemplo de un extremo (Los conjuntos $P_i$ se acumulan hacia la derecha).}
+	\label{fig:extremo}
+\end{figure}
 
 \begin{defin}
 El \textbf{borde ideal} de una superficie $S$ es el espacio topológico $B(S)$ que tiene por elementos las clases de equivalencia de extremos, y tiene por base los conjuntos $U^*$: donde $U\subset S$ es cualquier conjunto  cuyo borde sea compacto; y los elementos de $U^*$ son los extremos $p*$ que satisfagan que, fijado un representante $p=P_1 \supset P_2 \supset \ldots $, existe un $n$ con $P_n \subset U$.
@@ -658,6 +666,7 @@ El \textbf{borde ideal} de una superficie $S$ es el espacio topológico $B(S)$ q
 Para probar que el borde ideal está bien definido es preciso comprobar que los elementos de cualquier $U^*$ no dependen del representante escogido, esto se sigue directamente de la relación de equivalencia establecida entre extremos. Además, es necesario probar que el conjunto propuesto, en efecto, forma una base de una topología, para ello comprobamos que: eligiendo $U=\emptyset$ tenemos el abierto $U^*=B(S)$; tomando $U = S$ tenemos el abierto $U^*=\emptyset$; y en el siguiente lema veremos que $U^* \cap V^* = (U \cap V)^*$, que prueba que el conjunto es una base y con ello se demuetra que el espacio $B(S)$ está bien definido.
 
 \begin{lema}
+\label{lema:intdeextremos}
 Dada una superficie $S$ y dos conjuntos  con frontera compacta $U,V \subset S$, entonces se cumple que $U^*\cap V^* = (U \cap V)^* $.
 \end{lema}
 \begin{proof}
@@ -677,6 +686,7 @@ p^* \in U^*, \: p^* \in V^* & \Rightarrow \exists n,m \quad P_n \subset U, \: P_
 
 Del mismo modo, conviene demostrar la misma propiedad para la unión:
 \begin{lema}
+\label{lema:unideextremos}
 Dada una superficie $S$ y dos conjuntos  con frontera compacta $U,V \subset S$, entonces se cumple que $U^*\cup V^* = (U \cup V)^* $.
 \begin{proof}
 Si $U$ y $V$ tienen frontera compacta entonces $U\cup V$ también. El siguiente razonamiento comprueba $U^*\cup V^* \subset (U \cup V)^* $:
@@ -710,7 +720,13 @@ Una demostración totalmente análoga comprueba que $B = (B''(S))^c$ es abierto.
 \end{proof}
 \noindent \textbf{Ejemplo:} Si para todo subconjunto compacto $A\subset S$, se tiene que $S\backslash A$ tiene como mucho $m$ componentes no acotadas, y se cumple que para algún $A$ el valor es exactamente $m$, entonces el conjunto $B(S)$ consiste de $m$ clases de equivalencia de extremos (donde cada uno puede ser plano, orientable y no plano, o no orientable). Si $m=0$ tenemos una superficie compacta.
 
-[EJEMPLO CON M=4]
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\linewidth]{imagenes/m4.png}
+	\caption{Ejemplo con $m=4$: dos extremos de género infinito orientables, uno de género infinito no orientables y un extremo plano.}
+	\label{fig:m4}
+\end{figure}
 
 La siguiente propiedad es conveniente en la demostración del teorema de Kerékjártó:
 
@@ -788,8 +804,25 @@ Con lo que ningunos dos círculos $C^\pm(K)$ se intersecan entre sí.
 
 Construimos nuestra superficie $S$ como la esfera homeormofa al plano compactificado en el que retiramos los puntos de $X$ y algunos de los círculos $C^\pm(K)$. Primero, retiramos los círculos $C^\pm(K)$ que están dentro de un $K\in D$ con $K \cap Y \neq \emptyset$. Si por el contrario  $K \cap Y = \emptyset$, entonces no retiramos los círculos, este caso corresponderá con los extremos planos. A continuación,  si ocurre que $K \cap Y \neq \emptyset$  y $K \cap Z = \emptyset$, entonces identificamos la frontera de $C^+(K)$ con la frontera de $C^-(K)$ reflejando la primera en el eje x (preservando la orientación), estos corresponderán con los extremos de género infinito orientables.  Por último, si $K \cap Z \neq \emptyset$, entonces identificamos los círculos por traslación (invirtiendo la orientación), en cuyo caso tendremos extremos de género infinito no orientables.
 
-Queda ahora probar que la $S$ que se obtiene tiene un borde ideal equivalente a la terna $(X,Y,Z)$. (TODO: terminar).
+Queda ahora probar que la $S$ obtenida tiene un borde ideal homeomorfo a la terna $(X,Y,Z)$:\\
+De los puntos (1) y (2) anteriores se sigue que todo punto $x\in X$ se puede representar como la intersección de una secuencia de discos $D_1 \supset D_2 \supset \ldots$, con $D_i \in D$. Utilizando la definición \ref{defin:extremo}, observamos que dichas secuencias de discos son extremos. Esto nos permite definir la función que manda cada $x$ a la correspondiente clase de extremos:
+\begin{align*}
+f:& \: X \longrightarrow  B(S)\\
+& \: x \longrightarrow f(x) = p^*
+\end{align*}
+Donde $p^*$ es representante de $p = D_1 \supset D_2 \supset \ldots $ y se cumple:
+\[
+\{x\} = \bigcap_{i = 1}^{\infty} D_i
+\]
+Veamos ahora que $f$ define el homeomorfismo que buscamos.
 
+Como $X\backslash Y$ y $X\backslash Z$ son subconjuntos abiertos de $X$, entonces para todo punto $p\in X\backslash Y$ existe un disco $K\in D$ que contiene a $p$ y cumple $K \cap Y = \emptyset$, y análogamente para $p \in X\backslash Z$. Por tanto, tendremos que $Y$ y $Z$ corresponden exactamente con los extremos no planos y los no orientables, respectivamente\footnote{Esto se sigue de que $X\backslash Y$ corresponde por construcción con los extremos planos, y $X\backslash Z$ corresponde con los orientables}. Esto indica que $f$ induce los homeomorfismos adecuados cuando se restringe a los espacios $Y$ y $Z$.
+
+La función $f$ es inyectiva porque dados  dos puntos distintos  $x_1, x_2 \in X$ tenemos que, por ser $X$ un espacio Hausdorff, existen dos abiertos $U_1, U_2$ con intersección nula que los separan. Al mismo tiempo, por ser $D$ una base de la topología de $X$ entonces existen dos discos en $D$ que cumplen $x_1 \in K_1 \subset U_1$ y $x_2 \in K_2 \subset U_2$, pero como ambos discos tienen intersección vacía se sigue de la definición \ref{defin:extremo} que las secuencias necesariamente representan extremos no equivalentes\footnote{Un razonamiento muy parecido sirve para demostrar que la función $f$ está bien definida.}.
+
+Por otra parte, vemos que $f$ manda la base inducida por $D$\footnote{Intersecando los discos con $X$} de la topología de $X$ al conjunto $\{K^*: K\in D\}$. Utilizando los lemas \ref{lema:unideextremos} y \ref{lema:intdeextremos}, podemos comprobar que dicho conjunto es una base de la topología de $B(S)$. Bastaría entonces con probar la sobreyectividad de $f$ para demostrar que la función es, en efecto, un homeomorfismo.
+
+Probemos que $f$ es sobreyectiva: Como $B(S)$ es Hausdorff, entonces todo punto $p^* \in B(S)$ es intersección de una colección infinita $\{K_i^*\}_{i\in\mathbb{N}}$ de conjuntos de la base $\{K^*: K\in D\}$ de la topología de $B(S)$. Por la condición (1), la colección $\{K_i\}_{i\in\mathbb{N}}$ es una secuencia encajada y representa un extremo $p_1^* \in B(S)$, pero entonces es necesario que $p_1^* = p^*$.  Por la condición (2), se cumple que $\bigcap_{i\in\mathbb{N}} K_i = {p'}$. Finalmente, por la construcción dada de $f$ tenemos que $f(p') = p_1^* = p^*$, probando así la sobreyectividad y con ello concluyendo el teorema.
 
 
 \subsection{Construcción de representantes para superficies no compacta}
