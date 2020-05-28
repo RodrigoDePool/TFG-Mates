@@ -93,7 +93,7 @@ al ser dotado de la topología de subespacio, también es un ejemplo de superfic
 tendremos que si $S$ es una superficie topológica, entonces $f(S)$ también lo es.
 \end{enumerate}
 
-Por otro lado, si consideramos el cuadrado con sus bordes ($\overline{C}$), el conjunto no compone un ejemplo de superficie tal y como lo definimos. En este conjunto los puntos que pertenecen a las aristas no tienen entornos homeomorfos a $U^2$. Veremos que $\overline{C}$ es una \textquoteleft superficie con borde \textquoteright, concepto que estudiaremos más adelante (véase la sección \ref{sec:superfborde}).
+Por otro lado, si consideramos el cuadrado con sus bordes ($\overline{C}$), el conjunto no compone un ejemplo de superficie tal y como lo definimos. En este conjunto los puntos que pertenecen a las aristas no tienen entornos homeomorfos a $U^2$. Veremos que $\overline{C}$ es una `superficie con borde', concepto que estudiaremos más adelante (véase la sección \ref{sec:superfborde}).
 \subsection{Orientación de superficies}
 \label{sec:orientabilidad}
 Las superficies se dividen en dos clases: Las orientables y las no orientables. No ahondaremos con formalidad matemática este concepto. Por su parte, asumiremos que las superficies tratadas pueden dotarse de una estructura diferencial y con ello podemos recurrir a la noción de orientabilidad estudiada en el grado. Sin embargo, bastaría con extender el concepto de orientabilidad de modo que los resultados aquí propuestos valieran para cualquier superficie topológica.
@@ -120,7 +120,7 @@ Se puede comprobar que ambas formas de definir la esfera son homeomorfas.
 
 
 \subsection*{El toro}
-Si se toma el cuadrado cerrado $ \overline{C} = \{ (x,y) \in R^2: -1\leq x\leq 1,\quad -1\leq y \leq 1  \} $ con la topología de subespacio, el \textit{toro}  se construye al identificar los puntos de  $ X $ según  \ref{toroid} y dotar al conjunto resultante de la topología cociente.
+Si se toma el cuadrado cerrado $ \overline{C} = \{ (x,y) \in R^2: -1\leq x\leq 1,\quad -1\leq y \leq 1  \} $ con la topología de subespacio, el \textit{toro}  se construye al identificar los puntos de  $ \overline{C} $ según  \ref{toroid} y dotar al conjunto resultante de la topología cociente.
 \begin{align}\label{toroid}
 	(x,-1)\equiv(x,1) \quad x\in [-1,1]  \\
 	(-1,y)\equiv(1,y) \quad y\in [-1,1] \nonumber
@@ -323,13 +323,13 @@ Una \textit{triangulación} de una superficie compacta $S$, consiste en un conju
 Donde $T'_i$ es un triángulo del plano $\mathbb{R}^2$.
 Además, se exige que para cualesquiera dos $T_i$ y $T_j$ con $i\neq j$, se cumpla una de las siguientes condiciones: o son conjuntos totalmente disjuntos; o comparten un vértice en común y solo eso; o tienen toda una arista en común y solo eso.\\
 Adicionalmente, llamaremos \textit{vértice} a todo elemento de $S$ que se corresponde por algún $\phi_i$ con un vértice en el plano. Y llamaremos \textit{arista} a todo subconjunto de $S$ que tenga por imagen una arista de algún $T'_i$. A una superficie que admite una triangulación la llamaremos una superficie \textit{triangulable}.\\
-\textbf{Observación:} La definición se puede extender para superficies no compactas si permitimos que el conjunto de triángulos sea numerables, y exigiendo que todo punto del conjunto tenga un entorno que interseque solo a un número finito de triángulos.
+\textbf{Observación:} La definición se puede extender para superficies no compactas si permitimos que el conjunto de triángulos sea numerable, y exigiendo que todo punto del conjunto tenga un entorno que interseque solo a un número finito de triángulos.
 \end{defin}
 
 
 Intuitivamente, podemos pensar en una triangulación como una teselación por triángulos de una superficie dada. Estudiemos algunos ejemplos concretos para familiarizarnos con el concepto:
 
-El toro se puede triangular como ilustra la figura  \ref{fig:toro triangulado}. Fijémonos que basta con definir una lista de triángulos, con sus respectivos vértices, para concretar una trinagulación. En la figura indicada la lista de triángulos sería:
+El toro se puede triangular como ilustra la figura  \ref{fig:toro triangulado}. Fijémonos que basta con definir una lista de triángulos, con sus respectivos vértices, para concretar una triangulación. En la figura indicada la lista de triángulos sería:
 
 \begin{align*}
 124 \quad 245 \quad 235 \quad 356 \quad 136 \quad 164 \\
@@ -402,7 +402,7 @@ En cualquiera de los dos casos estaríamos incurriendo en un absurdo, con lo que
 Sea  $S$ una superficie triangulable y $v\in S$ un vértice en esa triangulación, entonces podemos ordenar el conjunto de todos los triángulos con vértice $v$ cíclicamente,  $T_0, T_1, ..., T_n = T_0$, de manera que $T_i$ y $T_{i+1}$ tienen toda una arista en común para todo $0\leq i\leq n-1$.
 
 \begin{proof}
-Fijado un vértice $v$, podemos utilizar el lema anterior (\ref{lema:lema1detriangulacion}) para hacer una partición del conjunto de triángulos que tienen a $v$ por vértice. Si ocurriese que hay más de un conjunto disjunto en la partición, entonces $v$ no podría tener un entorno homeomorfo a $U^2$.
+Fijado un vértice $v$, podemos utilizar el lema anterior (\ref{lema:lema1detriangulacion}) para hacer una partición del conjunto de triángulos que tienen a $v$ por vértice. En caso de haber más de un conjunto disjunto en la partición, entonces $v$ no podría tener un entorno homeomorfo a $U^2$.
 \end{proof}
 
 \end{lema}
@@ -425,7 +425,7 @@ Con este teorema concluimos el arsenal de herramientas que nos hará falta para 
 \label{chap:clasifcompacta}
 \begin{teor}{Teorema de clasificación de superficies compactas}\label{teor:teoremadeclasificacion}	
 
-Toda superficie compacta es homeomorfa a una esfera, a una suma conexa de toros o una suma conexa de planos proyectivos.
+Toda superficie compacta es homeomorfa a una esfera, a una suma conexa de toros o a una suma conexa de planos proyectivos.
 \end{teor}
 
 \subsubsection*{Idea de la demostración}
@@ -500,7 +500,7 @@ En este paso buscaremos eliminar las aristas adyacentes de primera especie, i.e,
 En este paso procederemos a transformar el polígono $D$, obtenido del paso anterior, para que todos sus vértices estén identificados entre sí, es decir, buscamos que todos los vértices representen el mismo punto en la superficie $S$. 
 
 Podemos dividir los vértices en clases de equivalencia según qué vértices están identificados. Supongamos que al menos hay dos clases de equivalencias e intentemos eliminar una de ellas.\\
-Como hay dos clases de equivalencia, entonces existen al menos dos vértices adyacentes $P$ y $Q$ que no pertenecen a la misma clase. En la figura\ref{fig:paso3} se ilustra el procedimiento. Sabemos que $a$ y $b$ no pueden estar identificados (no puede ser par de primera especie porque ya hemos aplicado el segundo paso, y no puede ser par de segunda especie porque los vértices son distintos), entonces cortamos e identificamos a lo largo de la línea $c$ tal y como  se muestra la figura. Al finalizar la transformación, tenemos un vértice menos de la clase $P$ y uno más de la clase $Q$. Una vez eliminado el vértice, se aplica el segundo paso nuevamente de ser posible y se repite el procedimiento. Tras un número finito de pasos habremos eliminado la clase de equivalencia de $P$. Iteramos de forma análoga hasta que tengamos una única clase de equivalencia de vértices del polígono.
+Como hay dos clases de equivalencia, entonces existen al menos dos vértices adyacentes $P$ y $Q$ que no pertenecen a la misma clase. En la figura \ref{fig:paso3} se ilustra el procedimiento. Sabemos que $a$ y $b$ no pueden estar identificados (no puede ser par de primera especie porque ya hemos aplicado el segundo paso, y no puede ser par de segunda especie porque los vértices son distintos), entonces cortamos e identificamos a lo largo de la línea $c$ tal y como  se muestra la figura. Al finalizar la transformación, tenemos un vértice menos de la clase $P$ y uno más de la clase $Q$. Una vez eliminado el vértice, se aplica el segundo paso nuevamente de ser posible y se repite el procedimiento. Tras un número finito de pasos habremos eliminado la clase de equivalencia de $P$. Iteramos de forma análoga hasta que tengamos una única clase de equivalencia de vértices del polígono.
 
 \begin{figure}[h!]
 	\centering
@@ -625,7 +625,7 @@ En este capítulo extenderemos la clasificación a superficies no compactas y co
 
 El teorema de clasificación de superficies no compactas de Kerékjártó se basará en la clasificación de superficies compactas con borde, estudiada en el capítulo anterior, y en el concepto de `borde ideal', que introduciremos en este capítulo. El borde ideal será un invariante  definido a partir de una superficie dada, que a su vez será un espacio topológico totalmente inconexo, separable y compacto. Finalmente, el teorema nos garantizará que, fijado el género y la `clase de orientabilidad', dos superficies son homeomorfas si y solo si sus bordes ideales también lo son.
 
-Las propiedades topológicas del borde ideal nos permitirán dar representantes para cada clase de equivalencia en la clasificación. Por un lado, veremos que todo borde ideal es homeomorfo a un subconjunto cerrado del conjunto de Cantor. Por el otro, estudiaremos una construcción de Richards que  asigna a todo subconjunto cerrado del conjunto de Cantor una superficie con borde ideal homeomorfo al subconjunto dado. Usando esta construcción una sencilla observación nos permitirá dar con los representantes. Por último, discutiremos brevemente la numerabilidad de las clases de superficies. 
+Las propiedades topológicas del borde ideal nos permitirán dar representantes para cada clase de equivalencia en la clasificación. Por un lado, veremos que todo borde ideal es homeomorfo a un subconjunto cerrado del conjunto de Cantor. Por el otro, estudiaremos una construcción de Richards que  asigna a todo subconjunto cerrado del conjunto de Cantor una superficie con borde ideal homeomorfo al subconjunto dado. Usando esta construcción, una sencilla observación nos permitirá dar con los representantes. Por último, discutiremos brevemente la numerabilidad de las clases de superficies. 
 
 El grueso de nuestra atención en este capítulo irá a la construcción de Richards. Recordamos también que las superficies estudiadas en este trabajo son segundo numerables por definición (\ref{defin:superficie}). 
 \section{Introducción a las superficies no compactas}
@@ -780,7 +780,7 @@ Sean $S$ y $S'$ dos superficies separables del mismo género y clase de orientab
 \begin{proof}[Idea de la demostración]
 La demostración sigue un razonamiento inductivo, para demostrarlo son necesarios varios pasos técnicos. En este trabajo esbozaremos sólo la idea que hay detrás de la demostración.
 
-El primer paso consiste en descomponer las superficies $S$ y $S'$ como sucesiones subsuperfecies compactas encajadas. Tomamos dos sucesiones de subsuperficies compactas $B_1 \subset B_2 \subset \ldots$ y $B'_1 \subset B'_2 \subset \ldots$, de modo que recubran a $S$ y $S'$, respectivamente. Además, a cada $B_i$ le exigimos  que separe las componentes de su complementario por una única curva, i.e, por cada componente $U$ de $S\backslash B_i$  pedimos que $U$  tenga una única curva simple cerrada en su frontera $d(U)$ (la misma condición se debe satisfacer para la sucesión con las primas).
+El primer paso consiste en descomponer las superficies $S$ y $S'$ como sucesión de subsuperfecies compactas encajadas. Tomamos dos sucesiones de subsuperficies compactas $B_1 \subset B_2 \subset \ldots$ y $B'_1 \subset B'_2 \subset \ldots$, de modo que recubran a $S$ y $S'$, respectivamente. Además, a cada $B_i$ le exigimos  que separe las componentes de su complementario por una única curva, i.e, por cada componente $U$ de $S\backslash B_i$  pedimos que $U$  tenga una única curva simple cerrada en su frontera $d(U)$ (la misma condición se debe satisfacer para la sucesión con las primas).
 
 A partir de aquí, la demostración buscará construir inductivamente otras dos sucesiones de subsuperficies compactas y una sucesión de funciones $\{f_n\}_{n=1}^{\infty}$ entre estas subsuperficies. Las sucesiones $A_1 \subset A_2 \subset \ldots$ y $A'_1 \subset A'_2 \subset \ldots$, recubrirán a $S$ y $S'$, respectivamente. Por su parte, cada función $f_{n+1}$ establecerá un homeomorfismo entre las superficies con borde   $A_{n+1}$ y $A'_{n+1}$, cumpliendo ser una extensión de $f_n$. Para el argumento inductivo que prueba existencia de las ternas $(A_n, A'_n, f_n)$ se utiliza el homeomorfismo entre los bordes ideales. A partir de allí, el homeomorfismo entre las superficies $S$ y $S'$ será el límite de la sucesión $\{f_n\}$.
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.22)  21 MAY 2020 13:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.22)  25 MAY 2020 19:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2734,9 +2734,16 @@ LaTeX Info: Redefining \% on input line 27.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1020.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1020.
 
-Package rerunfilecheck Info: File `plantilla-tfg-con-metadatos.out' has not cha
-nged.
-(rerunfilecheck)             Checksum: 3852EC2226B29782CE8EBFB561F960A7;1928.
+
+
+Package rerunfilecheck Warning: File `plantilla-tfg-con-metadatos.out' has chan
+ged.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `plantilla-tfg-con-metadatos.out':
+(rerunfilecheck)             Before: 3852EC2226B29782CE8EBFB561F960A7;1928
+(rerunfilecheck)             After:  F0AE5C2F4ECA9E31D1AC154E12306026;1931.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1020.
  ) 
 Here is how much of TeX's memory you used:
@@ -2773,7 +2780,7 @@ onts/type1/public/cm-super/sfss1095.pfb></usr/share/texmf/fonts/type1/public/cm
 </usr/share/texmf/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf/fo
 nts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-
 super/sfxc1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfxc1200.pfb>
-Output written on plantilla-tfg-con-metadatos.pdf (46 pages, 6975309 bytes).
+Output written on plantilla-tfg-con-metadatos.pdf (46 pages, 6975282 bytes).
 PDF statistics:
  768 PDF objects out of 1000 (max. 8388607)
  615 compressed objects within 7 object streams

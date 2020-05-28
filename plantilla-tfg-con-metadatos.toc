@@ -23,7 +23,7 @@
 \contentsline {chapter}{\numberline {3}Hacia las superficies no compactas}{21}{chapter.3}
 \contentsline {section}{\numberline {3.1}Introducci\IeC {\'o}n a las superficies no compactas}{21}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}El borde ideal}{24}{subsection.3.1.1}
-\contentsline {section}{\numberline {3.2}Teorema de Ker\IeC {\'e}kj\IeC {\'a}rto}{27}{section.3.2}
+\contentsline {section}{\numberline {3.2}Teorema de Ker\IeC {\'e}kj\IeC {\'a}rt\IeC {\'o}}{27}{section.3.2}
 \contentsline {section}{\numberline {3.3}Construcci\IeC {\'o}n de una superficie con borde ideal dado}{28}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Construcci\IeC {\'o}n de representantes para superficies no compactas}{31}{subsection.3.3.1}
 \contentsline {chapter}{\numberline {4}Anexo}{33}{chapter.4}
