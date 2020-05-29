@@ -18,13 +18,10 @@
 El objetivo de nuestro trabajo fue el estudio del teorema de clasificación de superficies topológicas.
 
 - 'Diapo 1: Definición de superficies'
- Recordamos que las superficies se definen como espacios topológicos, localmente homeomorfos a bolas abiertas  en R^2, que cumplen ser Hausdorff, segundo numerables y conexos.  Durante la presentación expondremos únicamente superficies orientables, pero todos los resultados tienen su análogo con superficies no orientables. El objetivo será  caracterizar topológicamente una superficie.
- 
- - 'Diapo 2: Distinción entre superficies compactas y no compactas'
- Como las funciones continuas mantienen la compacidad, podemos tratar los casos de superficies compactas y no compactas por separado.  Aquí tenemos algunos ejemplos canónicos de superficies compactas como el toro o la esfera.
+ Recordamos que las superficies se definen como espacios topológicos, localmente homeomorfos a bolas abiertas  en R^2, que cumplen ser Hausdorff, segundo numerables y conexos.  Durante la presentación expondremos únicamente superficies orientables, pero todos los resultados tienen su análogo con superficies no orientables. El objetivo será  caracterizar topológicamente una superficie. Como las funciones continuas mantienen la compacidad, la primera distinción es tratar el caso de superficies compactas y no compactas por separado.
  
  - 'Diapo 2.1: Título de clasificación de superficies compactas'
- Tratemos primero el problema de la clasificación de superficies compactas. Para caracterizar a una superficie compacta primero necesitaremos dos herramientas: La suma conexa y la triangulación.
+ Tratemos primero el problema más sencillo de la clasificación de superficies compactas. Para caracterizar a una superficie compacta primero necesitaremos dos herramientas: La suma conexa y la triangulación.
  
 -  'Diapo 3: La suma conexa'
 La suma conexa es una operador entre superficies. La operación consiste en retirar un disco abierto de cada una de las superficies e identificarlas por el borde, como resultado obtenemos otra superficie  dotada de la topología cociente. Se puede comprobar que sumar dos superficies compactas resulta siempre en otra superficie compacta. Las imagenes que tenemos en la diapositiva sugieren una forma gráfica de entender la suma, en este caso, entre dos toros. 
@@ -61,7 +58,7 @@ Vimos que para las superficies compactas el número de toros (el género) era su
 Necesitamos entonces de un nuevo invariante topológico que acabe de caracterizar las superficies no compactas. Para ello primero tenemos que ver como una superficie puede extender a infinito.
 
 - 'Diapo 12: Extremos'
-Un extremo en una superficie es una sucesión encajada de subconjuntos no acotados, que cumplen tener frontera compacta y que, además, cumplen que para cualquier subconjunto compacto existe un elemento de la sucesión a partir del cual  ya no se interseca al conjunto compacto (es decir, que hay un P_n cuya intersección con cualquier conjunto A es el vacío).
+Un extremo en una superficie es una sucesión encajada de subconjuntos no acotados, conexo, que cumplen tener frontera compacta y que, además, cumplen que para cualquier subconjunto compacto existe un elemento de la sucesión a partir del cual  ya no se interseca al conjunto compacto (es decir, que hay un P_n cuya intersección con cualquier conjunto A es el vacío).
 Esta definición nos permite definir el borde ideal.
 
 - 'Diapo 13: El borde ideal'

@@ -1,0 +1,307 @@
+\documentclass{beamer}
+
+\mode<presentation>
+
+\usetheme{Pittsburgh}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage{beamerthemesplit}
+\usepackage{caption}
+\usepackage{adjustbox}
+\newtheorem*{defi}{Definición}
+\newtheorem*{teor}{Teorema}
+\newtheorem*{ejem}{Ejemplo}
+%\mode<handout>
+{
+\beamertemplatesolidbackgroundcolor{black!5}
+}
+\usepackage{amssymb,amsmath,amsfonts,graphicx,float,epsfig,enumerate}
+\usepackage{amsopn}
+\usepackage{fancyhdr}
+
+\renewcommand{\baselinestretch}{1}
+
+% \newenvironment{flushenum}{
+% \begin{enumerate}
+%   \setlength{\leftmargin}{0pt}
+% }{\end{enumerate}}
+
+\sloppy
+
+\parindent 0pt
+
+%\usepackage[dark,tab]{beamerthemesidebar}
+
+%\logo{\includegraphics[width=1cm,height=1cm]{logo.pdf}}
+
+\title[Teorema de clasificación de superficies]{Teorema de clasificación de superficies topológicas}
+\author[Rodrigo De Pool]{}
+%\institute[UAM]{}
+\date[]{Junio 2020}
+\subject{}
+
+%\AtBeginSubsection[]
+%{
+% \begin{frame}<beamer>
+%    \frametitle{Plan of the talk}
+%    \tableofcontents[currentsection,currentsubsection]
+%  \end{frame}
+% }
+
+\newcommand{\oo}{$^{\mbox{\underline{\tiny o}}}$\hspace{2 mm}}
+
+\definecolor{dark}{gray}{.5}
+\definecolor{rosa_claro}{rgb}{1,0.9,0.9}
+%\definecolor{azul_intenso}{rgb}{0,0.6,0.9}
+\definecolor{azullito}{rgb}{0.4,0.5,0.9}
+%\definecolor{amarillo_claro}{rgb}{1,1,0.7}
+%\definecolor{gris_claro}{gray}{0.9}
+\definecolor{uofsgreen}{rgb}{.125,.5,.25}
+
+\usecolortheme[named=azullito]{structure} % Para cambiar el fondo de los frametitles
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% TITULO %%%%%%%%%
+\frame{\titlepage}
+ 
+%%%%%% DIAPOSITIVA 2 %%%%%%
+\begin{frame}
+\frametitle{Superficies topológicas}
+
+\begin{defi}
+S es superficie topológica si
+\begin{itemize}
+    \item Localmente homeomorfo a una bola en $\mathbb{R}^2$.
+    \item Hausdorff, segundo numerable y conexo (*orientable).
+\end{itemize}
+\end{defi}
+[IMAGEN DE SUPERFICIE COMPACTA Y NO COMPACTA]
+\end{frame}
+
+%%%%%% DIAPOSITIVA 3 %%%%%%
+\begin{frame}
+\frametitle{Teorema de clasificación de superficies compactas orientables}
+
+\begin{itemize}
+\item Suma conexa.
+\item Triangulación.
+\end{itemize}
+\end{frame}
+
+%%%%%% DIAPOSITIVA 4 %%%%%%
+\begin{frame}
+\frametitle{Suma conexa}
+
+\begin{defi}
+La suma conexa es un operador entre superficies:
+\[S' = S_1 \# S_2 \]
+$S'$ resulta de de retirar un disco abierto de cada superficie e identificarlas por el borde.
+\end{defi}
+\begin{ejem}
+[EJEMPLO DE SUMA CONEXA]
+\end{ejem}
+
+\end{frame}
+
+
+%%%%%% DIAPOSITIVA 6 %%%%%%
+\begin{frame}
+\frametitle{Triangulación de una superficie}
+
+\begin{itemize}
+    \item Es común tener que trabajar con datos categóricos, que no tienen un valor numérico. El \textbf{escalado multidimensional} permite transformar muestras de este tipo en puntos de un espacio euclídeo, tratando de conservar las distancias.
+    \item Es necesario disponer de una matriz de distancias entre los individuos de una muestra:
+    \begin{equation*}
+    \boldsymbol{\Delta} = \begin{pmatrix}
+    \delta_{11} & \delta_{12} & ... & \delta_{1n} \\
+    \delta_{21} & \delta_{22} & ... & \delta_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    \delta_{n1} & \delta_{n2} & ... & \delta_{nn} \\
+    \end{pmatrix}
+    \end{equation*}
+\end{itemize}
+\end{frame}
+
+%%%%%% DIAPOSITIVA 7 %%%%%%
+\begin{frame}
+\frametitle{Escalado multidimensional métrico}
+
+\begin{itemize}
+    \item Si $\boldsymbol{\Delta}$ es compatible con una configuración euclídea, basta con tomar dicha configuración. Este es el \textbf{caso métrico}.
+    \item \textbf{Teorema:} $\boldsymbol{\Delta}$ es compatible con una configuración euclídea si $\boldsymbol{B} =  -\frac{1}{2} \boldsymbol{H} \boldsymbol{\Delta}^2  \boldsymbol{H}$ es semidefinida positiva.
+    \item Cualquier $\boldsymbol{Y}$ tal que
+    $\boldsymbol{B} = \boldsymbol{Y}\boldsymbol{Y}^t$ sería una configuración euclídea compatible.
+    \item Es MDS métrico se toma $\boldsymbol{Y} = \boldsymbol{U} \boldsymbol{\Lambda}^{1/2}$, que es valor que se obtendría al aplicar PCA sobre cualquiera de las configuraciones euclídeas compatibles con $\boldsymbol{\Delta}$. 
+\end{itemize}
+
+
+\end{frame}
+
+%%%%%% DIAPOSITIVA 8 %%%%%%
+\begin{frame}
+\frametitle{Escalado multidimensional no métrico}
+
+\begin{itemize}
+    \item Si $\boldsymbol{B}$ no es semidefinida positiva, entonces no existe una configuración euclídea compatible con $\boldsymbol{\Delta}$.
+    \item En este caso es necesario transformar $\boldsymbol{\Delta}$ conservando la relación entre distancias.
+    \item Una transformación que permite obtener una $\boldsymbol{B}$ semidefinida positiva, si se elige una $a$ adecuada, es la transformación q-aditiva:
+    \begin{equation*}
+    \hat{\delta}_{ij}^2 = 
+    \begin{cases}
+      \delta_{ij}^2 - 2a & \text{si}\ i\neq j \\
+      0  & \text{si}\ i=j
+    \end{cases}
+    \end{equation*}
+
+    \item En el caso \textbf{caso no métrico} se aplica una transformación de este tipo para, posteriormente, poder utilizar la versión métrica.
+\end{itemize}
+
+
+\end{frame}
+
+%%%%%% DIAPOSITIVA 9 %%%%%%
+\begin{frame}
+\frametitle{Escalado multidimensional: Similaridades y distancias}
+
+\begin{itemize}
+    \item El escalado multidimensional también es compatible con matrices de similaridades.
+    \item En general, una buena similaridad para un conjunto de datos con $p_1$ variables cuantitativas; $p_2$ variables binarias y $p_3$ variables categóricas es la de Gower:
+    \begin{equation*}
+    s(\boldsymbol{x}, \boldsymbol{y}) = \frac{\sum_{k=1}^{p_1}(1-\frac{| x_{k} - y_{k}|}{R_k})  + a + \alpha }{p_1 + (p_2 -d)+p_3}
+\end{equation*}
+
+\begin{itemize}
+    \item $R_k$ es el rango de la variable cuantitativa $X_k$, para $k=1,...,p_1;$
+    \item $a$ es el número de coincidencias sobre 1 de las variables binarias;
+    \item $d$ es el número de coincidencias sobre 0 de las variables binarias;
+    \item $\alpha$ es el número de coincidencias en las variables categóricas.
+\end{itemize}
+\end{itemize}
+
+
+\end{frame}
+
+%%%%%% DIAPOSITIVA 10 %%%%%%
+\begin{frame}
+\frametitle{Regresión basada en distancias}
+
+\begin{itemize}
+    \item \textbf{Regresión basada en distancias} es un método que permite incorporar la información de variables categóricas al modelo de regresión lineal.
+    \item Consiste en aplicar regresión lineal por pesos sobre una configuración euclídea compatible con una matriz de distancias $\boldsymbol{\Delta}$.
+    \item \textbf{Teorema:} La matriz de proyección del método de regresión no depende de la configuración empleada.
+    \item Por tanto, la matriz de distancias determina totalmente los resultados de este método.
+\end{itemize}
+
+\end{frame}
+
+%%%%%% DIAPOSITIVA 11 %%%%%%
+\begin{frame}
+\frametitle{Regresión basada en distancias: Ejemplo (1)}
+
+\begin{itemize}
+    \item \textbf{Objetivo:} Predecir el precio de inmuebles en Iowa (EEUU).
+    \item 66 variables regresoras: 36 categóricas y 30 numéricas.
+    \item Errores obtenidos:
+    \vspace{10pt}
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Método}                                       & \textbf{Error cuadrático medio} \\ \hline
+    {\color[HTML]{000000} Regresión lineal}               & 2.15\%                          \\ \hline
+    {\color[HTML]{000000} Regresión basada en distancias} & 1.27\%                          \\ \hline
+    \end{tabular}
+    \end{table}
+\end{itemize}
+
+\end{frame}
+
+%%%%%% DIAPOSITIVA 13 %%%%%%
+\begin{frame}
+\frametitle{Indexación semántica latente (1)}
+
+
+\begin{itemize}
+    \item Es un método de búsqueda de documentos en una base de datos $\mathcal{D}$, a partir de una serie de términos clave $\mathcal{T}$ y de una query de búsqueda $\boldsymbol{q}$.
+    \item Utiliza SVD para capturar información implícita, lo que permite sobreponerse al problema de la sinonimia y relacionar conceptos cercanos.
+    \item Parte de una matriz término-documento:
+    \begin{equation*}
+    \boldsymbol{X} = \begin{pmatrix}
+    f_{11}   & f_{12}   & ...  & f_{1p}  \\
+    f_{21}   & f_{22}   & ...  & f_{2p}   \\
+    \vdots   & \vdots   & \ddots & \vdots \\
+    f_{n1}   & f_{n2}   & ...  & f_{np}   \\
+    \end{pmatrix}
+    \end{equation*}
+    \noindent donde $f_{ij}$ denota la ``importancia'' del término $t_i \in \mathcal{T}$ en el documento $\boldsymbol{d}_j \in \mathcal{D}$.
+\end{itemize}
+
+\end{frame}
+
+%%%%%% DIAPOSITIVA 14 %%%%%%
+\begin{frame}
+\frametitle{Indexación semántica latente (2)}
+
+\begin{itemize}
+    \item Si $\boldsymbol{X_k} = \boldsymbol{U}_k \boldsymbol{\Sigma}_k \boldsymbol{V}_k^t$ es la SVD de $\boldsymbol{X}$ truncada a rango $k$:
+    \begin{itemize}
+        \item $\boldsymbol{U}_k$ contiene representaciones vectoriales de $k$ dimensiones para los términos de $\mathcal{T}$.
+        \item $\boldsymbol{V}_k$ contiene representaciones vectoriales de $k$ dimensiones para los documentos de $\mathcal{D}$.
+    \end{itemize}
+    
+    \item Una vez obtenidas estas representaciones, se pueden medir las relaciones entre términos y documentos a partir de las distancia que los separa.
+    
+    \item Para proyectar la query $\boldsymbol{q}$ al mismo espacio, se halla $\boldsymbol{q}^t\boldsymbol{U_k}$.
+    
+    \item La búsqueda se puede realizar con la similitud coseno.
+
+    
+\end{itemize}
+
+\end{frame}
+ 
+
+%%%%%% DIAPOSITIVA 15 %%%%%%
+\begin{frame}
+\frametitle{Indexación semántica latente: Ejemplo (1)}
+
+\begin{itemize}
+    \item LSI se aplica sobre los títulos de 15 libros de la biblioteca de la Escuela Politécnica y los de otros 15 de la Facultad de Psicología. 
+    \item Se seleccionan las palabras más relevantes y se construye la matriz término-documento empleando el bit de presencia como f. Extracto:
+    \vspace{10pt}
+    \begin{table}[h]
+\begin{adjustbox}{width=\columnwidth,center}
+\begin{tabular}{{ cccccccccccccccc }}
+ & D001 & D002 & D003 & D004 & D005 & D006 & D007 & D008 & D009& D010 & D011 & D012& D013 & D014 & D015 \\
+artificial & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\ 
+cognition & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0  \\ 
+  human & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0  \\ 
+  intelligence & 1 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\ 
+  language & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\ 
+  learning & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 1 & 0 \\ 
+  machine & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 0 & 0  \\ 
+  reasoning & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0  \\ 
+  robot & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 0 & 1 \\ 
+\end{tabular}
+\end{adjustbox}
+\captionsetup{labelformat=empty}
+\captionof{table}{Matriz término-documento (Parte 1: Documentos EPS)}\label{tableTD1}
+\end{table}
+\item La descomposición se trunca a 2 dimensiones.
+
+\end{itemize}
+
+\end{frame}
+
+ 
+ 
+ 
+ 
+ 
+\end{document}
+
+
+
+
