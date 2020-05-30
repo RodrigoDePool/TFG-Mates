@@ -6,12 +6,16 @@
 
 
 \usepackage[utf8]{inputenc}
-\usepackage{beamerthemesplit}
+\usepackage{ beamerthemesplit}
 \usepackage{caption}
 \usepackage{adjustbox}
 \newtheorem*{defi}{Definición}
 \newtheorem*{teor}{Teorema}
-\newtheorem*{ejem}{Ejemplo}
+\newtheorem*{teort}{Teorema de Tibor Radó}
+\newtheorem*{lema}{Lema}
+\newtheorem*{ejem}{Ejemplos}
+\newtheorem*{prop}{Proposición}
+
 %\mode<handout>
 {
 \beamertemplatesolidbackgroundcolor{black!5}
@@ -19,6 +23,7 @@
 \usepackage{amssymb,amsmath,amsfonts,graphicx,float,epsfig,enumerate}
 \usepackage{amsopn}
 \usepackage{fancyhdr}
+\renewcommand{\figurename}{Figura}
 
 \renewcommand{\baselinestretch}{1}
 
@@ -77,17 +82,14 @@ S es superficie topológica si
     \item Hausdorff, segundo numerable y conexo (*orientable).
 \end{itemize}
 \end{defi}
-[IMAGEN DE SUPERFICIE COMPACTA Y NO COMPACTA]
-\end{frame}
 
-%%%%%% DIAPOSITIVA 3 %%%%%%
-\begin{frame}
-\frametitle{Teorema de clasificación de superficies compactas orientables}
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=3in,height=1in]{imagenes/diapo1.png} 
+\caption{Una superficie compacta y otra no compacta}
+\end{center}
+\end{figure}
 
-\begin{itemize}
-\item Suma conexa.
-\item Triangulación.
-\end{itemize}
 \end{frame}
 
 %%%%%% DIAPOSITIVA 4 %%%%%%
@@ -99,9 +101,13 @@ La suma conexa es un operador entre superficies:
 \[S' = S_1 \# S_2 \]
 $S'$ resulta de de retirar un disco abierto de cada superficie e identificarlas por el borde.
 \end{defi}
-\begin{ejem}
-[EJEMPLO DE SUMA CONEXA]
-\end{ejem}
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=3in,height=1.5in]{imagenes/diapo2.png} 
+\caption{Suma conexa de toros}
+\end{center}
+\end{figure}
 
 \end{frame}
 
@@ -110,192 +116,195 @@ $S'$ resulta de de retirar un disco abierto de cada superficie e identificarlas 
 \begin{frame}
 \frametitle{Triangulación de una superficie}
 
+
+\begin{defi}
+Una triangulación de una superficie S es una colección de subconjuntos cerrados $\{T_1, T_2, ..., T_n\}$ que recubren a la superficie y cumplen:
 \begin{itemize}
-    \item Es común tener que trabajar con datos categóricos, que no tienen un valor numérico. El \textbf{escalado multidimensional} permite transformar muestras de este tipo en puntos de un espacio euclídeo, tratando de conservar las distancias.
-    \item Es necesario disponer de una matriz de distancias entre los individuos de una muestra:
-    \begin{equation*}
-    \boldsymbol{\Delta} = \begin{pmatrix}
-    \delta_{11} & \delta_{12} & ... & \delta_{1n} \\
-    \delta_{21} & \delta_{22} & ... & \delta_{2n} \\
-    \vdots & \vdots & \ddots & \vdots \\
-    \delta_{n1} & \delta_{n2} & ... & \delta_{nn} \\
-    \end{pmatrix}
-    \end{equation*}
+\item Todo $T_i$ es homeomorfo a un triangulo en $\mathbb{R}^2$.
+\item Dos conjuntos $T_i$ y $T_j$ distintos o son disjuntos o comparten solo un vértice o comparten toda una arista.
 \end{itemize}
+
+\end{defi}
 \end{frame}
 
 %%%%%% DIAPOSITIVA 7 %%%%%%
 \begin{frame}
-\frametitle{Escalado multidimensional métrico}
 
-\begin{itemize}
-    \item Si $\boldsymbol{\Delta}$ es compatible con una configuración euclídea, basta con tomar dicha configuración. Este es el \textbf{caso métrico}.
-    \item \textbf{Teorema:} $\boldsymbol{\Delta}$ es compatible con una configuración euclídea si $\boldsymbol{B} =  -\frac{1}{2} \boldsymbol{H} \boldsymbol{\Delta}^2  \boldsymbol{H}$ es semidefinida positiva.
-    \item Cualquier $\boldsymbol{Y}$ tal que
-    $\boldsymbol{B} = \boldsymbol{Y}\boldsymbol{Y}^t$ sería una configuración euclídea compatible.
-    \item Es MDS métrico se toma $\boldsymbol{Y} = \boldsymbol{U} \boldsymbol{\Lambda}^{1/2}$, que es valor que se obtendría al aplicar PCA sobre cualquiera de las configuraciones euclídeas compatibles con $\boldsymbol{\Delta}$. 
-\end{itemize}
+\frametitle{Triangulación}
+\begin{ejem}
+Toro y esfera triangulados
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=2in,height=0.75in]{imagenes/diapo3.png} 
+\end{center}
+\end{figure}
+
+\end{ejem}
+
+\begin{teort}
+Toda superficie separable es triangulable.
+\end{teort}
 
 
 \end{frame}
 
 %%%%%% DIAPOSITIVA 8 %%%%%%
 \begin{frame}
-\frametitle{Escalado multidimensional no métrico}
-
-\begin{itemize}
-    \item Si $\boldsymbol{B}$ no es semidefinida positiva, entonces no existe una configuración euclídea compatible con $\boldsymbol{\Delta}$.
-    \item En este caso es necesario transformar $\boldsymbol{\Delta}$ conservando la relación entre distancias.
-    \item Una transformación que permite obtener una $\boldsymbol{B}$ semidefinida positiva, si se elige una $a$ adecuada, es la transformación q-aditiva:
-    \begin{equation*}
-    \hat{\delta}_{ij}^2 = 
-    \begin{cases}
-      \delta_{ij}^2 - 2a & \text{si}\ i\neq j \\
-      0  & \text{si}\ i=j
-    \end{cases}
-    \end{equation*}
-
-    \item En el caso \textbf{caso no métrico} se aplica una transformación de este tipo para, posteriormente, poder utilizar la versión métrica.
-\end{itemize}
-
+\frametitle{Teorema de clasificación de superficies compactas}
+\begin{teor}
+Toda superficie compacta orientable es homeomorfa o a una esfera o una suma conexa de $n$ toros.
+\end{teor}
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=4in,height=0.75in]{imagenes/diapo4.png} 
+\end{center}
+\end{figure}
 
 \end{frame}
 
 %%%%%% DIAPOSITIVA 9 %%%%%%
 \begin{frame}
-\frametitle{Escalado multidimensional: Similaridades y distancias}
+\frametitle{Demostración}
+\begin{proof}[Demostración]
+Primero, se utiliza el teorema de Tibor Radó para expresar una superficie como un polígono donde todas las aristas del borde están identificadas a pares.
 
-\begin{itemize}
-    \item El escalado multidimensional también es compatible con matrices de similaridades.
-    \item En general, una buena similaridad para un conjunto de datos con $p_1$ variables cuantitativas; $p_2$ variables binarias y $p_3$ variables categóricas es la de Gower:
-    \begin{equation*}
-    s(\boldsymbol{x}, \boldsymbol{y}) = \frac{\sum_{k=1}^{p_1}(1-\frac{| x_{k} - y_{k}|}{R_k})  + a + \alpha }{p_1 + (p_2 -d)+p_3}
-\end{equation*}
+Luego, mediante cortes e identificaciones obtenemos un nuevo polígono que es equivalente o a una esfera o una suma conexa de $n$ toros.
 
-\begin{itemize}
-    \item $R_k$ es el rango de la variable cuantitativa $X_k$, para $k=1,...,p_1;$
-    \item $a$ es el número de coincidencias sobre 1 de las variables binarias;
-    \item $d$ es el número de coincidencias sobre 0 de las variables binarias;
-    \item $\alpha$ es el número de coincidencias en las variables categóricas.
-\end{itemize}
-\end{itemize}
-
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=2in,height=0.75in]{imagenes/paso4.jpeg} 
+\caption{recorte e identificación}
+\end{center}
+\end{figure}
+ 
+\end{proof}
 
 \end{frame}
 
 %%%%%% DIAPOSITIVA 10 %%%%%%
 \begin{frame}
-\frametitle{Regresión basada en distancias}
+\frametitle{Género}
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=4in,height=0.75in]{imagenes/diapo4.png} 
+\end{center}
+\end{figure}
 
-\begin{itemize}
-    \item \textbf{Regresión basada en distancias} es un método que permite incorporar la información de variables categóricas al modelo de regresión lineal.
-    \item Consiste en aplicar regresión lineal por pesos sobre una configuración euclídea compatible con una matriz de distancias $\boldsymbol{\Delta}$.
-    \item \textbf{Teorema:} La matriz de proyección del método de regresión no depende de la configuración empleada.
-    \item Por tanto, la matriz de distancias determina totalmente los resultados de este método.
-\end{itemize}
+Llamaremos \textit{género} de una superficie compacta al número $n$ de toros al que es homeomorfa. Si es homeomorfa a una esfera diremos que tiene género 0.
 
 \end{frame}
 
 %%%%%% DIAPOSITIVA 11 %%%%%%
 \begin{frame}
-\frametitle{Regresión basada en distancias: Ejemplo (1)}
+\frametitle{Clasificación de superficies no compactas}
 
-\begin{itemize}
-    \item \textbf{Objetivo:} Predecir el precio de inmuebles en Iowa (EEUU).
-    \item 66 variables regresoras: 36 categóricas y 30 numéricas.
-    \item Errores obtenidos:
-    \vspace{10pt}
-    \begin{table}[H]
-    \centering
-    \begin{tabular}{|c|c|}
-    \hline
-    \textbf{Método}                                       & \textbf{Error cuadrático medio} \\ \hline
-    {\color[HTML]{000000} Regresión lineal}               & 2.15\%                          \\ \hline
-    {\color[HTML]{000000} Regresión basada en distancias} & 1.27\%                          \\ \hline
-    \end{tabular}
-    \end{table}
-\end{itemize}
+Superficies no compactas:
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=3in,height=1.25in]{imagenes/ejemplonocompactas.png} 
+\end{center}
+\end{figure}
+
+Para las superficies no compactas el género ya no caracteriza totalmente a la superficie.
 
 \end{frame}
 
 %%%%%% DIAPOSITIVA 13 %%%%%%
 \begin{frame}
-\frametitle{Indexación semántica latente (1)}
-
-
+\frametitle{Borde ideal}
+Un \textit{extremo} es una sucesión de subconjuntos encajados $P_1 \supset P_2 \supset ...$ que son:
 \begin{itemize}
-    \item Es un método de búsqueda de documentos en una base de datos $\mathcal{D}$, a partir de una serie de términos clave $\mathcal{T}$ y de una query de búsqueda $\boldsymbol{q}$.
-    \item Utiliza SVD para capturar información implícita, lo que permite sobreponerse al problema de la sinonimia y relacionar conceptos cercanos.
-    \item Parte de una matriz término-documento:
-    \begin{equation*}
-    \boldsymbol{X} = \begin{pmatrix}
-    f_{11}   & f_{12}   & ...  & f_{1p}  \\
-    f_{21}   & f_{22}   & ...  & f_{2p}   \\
-    \vdots   & \vdots   & \ddots & \vdots \\
-    f_{n1}   & f_{n2}   & ...  & f_{np}   \\
-    \end{pmatrix}
-    \end{equation*}
-    \noindent donde $f_{ij}$ denota la ``importancia'' del término $t_i \in \mathcal{T}$ en el documento $\boldsymbol{d}_j \in \mathcal{D}$.
+\item Conexos, no acotados y de frontera compacta
+\item Para cualquier subconjunto compacto $A\subset S$, existe un $n$ con $P_n \cap A = \emptyset$.
 \end{itemize}
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=2in,height=0.7in]{imagenes/final.png} 
+\end{center}
+\end{figure}
+
+\begin{defi}
+El borde ideal $B(S)$ de una superficie es el conjunto de extremos salvo equivalencia.
+\end{defi}
 
 \end{frame}
 
 %%%%%% DIAPOSITIVA 14 %%%%%%
 \begin{frame}
-\frametitle{Indexación semántica latente (2)}
+\frametitle{Topología de $B(S)$}
+Sobre $B(S)$ tomamos la topología que tiene por base el conjunto \[\{U^*: U\subset S \text{, no acotado de frontera compacta}\}\]donde $U^*$ es el conjunto de extremos contenidos en $U$.
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=2.5in,height=0.75in]{imagenes/diapoX.png} 
+\end{center}
+\end{figure}
 
-\begin{itemize}
-    \item Si $\boldsymbol{X_k} = \boldsymbol{U}_k \boldsymbol{\Sigma}_k \boldsymbol{V}_k^t$ es la SVD de $\boldsymbol{X}$ truncada a rango $k$:
-    \begin{itemize}
-        \item $\boldsymbol{U}_k$ contiene representaciones vectoriales de $k$ dimensiones para los términos de $\mathcal{T}$.
-        \item $\boldsymbol{V}_k$ contiene representaciones vectoriales de $k$ dimensiones para los documentos de $\mathcal{D}$.
-    \end{itemize}
-    
-    \item Una vez obtenidas estas representaciones, se pueden medir las relaciones entre términos y documentos a partir de las distancia que los separa.
-    
-    \item Para proyectar la query $\boldsymbol{q}$ al mismo espacio, se halla $\boldsymbol{q}^t\boldsymbol{U_k}$.
-    
-    \item La búsqueda se puede realizar con la similitud coseno.
-
-    
-\end{itemize}
-
+El subconjunto de extremos de género infinito se denota por $B'(S)$. Se suele llamar borde ideal a la tupla $(B(S), B'(S))$.
 \end{frame}
  
 
 %%%%%% DIAPOSITIVA 15 %%%%%%
 \begin{frame}
-\frametitle{Indexación semántica latente: Ejemplo (1)}
+\frametitle{Teorema de clasificación de superficies no compactas}
 
+\begin{teor}
+Sean $S$ y $S'$ dos superficies orientables del mismo género, entonces serán homeomorfas si y solo si lo son sus bordes ideales como tuplas de espacios.
+\end{teor}
+
+\begin{proof}[Demostración]
+El homeomorfismo entre bordes ideales nos permite definir las sucesiones de subsuperficies compactas $A_1 \subset A_2 \subset ...$ y $A'_1 \subset A'_2 \subset ...$ de modo que:
 \begin{itemize}
-    \item LSI se aplica sobre los títulos de 15 libros de la biblioteca de la Escuela Politécnica y los de otros 15 de la Facultad de Psicología. 
-    \item Se seleccionan las palabras más relevantes y se construye la matriz término-documento empleando el bit de presencia como f. Extracto:
-    \vspace{10pt}
-    \begin{table}[h]
-\begin{adjustbox}{width=\columnwidth,center}
-\begin{tabular}{{ cccccccccccccccc }}
- & D001 & D002 & D003 & D004 & D005 & D006 & D007 & D008 & D009& D010 & D011 & D012& D013 & D014 & D015 \\
-artificial & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\ 
-cognition & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0  \\ 
-  human & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0  \\ 
-  intelligence & 1 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\ 
-  language & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\ 
-  learning & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 1 & 0 \\ 
-  machine & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 0 & 0  \\ 
-  reasoning & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0  \\ 
-  robot & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 0 & 1 \\ 
-\end{tabular}
-\end{adjustbox}
-\captionsetup{labelformat=empty}
-\captionof{table}{Matriz término-documento (Parte 1: Documentos EPS)}\label{tableTD1}
-\end{table}
-\item La descomposición se trunca a 2 dimensiones.
+\item Recubren a $S$ y $S'$, respectivamente.
+\item Para todo $n$ existe el homeomorfismo entre subsuperficies $f_n: A_n \longrightarrow A'_n$.
+\end{itemize} 
+El homeomorfismo entre las superficies $S$ y $S'$ será $f = \lim_{n\to\infty} f_n$.
 
+\end{proof}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Representantes de superficies no compactas.}
+
+
+\begin{prop}
+El borde ideal de una superficie $(B(S), B'(S))$ es homeomorfo a $(X,Y)$ con $Y$ cerrado de $X$, y $X$ un subconjunto del conjunto de Cantor.
+\end{prop}
+
+\begin{teor}
+Para todo par $(X,Y)$ anterior, podemos construir una superficie con ese borde ideal.
+\end{teor}
+
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Cardinalidad}
+Cardinalidad de superficies salvo homeomorfismo:
+\begin{itemize}
+\item Hay $\aleph_0$ superficies compactas
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=4in,height=0.75in]{imagenes/diapo4.png} 
+\end{center}
+\end{figure}
+
+\item Hay $\aleph_1$ superficies no compactas (cantidad de subconjuntos cerrados del conjuntos de Cantor no homeomorfos entre sí).
+
+\item  Hay $\aleph_2$ superficies \textbf{no} segundo numerables.
 \end{itemize}
+
+
 
 \end{frame}
 
  
+
  
  
  
