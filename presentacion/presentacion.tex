@@ -9,12 +9,12 @@
 \usepackage{ beamerthemesplit}
 \usepackage{caption}
 \usepackage{adjustbox}
-\newtheorem*{defi}{Definición}
 \newtheorem*{teor}{Teorema}
 \newtheorem*{teort}{Teorema de Tibor Radó}
 \newtheorem*{lema}{Lema}
 \newtheorem*{ejem}{Ejemplos}
 \newtheorem*{prop}{Proposición}
+\newtheorem*{defi}{Definición}
 
 %\mode<handout>
 {
@@ -23,7 +23,7 @@
 \usepackage{amssymb,amsmath,amsfonts,graphicx,float,epsfig,enumerate}
 \usepackage{amsopn}
 \usepackage{fancyhdr}
-\renewcommand{\figurename}{Figura}
+\renewcommand{\figurename}{}
 
 \renewcommand{\baselinestretch}{1}
 
@@ -71,151 +71,159 @@
 %%%%% TITULO %%%%%%%%%
 \frame{\titlepage}
  
-%%%%%% DIAPOSITIVA 2 %%%%%%
+%%%%%% DIAPOSITIVA 1 %%%%%%
 \begin{frame}
 \frametitle{Superficies topológicas}
 
-\begin{defi}
-S es superficie topológica si
+\begin{block}{Superficie topológica}
 \begin{itemize}
     \item Localmente homeomorfo a una bola en $\mathbb{R}^2$.
     \item Hausdorff, segundo numerable y conexo (*orientable).
 \end{itemize}
-\end{defi}
+\end{block}
 
+Algunos ejemplos
 \begin{figure}[htb]
 \begin{center}
 \includegraphics[width=3in,height=1in]{imagenes/diapo1.png} 
-\caption{Una superficie compacta y otra no compacta}
 \end{center}
 \end{figure}
 
 \end{frame}
 
-%%%%%% DIAPOSITIVA 4 %%%%%%
+% DIAPO 2
 \begin{frame}
 \frametitle{Suma conexa}
+\begin{block}{Suma conexa}
+Operdor entre superficies
 
-\begin{defi}
-La suma conexa es un operador entre superficies:
-\[S' = S_1 \# S_2 \]
-$S'$ resulta de de retirar un disco abierto de cada superficie e identificarlas por el borde.
-\end{defi}
+\end{block}
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=2in,height=1.5in]{imagenes/sumaconexa_toros_R3.png} 
+\end{center}
+\end{figure}
+
+\end{frame}
+
+% Diapo 3
+\begin{frame}
+\frametitle{Ejemplos de suma conexa}
+Toro y suma conexa de dos toros:
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=3in,height=2in]{imagenes/sumaconexa1.png}
+\end{center}
+\end{figure}
+\end{frame}
+
+
+% Diapo 4
+\begin{frame}
+\frametitle{Clasifiación de superficies compactas}
+\begin{block}{Teorema de clasificación de superficies compactas}
+Toda superficie compacta orientable es homeomorfa a una esfera o a una suma conexa de $n$ toros.
+\end{block}
 
 \begin{figure}[htb]
 \begin{center}
-\includegraphics[width=3in,height=1.5in]{imagenes/diapo2.png} 
-\caption{Suma conexa de toros}
+\includegraphics[width=4in,height=0.75in]{imagenes/diapo4.png} 
 \end{center}
 \end{figure}
-
 \end{frame}
 
-
-%%%%%% DIAPOSITIVA 6 %%%%%%
+% Diapo 5
 \begin{frame}
-\frametitle{Triangulación de una superficie}
-
-
-\begin{defi}
-Una triangulación de una superficie S es una colección de subconjuntos cerrados $\{T_1, T_2, ..., T_n\}$ que recubren a la superficie y cumplen:
-\begin{itemize}
-\item Todo $T_i$ es homeomorfo a un triangulo en $\mathbb{R}^2$.
-\item Dos conjuntos $T_i$ y $T_j$ distintos o son disjuntos o comparten solo un vértice o comparten toda una arista.
-\end{itemize}
-
-\end{defi}
-\end{frame}
-
-%%%%%% DIAPOSITIVA 7 %%%%%%
-\begin{frame}
-
 \frametitle{Triangulación}
-\begin{ejem}
-Toro y esfera triangulados
+\begin{block}{Teorema (Radó 1925)}
+Toda superficie separable es triangulable.
+\end{block}
+
+
 \begin{figure}[htb]
 \begin{center}
 \includegraphics[width=2in,height=0.75in]{imagenes/diapo3.png} 
-\end{center}
-\end{figure}
-
-\end{ejem}
-
-\begin{teort}
-Toda superficie separable es triangulable.
-\end{teort}
-
-
-\end{frame}
-
-%%%%%% DIAPOSITIVA 8 %%%%%%
-\begin{frame}
-\frametitle{Teorema de clasificación de superficies compactas}
-\begin{teor}
-Toda superficie compacta orientable es homeomorfa o a una esfera o una suma conexa de $n$ toros.
-\end{teor}
-\begin{figure}[htb]
-\begin{center}
-\includegraphics[width=4in,height=0.75in]{imagenes/diapo4.png} 
+\caption{Toro y esfera triangulados.}
 \end{center}
 \end{figure}
 
 \end{frame}
 
-%%%%%% DIAPOSITIVA 9 %%%%%%
+
+% Diapo 7
+
 \begin{frame}
-\frametitle{Demostración}
-\begin{proof}[Demostración]
-Primero, se utiliza el teorema de Tibor Radó para expresar una superficie como un polígono donde todas las aristas del borde están identificadas a pares.
+\frametitle{Idea de la demostración}
 
-Luego, mediante cortes e identificaciones obtenemos un nuevo polígono que es equivalente o a una esfera o una suma conexa de $n$ toros.
-
+\begin{block}{Paso 1}
+Se usa el resultado de Radó para expresar una superficie como un polígono con las aristas identificadas a pares.
 \begin{figure}[htb]
 \begin{center}
-\includegraphics[width=2in,height=0.75in]{imagenes/paso4.jpeg} 
-\caption{recorte e identificación}
+\includegraphics[width=2.3in,height=1.3in]{imagenes/paso1.png} 
 \end{center}
 \end{figure}
+\end{block}
+
  
-\end{proof}
-
 \end{frame}
 
-%%%%%% DIAPOSITIVA 10 %%%%%%
+
+% Diapo 8
+
+\begin{frame}
+\frametitle{Idea de la demostración}
+\begin{block}{Paso 2}
+Se realizan cortes e identificaciones para obtener un nuevo polígono equivalente a una esfera o a una suma conexa de $n$ toros.
+
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=1.5in,height=0.75in]{imagenes/paso4.jpeg} 
+\end{center}
+\end{figure}
+
+\end{block}
+ 
+\end{frame}
+
+
+% Diapo 9
 \begin{frame}
 \frametitle{Género}
+\begin{block}{Género}
+Número de toros al que una superficie es homeomorfo.
+\end{block}
 \begin{figure}[htb]
 \begin{center}
 \includegraphics[width=4in,height=0.75in]{imagenes/diapo4.png} 
 \end{center}
 \end{figure}
 
-Llamaremos \textit{género} de una superficie compacta al número $n$ de toros al que es homeomorfa. Si es homeomorfa a una esfera diremos que tiene género 0.
-
 \end{frame}
 
-%%%%%% DIAPOSITIVA 11 %%%%%%
+% Diapo 10
 \begin{frame}
-\frametitle{Clasificación de superficies no compactas}
+\frametitle{Superficies no compactas}
 
-Superficies no compactas:
+Ejemplos de superficies no compactas
 \begin{figure}[htb]
 \begin{center}
-\includegraphics[width=3in,height=1.25in]{imagenes/ejemplonocompactas.png} 
+\includegraphics[width=3.3in,height=1in]{imagenes/ejemplonocompactas.png} 
 \end{center}
 \end{figure}
 
-Para las superficies no compactas el género ya no caracteriza totalmente a la superficie.
 
 \end{frame}
 
-%%%%%% DIAPOSITIVA 13 %%%%%%
+% Diapo 11
 \begin{frame}
 \frametitle{Borde ideal}
-Un \textit{extremo} es una sucesión de subconjuntos encajados $P_1 \supset P_2 \supset ...$ que son:
+\begin{block}
+{Extremo}
+Subconjuntos $P_1 \supset P_2 \supset ...$ que cumplen:
 \begin{itemize}
 \item Conexos, no acotados y de frontera compacta
-\item Para cualquier subconjunto compacto $A\subset S$, existe un $n$ con $P_n \cap A = \emptyset$.
+\item $\forall A\subset S$ compacto, $\exists n$ con $P_n \cap A = \emptyset$.
 \end{itemize}
 
 \begin{figure}[htb]
@@ -223,80 +231,113 @@ Un \textit{extremo} es una sucesión de subconjuntos encajados $P_1 \supset P_2 
 \includegraphics[width=2in,height=0.7in]{imagenes/final.png} 
 \end{center}
 \end{figure}
+\end{block}
 
-\begin{defi}
-El borde ideal $B(S)$ de una superficie es el conjunto de extremos salvo equivalencia.
-\end{defi}
 
+\begin{block}{Borde ideal}
+$B(S)$ es el conjunto de extremos salvo equivalencia.
+\end{block}
 \end{frame}
 
-%%%%%% DIAPOSITIVA 14 %%%%%%
+
+% Diapo 12
 \begin{frame}
-\frametitle{Topología de $B(S)$}
-Sobre $B(S)$ tomamos la topología que tiene por base el conjunto \[\{U^*: U\subset S \text{, no acotado de frontera compacta}\}\]donde $U^*$ es el conjunto de extremos contenidos en $U$.
+\frametitle{Borde ideal}
+\begin{block}
+{Topología de B(S)}
+Para $U \subset S$ no acotado de frontera compacta, definimos $U^*$ como el conjunto de extremos contenidos en $U$. 
 \begin{figure}[htb]
 \begin{center}
 \includegraphics[width=2.5in,height=0.75in]{imagenes/diapoX.png} 
 \end{center}
 \end{figure}
 
-El subconjunto de extremos de género infinito se denota por $B'(S)$. Se suele llamar borde ideal a la tupla $(B(S), B'(S))$.
+Los $U^*$ forman una base.
+\end{block}
+
+\end{frame}
+
+% Diapo 13
+\begin{frame}
+\frametitle{Tipos de extremo}
+
+Los extremos pueden ser de género infinito o planos.
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=1.2in,height=0.75in]{imagenes/dosfinales.png} 
+\end{center}
+\end{figure}
+
+El conjunto $B'(S)$  de extremos de género infinito es un cerrado. Llamamos borde ideal a la tupla $(B(S), B'(S))$.
 \end{frame}
  
 
-%%%%%% DIAPOSITIVA 15 %%%%%%
+% Diapo 14
 \begin{frame}
-\frametitle{Teorema de clasificación de superficies no compactas}
+\frametitle{Clasificación de superficies no compactas}
 
-\begin{teor}
-Sean $S$ y $S'$ dos superficies orientables del mismo género, entonces serán homeomorfas si y solo si lo son sus bordes ideales como tuplas de espacios.
-\end{teor}
+\begin{block}{Teorema (Kerékjártó 1923)}
+El tipo topológico de una superficie orientable está determinado por su género y borde ideal.
+\end{block}
+\end{frame}
 
-\begin{proof}[Demostración]
-El homeomorfismo entre bordes ideales nos permite definir las sucesiones de subsuperficies compactas $A_1 \subset A_2 \subset ...$ y $A'_1 \subset A'_2 \subset ...$ de modo que:
+% Diapo 15
+\begin{frame}
+
+\frametitle{Idea de la demostración}
+Se construyen inductivamente las tuplas $(A_i, A'_i, f_i)$ con:
 \begin{itemize}
-\item Recubren a $S$ y $S'$, respectivamente.
-\item Para todo $n$ existe el homeomorfismo entre subsuperficies $f_n: A_n \longrightarrow A'_n$.
-\end{itemize} 
-El homeomorfismo entre las superficies $S$ y $S'$ será $f = \lim_{n\to\infty} f_n$.
-
-\end{proof}
+\item $A_i$ y $A'_i$  subsuperficies compactas.
+\item $S = \bigcup_{i=0}^{\infty}A_i$  (igual con $S'$).
+\item $f_i: A_i \longrightarrow A'_i$ homeomorfismo.
+\end{itemize}
 
 \end{frame}
 
-
+% Diapo 16
 \begin{frame}
-\frametitle{Representantes de superficies no compactas.}
-
-
+\frametitle{Representantes de superficies no compactas}
 \begin{prop}
-El borde ideal de una superficie $(B(S), B'(S))$ es homeomorfo a $(X,Y)$ con $Y$ cerrado de $X$, y $X$ un subconjunto cerrado del conjunto de Cantor.
+El borde ideal de toda superficie es homeomorfo a un par (X,Y):
+\begin{itemize}
+\item X subconjunto cerrado del conjunto de Cantor.
+\item Y cerrado de X.
+\end{itemize} 
 \end{prop}
 
-\begin{teor}
+
+\end{frame}
+
+% Diapo 17
+\begin{frame}
+\frametitle{Representantes de superficies no compactas}
+
+\begin{block}
+{Teorema (Richards 1963)}
 Para todo par $(X,Y)$ anterior, podemos construir una superficie con ese borde ideal.
-\end{teor}
+\end{block}
+\begin{block}
+{Idea de la demostración}
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=2.5in,height=1.5in]{imagenes/eleccionCK.png} 
+\end{center}
+\end{figure}
 
 
+\end{block}
 \end{frame}
 
 
 
-
+%Diapo 18
 \begin{frame}
 \frametitle{Cardinalidad}
 Cardinalidad de superficies salvo homeomorfismo:
 \begin{itemize}
-\item Hay $\aleph_0$ superficies compactas
-\begin{figure}[htb]
-\begin{center}
-\includegraphics[width=4in,height=0.75in]{imagenes/diapo4.png} 
-\end{center}
-\end{figure}
-
-\item Hay $\aleph_1$ superficies no compactas (cantidad de subconjuntos cerrados del conjuntos de Cantor no homeomorfos entre sí).
-
-\item  Hay $\aleph_2$ superficies \textbf{no} segundo numerables.
+\item Hay $\aleph_0$ superficies compactas.
+\item Hay $2^{\aleph_0}$ superficies no compactas.
+\item  Hay $2^{2^{\aleph_0}}$ superficies \textbf{no} segundo numerables.
 \end{itemize}
 
 
