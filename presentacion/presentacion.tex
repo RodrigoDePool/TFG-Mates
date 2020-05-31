@@ -77,7 +77,7 @@
 
 \begin{block}{Superficie topológica}
 \begin{itemize}
-    \item Localmente homeomorfo a una bola en $\mathbb{R}^2$.
+    \item Localmente homeomorfo a $\mathbb{R}^2$.
     \item Hausdorff, segundo numerable y conexo (*orientable).
 \end{itemize}
 \end{block}
@@ -109,10 +109,10 @@ Operador entre superficies
 % Diapo 3
 \begin{frame}
 \frametitle{Ejemplos de suma conexa}
-Toro y suma conexa de dos toros:
+Toro, suma conexa de dos y de $n$ toros:
 \begin{figure}[htb]
 \begin{center}
-\includegraphics[width=3in,height=2in]{imagenes/sumaconexa1.png}
+\includegraphics[width=4in,height=1.8in]{imagenes/sumaconexa1.png}
 \end{center}
 \end{figure}
 \end{frame}
@@ -122,7 +122,8 @@ Toro y suma conexa de dos toros:
 \begin{frame}
 \frametitle{Clasificación de superficies compactas}
 \begin{block}{Teorema de clasificación de superficies compactas}
-Toda superficie compacta orientable es homeomorfa a una esfera o a una suma conexa de $n$ toros.
+Toda superficie compacta orientable es homeomorfa a una esfera o a una suma conexa de $n$ toros.\\
+\textbf{Observación:} Al $n$ se le llama \textit{género}.
 \end{block}
 
 \begin{figure}[htb]
@@ -173,7 +174,7 @@ Se usa el resultado de Radó para expresar una superficie como un polígono con 
 \begin{frame}
 \frametitle{Idea de la demostración}
 \begin{block}{Paso 2}
-Se realizan cortes e identificaciones para obtener un nuevo polígono equivalente a una esfera o a una suma conexa de $n$ toros.
+Se realizan cortes e identificaciones para obtener el polígono anterior equivalente a la suma conexa de $n$ toros.
 
 
 \begin{figure}[htb]
@@ -187,19 +188,6 @@ Se realizan cortes e identificaciones para obtener un nuevo polígono equivalent
 \end{frame}
 
 
-% Diapo 9
-\begin{frame}
-\frametitle{Género}
-\begin{block}{Género}
-Número de toros al que una superficie es homeomorfo.
-\end{block}
-\begin{figure}[htb]
-\begin{center}
-\includegraphics[width=4in,height=0.75in]{imagenes/diapo4.png} 
-\end{center}
-\end{figure}
-
-\end{frame}
 
 % Diapo 10
 \begin{frame}
@@ -211,7 +199,7 @@ Ejemplos de superficies no compactas
 \includegraphics[width=3.3in,height=1in]{imagenes/ejemplonocompactas.png} 
 \end{center}
 \end{figure}
-
+\textbf{Observación:} El género ya no caracteriza una superficie.
 
 \end{frame}
 
@@ -222,7 +210,7 @@ Ejemplos de superficies no compactas
 {Extremo}
 Subconjuntos $P_1 \supset P_2 \supset ...$ que cumplen:
 \begin{itemize}
-\item Conexos, no acotados y de frontera compacta
+\item Conexos, no acotados y de frontera compacta.
 \item $\forall A\subset S$ compacto, $\exists n$ con $P_n \cap A = \emptyset$.
 \end{itemize}
 
@@ -252,7 +240,7 @@ Para $U \subset S$ no acotado de frontera compacta, definimos $U^*$ como el conj
 \end{center}
 \end{figure}
 
-Los $U^*$ forman una base.
+Los $U^*$ forman una base de una topología.
 \end{block}
 
 \end{frame}
@@ -318,9 +306,14 @@ Para todo par $(X,Y)$ anterior, podemos construir una superficie con ese borde i
 \end{block}
 \begin{block}
 {Idea de la demostración}
+Por cada $p\in X$ construimos un extremo:
+\begin{itemize}
+\item Plano si $p\in X\backslash Y$.
+\item De género infinito si $p\in Y$. 
+\end{itemize}
 \begin{figure}[htb]
 \begin{center}
-\includegraphics[width=2.5in,height=1.5in]{imagenes/eleccionCK.png} 
+\includegraphics[width=2in,height=1in]{imagenes/eleccionCK.png} 
 \end{center}
 \end{figure}
 
